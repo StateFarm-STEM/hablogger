@@ -28,8 +28,10 @@
 ## Proof of concept launch
 
 - We launched on 3/28 aproximately 4pm at Tri-Valley High school
-- [Time Lapse](https://youtu.be/DzhJ7vASVg0)
+- [The Story of Bartholomew The Space Potato](https://www.youtube.com/watch?v=lgF7glYxPEk&t=47s)
 - [Video of launch](https://vimeo.com/693551736)
+- [Overview from Tri-Valley](https://www.youtube.com/watch?v=9-vcuOU2RxY)
+- [Highlights of Tri-Valley - flight footage](https://www.youtube.com/watch?v=hXOj18e2MYQ&t=10s)
 - [Raw footage - complete flight](https://youtu.be/MibnktoN1XE)
 
 ## Lessons Learned (first draft)
