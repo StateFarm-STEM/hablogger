@@ -14,6 +14,7 @@
   - [Tri-Valley what went into flying a HAB 1:56](https://www.youtube.com/watch?v=9-vcuOU2RxY)
   - [Video of the Tri-Valley Launch 2:25](https://vimeo.com/693551736)
   - [The Story of Bartholomew The Space Potato 9:23](https://www.youtube.com/watch?v=lgF7glYxPEk&t=47s)
+- [Telemetry analysis](https://github.com/StateFarm-STEM/hablogger/tree/main/telemetry-analysis) 
  
 ## November session
 
