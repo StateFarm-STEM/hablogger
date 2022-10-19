@@ -15,13 +15,13 @@
 ## Measure Pressure and Temperature using the BMP180
 
 #### What you will be using:
-
-- [Arduino IDE](https://github.com/StateFarm-STEM/pyinthesky/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/pyinthesky/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
-- [BMP180 Sensor](https://github.com/StateFarm-STEM/pyinthesky/blob/main/c/arduino/lesson3/screenshots/bmp180.png)
-- [5 pin connector](https://github.com/StateFarm-STEM/pyinthesky/blob/main/c/arduino/lesson4/screenshots/5-pin-connector.png)
-- [Breadboard](https://github.com/StateFarm-STEM/pyinthesky/blob/main/c/arduino/lesson4/screenshots/breadboard.png)
-- [Jumper Wires](https://github.com/StateFarm-STEM/pyinthesky/blob/main/c/arduino/lesson3/screenshots/1956-02.jpg)
+                https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png
+- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+- [BMP180 Sensor](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/bmp180.png)
+- [5 pin connector](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/5-pin-connector.png)
+- [Breadboard](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/breadboard.png)
+- [Jumper Wires](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/1956-02.jpg)
 
 #### Note: the BMP180 Sensor didn't detect the pressure and temp accurately until I soldered the 5 pin connector to the BMP180<br>
 
