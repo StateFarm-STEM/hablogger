@@ -27,7 +27,7 @@ Lessons will be broken up into short lessons students can work on by themselves 
 
 - [Greg Dirst@Unit5](mailto:greg.dirst.nf94@unit5.org)
 - [Andrew Blessing@Unit5](mailto:andrew.blessing.jij8@unit5.org)
-- report an issue by clicking the issue link towards the top of the page
+- Report an issue by clicking the issue link towards the top of the page
 - Schedule a working session with your mentor and myself or between each other
 - Reach out to other students in other groups and bring back to your group what you learned
 
