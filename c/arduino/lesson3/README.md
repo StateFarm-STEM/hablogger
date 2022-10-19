@@ -39,11 +39,11 @@
 ### Wiring help
  <img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMP_BACKWIRE.jpg" width="500" >
  <img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMPWIRE2.jpg" width="500" >
+Remember that you don't have to use the same color wires I do, but make sure they connect the same way. 
 
-- Remember that you don't have to use the same color wires I do, but make sure they connect the same way. 
 
-
-Connecting Up the BMP180 Pressure and Temperature Sensor
+### Connecting Up the BMP180 Pressure and Temperature Sensor
+**Unplug the Ardiuno from the computer before doing this**
 | BMP180 Pin | Arduino Pin |
 | -------------- | :--------- | 
 Vin |	5V

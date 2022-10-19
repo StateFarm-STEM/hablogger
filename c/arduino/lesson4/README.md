@@ -3,7 +3,7 @@
 ## Working with GPS sensor data using the Arduino language
 
 #### Pre-requisites:
-- it is reccomended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson2#welcome-to-lesson-2)
+- It is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson2#welcome-to-lesson-2)
 
 #### Objectives:
 - Wire up the GPS to the Arduino
@@ -22,16 +22,16 @@
 - [Jumper Wires](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/1956-02.jpg)
 
 #### Note: I had some issues using the GPS module from inside my garage. If you do not get data on your serial monitor. Here are some things you can try to get good results...<br>
-- try working near a window with the best view of the sky
-- try taking your laptop outside
-- if it works where you like to work, then great
+- Try working near a window with the best view of the sky
+- Try taking your laptop outside along with the Arduino and all of its components that are connected
+- If it works where you like to work, then great
 
 #### What you will be learning:
 - How to connect the GPS GT-U7 to the Arduino without using a breadboard (changes it up just a little here compared to lesson 3)
 - How to create a new Arduino Sketch project using the TinyGPSPlus Library
 - Write the code in the Arduino IDE and upload it to the Arduino
-  - read Latitude, Longitude, Altitude, speed, and the number of satellites you are connected to from the GPS module
-  - print your results to the Arduino's serial port
+  - Read Latitude, Longitude, Altitude, speed, and the number of satellites you are connected to from the GPS module
+  - Print your results to the Arduino's serial port
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 
 ## Videos
@@ -44,9 +44,9 @@ https://user-images.githubusercontent.com/91698286/181350144-9dad1089-92e9-4f3b-
 
 
 #### How to get the TinyGPSPlus library:
-- navigate to the sketch menu and hover over include library and then click manage libraries
-- type in TinyGPSPlus and install the library and then restart the IDE
-- copy and paste this code into a sketch and run it
+- Navigate to the sketch menu and hover over include library and then click manage libraries
+- Type in TinyGPSPlus and install the library and then restart the IDE
+- Copy and paste this code into a sketch and run it
 ``` 
 #include "TinyGPSPlus.h"
 #include <SoftwareSerial.h>
@@ -99,12 +99,12 @@ void loop() {
 #### Helpful video shortcuts
 - [connect the GPS GT-U7 to the Arduino](https://youtu.be/7zw2ULu73DY?t=54)
 #### Tips
-- Make sure everthing is wired correctly, if you did not catch the wiring in the video, use the chart below.
+- Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below.
+- **Unplug the Arduino from the computer before doing this**
+<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/GPSback.jpg width="500">
+<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/ArduinoBackGPS.jpg width="500">
 
-<img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/GPSback.jpg" width="500">
-<img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/ArduinoBackGPS.jpg" width="500">
-
-<img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/ArdiunoFrountGPS.jpg" width="500">
+<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/ArdiunoFrountGPS.jpg width="500">
 
 
   **Pin on the GPS module** | **Pin on the Arduino**

@@ -20,7 +20,7 @@ Lessons will be broken up into short lessons students can work on by themselves 
 - [Working with the weather sensor](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson3)
 - [Working with the GPS module](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson4)
 - [Working with the SD card module](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson5)
-- [Putting it all together - evolving](https://github.com/StateFarm-STEM/pyinthesky/blob/main/putting-it-all-together/README.md#putting-it-all-together)
+- [Putting it all together - evolving](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson6)
 - [Analyzing telemetry and log data](https://github.com/StateFarm-STEM/pyinthesky/blob/main/telemetry-analysis/README.md)
 
 ### Need some help?
