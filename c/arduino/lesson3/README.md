@@ -15,7 +15,6 @@
 ## Measure Pressure and Temperature using the BMP180
 
 #### What you will be using:
-                https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png
 - [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
 - [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
 - [BMP180 Sensor](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/bmp180.png)
