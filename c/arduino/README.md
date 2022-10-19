@@ -17,7 +17,7 @@ Lessons will be broken up into short lessons students can work on by themselves 
 
 - [Introduction and how to get started](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1)
 - [Blinking lights - Arduino 101](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
-- [Working with the weather sensor](hhttps://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson3)
+- [Working with the weather sensor](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson3)
 - [Working with the GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson4)
 - [Working with the SD card module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson5)
 - [Putting it all together - evolving](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson6)
