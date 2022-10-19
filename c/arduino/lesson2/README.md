@@ -13,9 +13,9 @@
 ## Blink the LED
 
 #### What you will be using:
-- [Arduino IDE picture](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/arduino-ide.png)
+ - [Arduino IDE picture](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
 - [Link to Arduino IDE download](https://www.arduino.cc/en/software)
-- [Arduino Uno](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/arduino-uno-r3.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
 
 #### What you will be learning:
 - How to download the Arduino IDE software
