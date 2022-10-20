@@ -4,7 +4,7 @@
 ## Working with weather sensor data using the Arduino language
 
 #### Pre-requisites:
-- you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson2#welcome-to-lesson-2)
+- you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1)
 - if not, do that first
 
 #### Objectives:
@@ -15,12 +15,12 @@
 ## Measure Pressure and Temperature using the BMP180
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/arduino-uno-r3.png)
-- [BMP180 Sensor](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/bmp180.png)
-- [5 pin connector](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/5-pin-connector.png)
-- [Breadboard](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/breadboard.png)
-- [Jumper Wires](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/1956-02.jpg)
+- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+- [BMP180 Sensor](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/bmp180.png)
+- [5 pin connector](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/5-pin-connector.png)
+- [Breadboard](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/breadboard.png)
+- [Jumper Wires](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/1956-02.jpg)
 
 #### Note: the BMP180 Sensor didn't detect the pressure and temp accurately until I soldered the 5 pin connector to the BMP180<br>
 
@@ -39,11 +39,11 @@
 ### Wiring help
  <img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMP_BACKWIRE.jpg" width="500" >
  <img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMPWIRE2.jpg" width="500" >
+Remember that you don't have to use the same color wires I do, but make sure they connect the same way. 
 
-- Remember that you don't have to use the same color wires I do, but make sure they connect the same way. 
 
-
-Connecting Up the BMP180 Pressure and Temperature Sensor
+### Connecting Up the BMP180 Pressure and Temperature Sensor
+**Unplug the Ardiuno from the computer before doing this**
 | BMP180 Pin | Arduino Pin |
 | -------------- | :--------- | 
 Vin |	5V
