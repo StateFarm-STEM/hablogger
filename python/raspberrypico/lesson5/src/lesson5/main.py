@@ -13,12 +13,13 @@ def readCsv(sd_dir, file_name) :
     # This approach to reading a CSV bypasses the need to import the CSV package, saving on space.
     # Reading data is as as simple as referencing csv_data as an array data type. Example: csv_in[0][1]
     csv_data = []
+    num_rows = 0
     with open(sd_dir+'/'+file_name,'r') as csv_in:
         for line in csv_in:
-            line_str=csv_in.readline()
-            line_str=line_str.rstrip('\n')
-            line_str=line_str.rstrip('\r')
-            csv_data.append(line_str.split(','))
+            line=line.rstrip('\n')
+            line=line.rstrip('\r')
+            CAN_Parm.append(line.split(','))
+            num_rows += 1
             
 def writeTextExample(sd_dir) :
     # Create / Open a CSV file in write mode. Write, 'w', mode creates a new file.
