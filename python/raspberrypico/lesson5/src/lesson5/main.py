@@ -1,6 +1,6 @@
 from machine import Pin, SPI, Timer
 from drivers import sdcard
-from time import sleep
+from time import sleep, gmtime
 
 import os
 
@@ -8,18 +8,28 @@ import os
 def blinkLED(timer_one) :
     # Toggle LED functionality
     led.toggle()
+    
+def writeCsv(sd_dir, file_name, dataset) :
+    # Write array dataset to CSV. If the file doesn't exist, create it. Otherwise, append.
+    with open(sd_dir+'/'+file_name,'a+') as csv_out :
+        for data in dataset :
+            if data == dataset[-1] :
+                # If last element in the dataset, don't add a comma.
+                csv_out.write('"'+str(data)+'"')
+            else :
+                csv_out.write('"'+str(data)+'",')
+        csv_out.write('\n')
 
 def readCsv(sd_dir, file_name) :
     # This approach to reading a CSV bypasses the need to import the CSV package, saving on space.
     # Reading data is as as simple as referencing csv_data as an array data type. Example: csv_in[0][1]
     csv_data = []
-    num_rows = 0
-    with open(sd_dir+'/'+file_name,'r') as csv_in:
+    with open(sd_dir+'/'+file_name,'r') as csv_in :
         for line in csv_in:
             line=line.rstrip('\n')
             line=line.rstrip('\r')
-            CAN_Parm.append(line.split(','))
-            num_rows += 1
+            csv_data.append(line.split(','))
+    return csv_data
             
 def writeTextExample(sd_dir) :
     # Create / Open a CSV file in write mode. Write, 'w', mode creates a new file.
@@ -53,7 +63,6 @@ def readTextExample(sd_dir) :
 if __name__ == "__main__" :    
     led = Pin(25, Pin.OUT)      # Assign on board LED to variable
     sd_dir = '/sd'             # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
-    file_name = 'output.csv'    # File name. Expected format is '<file_name>.<file_extension>'. Example: 'output.csv'
         
     # Initialize timer_one. Used for toggling the on board LED
     timer_one = machine.Timer()
@@ -81,8 +90,19 @@ if __name__ == "__main__" :
     # Mount the SD card at specified directory
     os.mount(sd,sd_dir)
     
-    writeTextExample(sd_dir)
-    readTextExample(sd_dir)
+    
+    for x in range(6) :
+        # temp, humidity, pressure, lat, long, alt, time
+        dataset = [98.7, 84.5, 29.74, 40.4492267, -89.0431831, 244, str(gmtime())]
+        writeCsv(sd_dir, "data.csv", dataset)
+        sleep(2)
+    
+    for line in readCsv(sd_dir, "data.csv") :
+        print(line)
+    
+    
+    #writeTextExample(sd_dir)
+    #readTextExample(sd_dir)
 
     # Debug print SD card directory and files. Uncomment this to list files in the `/sd` directory.
     # print(os.listdir(sd_dir))
