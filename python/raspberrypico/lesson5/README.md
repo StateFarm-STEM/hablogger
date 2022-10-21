@@ -1,6 +1,8 @@
 # hablogger
  High Altitude Balloon Data Logging 
 
+* [Raspberry Pi Pico Pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf)
+* [Raspberry Pi Pico SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
 * [MicroPython releases for Pico](https://micropython.org/download/rp2-pico/)
 * [MicroPython libraries](https://docs.micropython.org/en/latest/library/index.html)
  
