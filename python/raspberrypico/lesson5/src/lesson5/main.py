@@ -5,26 +5,25 @@ from time import sleep, gmtime
 import os
 
 # ---------------------------
-# HW-125 SDCard module
+# This project uses the `sdcard.py` MicroPython driver to interface with a
+# HW-125 SDCard peripheral attached to a Raspberry Pi Pico.
 # 
-# VCC  (Voltage Common Collector): Provides power to the HW-125. Connect to the 5V pin on Pico
-# GND  (Ground): Connect to the ground pin on Pico
-# MISO (Master In Slave Out): SPI output from the microSD card module
-# MOSI (Master Out Slave In): SPI input to microSD card module
-# SCK  (Serial Clock): Accepts clock pulses from the Pico to synchronize data transmission
-# SS   (Slave Select): Control pin used to select one (or set) of slave devices on the SPI bus
+# Dummy information is written to a CSV file, then read and printed to the console.
+# An optional function can be used to delete the files in the SD card directory.
 
 
-def blinkLED(timer_one) :
+def blinkLed(timer_one) :
     # Toggle LED functionality
     
     led.toggle()
 
 
 def writeCsv(sd_dir, file_name, dataset) :
-    # Write array dataset to CSV. If the file doesn't exist, create it. Otherwise, append.
+    # Write dataset to CSV using list dataset passed in.
     
-    with open(sd_dir+'/'+file_name,'a+') as csv_out :
+    # Open a new file if it doesn't exist, otherwise append an existing file.
+    print("Writing data to '%s/%s'..." % (sd_dir, file_name))
+    with open(sd_dir + '/' + file_name,'a+') as csv_out :
         for data in dataset :
             if data == dataset[-1] :
                 # If last element in the dataset, don't add a comma.
@@ -32,67 +31,42 @@ def writeCsv(sd_dir, file_name, dataset) :
             else :
                 csv_out.write('"'+str(data)+'",')
         csv_out.write('\n')
+    print("Done.")
 
 
 def readCsv(sd_dir, file_name) :
-    # This approach to reading a CSV bypasses the need to import the CSV package. This is MicroPython friendly.
     # Returns a list of CSV rows.
     
     csv_data = []
-    with open(sd_dir+'/'+file_name,'r') as csv_in :
+    # Open the CSV file in read mode. Store each CSV line in a list called csv_data.
+    print("Reading data from '%s/%s'..." % (sd_dir, file_name))
+    with open(sd_dir + '/' + file_name,'r') as csv_in :
         for line in csv_in:
             line=line.rstrip('\n')
             line=line.rstrip('\r')
             csv_data.append(line.split(','))
+    print("Done")
+
     return csv_data
 
 
-def writeTextExample(sd_dir) :
-    # Create / Open a CSV file in write mode. Write, 'w', mode creates a new file.
-    # This example opens a file, writes text, closes the file. Then opens the same file and appends
-    # a line to the bottom, thus demonstrating open/close/write features.
-    
-    # If the file already exists, this will overwrite it.
-    file = open(sd_dir+'/example.txt','w')
-
-    # Write sample text
-    for i in range(20):
-        file.write("Sample text = %s\r\n" % i)
-        
-    # Close the file
-    file.close()
-
-    # Open the file again and append, 'a', text. Then close the file.
-    file = open(sd_dir+'/example.txt','a')
-    file.write("Appended Sample Text at the END \n")
-    file.close()
-
-
-def readTextExample(sd_dir) :
-    # Read, 'r', the file and print the text on debug port.
-    file = open(sd_dir+'/example.txt', 'r')
-    if file != 0:
-        print("Reading from SD card")
-        read_data = file.read()
-        print (read_data)
-    file.close()
-
-
 def cleanupDir(rmdir) :
-    print("Removing files from", rmdir)
+    # Deletes all the files in a directory passed in. Does not delete sub-directories.
+
+    print("Deleting files from '%s'..." % rmdir)
     for file in os.listdir(rmdir)[1:] :
         os.remove(rmdir + '/' + file)
     print("Done.")
 
 
 if __name__ == "__main__" :
+    # Main entrypoint. Primary code functions start here.
+    
     led = Pin(25, Pin.OUT)  # Assign on board LED to variable
     sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
         
-    # Initialize timer_one. Used for toggling the on board LED
-    timer_one = machine.Timer()
-    # Blink the onboard LED until control interrupt
-    timer_one.init(freq=1, mode=Timer.PERIODIC, callback=blinkLED)
+    # Initialize Timer() and blink the onboard LED until control interrupt (Stop/Restart backend)
+    machine.Timer().init(freq=1, mode=Timer.PERIODIC, callback=blinkLed)
 
     # Intialize SPI peripheral
     spi = machine.SPI(1,
@@ -105,7 +79,7 @@ if __name__ == "__main__" :
                       mosi=machine.Pin(11), # Pico GPIO Pin 11
                       miso=machine.Pin(12)) # Pico GPIO Pin 12
 
-    # Initialize the SD card on chip select (CS) to Pico GPIO Pin 13
+    # Initialize the SD card to Pico GPIO Pin 13 on chip select (CS) pin
     sd=sdcard.SDCard(spi,Pin(13))
 
     # Create a instance of MicroPython Unix-like Virtual File System (VFS)
@@ -117,20 +91,15 @@ if __name__ == "__main__" :
     
     for x in range(6) :
         # temp, humidity, pressure, lat, long, alt, time
-        dataset = [98.7, 84.5, 29.74, 40.4492267, -89.0431831, 244, str(gmtime())]
+        dataset = [98.6, 84.5, 29.74, 40.4492267, -89.0431831, 244, str(gmtime())]
         writeCsv(sd_dir, "data.csv", dataset)
-        sleep(1)
+        sleep(1) # Sleep for x seconds.
     
     # Read all the rows from the CSV and print them to the console.
     for row in readCsv(sd_dir, "data.csv") :
         print(row)
 
     # Remove all files within the directory passed in. Useful for cleaning things up during testing.
+    # Comment this out if you want the files to not be deleted.
     cleanupDir(sd_dir)
-
-    # Print SD card directory and files. Uncomment this to list files in the `/sd` directory.
-    # print(os.listdir(sd_dir))
     
-    # Uncomment these two functions to demonstrate writing a text file, then reading the text file.
-    #writeTextExample(sd_dir)
-    #readTextExample(sd_dir)
