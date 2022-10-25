@@ -3,7 +3,7 @@
 ## Working with SD card using the Arduino language
 
 #### Pre-requisites:
-- it is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson2#welcome-to-lesson-2)
+- it is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
 
 
 #### Objectives:
@@ -12,11 +12,11 @@
 
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/arduino-uno-r3.png)
-- [MicroSD Card Module](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/bmp180.png)
-- [Breadboard](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/breadboard.png)
-- [Wires](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/1956-02.jpg)
+- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/arduino-ide.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/arduino-uno-r3.png)
+- [MicroSD Card Module](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/bmp180.png)
+- [Breadboard](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/breadboard.png)
+- [Wires](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/1956-02.jpg)
 
 #### What you will be learning:
 - How to connect the SD card to the Arduino using a breadboard
@@ -42,9 +42,9 @@ SCK   | 13
 CS   | 10  
 
 
-<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson5/screenshots/SDCardSIDE.jpg width="500" >
-<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson5/screenshots/ArduinoSdcard1.jpg width="500" >
-<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson5/screenshots/ArduinoSDcard2.jpg width="500" >
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/SDCardSIDE.jpg width="500" >
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/ArduinoSdcard1.jpg width="500" >
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/ArduinoSDcard2.jpg width="500" >
 
 - Remember you do not have to use the same color of jumper wire as this, but insure that your connections are the same. 
 
