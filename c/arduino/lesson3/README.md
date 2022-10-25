@@ -103,4 +103,4 @@ void loop() {
   delay(250); //Pause between readings.
 }
 ```
-### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
+### [Need help?](https://github.com/StateFarm-STEM/hablogger#Needsomehelp?)
