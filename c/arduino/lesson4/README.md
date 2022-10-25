@@ -14,12 +14,12 @@
 ## Reading GPS location data using the GPS GT-U7 Module
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson5/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson5/screenshots/arduino-uno-r3.png)
-- [GPS GT-U7 Sensor (GPS NEO 6M clone)](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/gps-gt-u7.png)
-- [5 pin connector](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/5-pin-connector.png)
-- [Breadboard](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson5/screenshots/breadboard.png)
-- [Jumper Wires](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/1956-02.jpg)
+- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/arduino-ide.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/arduino-uno-r3.png)
+- [GPS GT-U7 Sensor (GPS NEO 6M clone)](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/gps-gt-u7.png)
+- [5 pin connector](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/5-pin-connector.png)
+- [Breadboard](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/breadboard.png)
+- [Jumper Wires](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/1956-02.jpg)
 
 #### Note: I had some issues using the GPS module from inside my garage. If you do not get data on your serial monitor. Here are some things you can try to get good results...<br>
 - Try working near a window with the best view of the sky
@@ -101,10 +101,10 @@ void loop() {
 #### Tips
 - Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below.
 - **Unplug the Arduino from the computer before doing this**
-<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/GPSback.jpg width="500">
-<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/ArduinoBackGPS.jpg width="500">
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/GPSback.jpg width="500">
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArduinoBackGPS.jpg width="500">
 
-<img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson4/screenshots/ArdiunoFrountGPS.jpg width="500">
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArdiunoFrountGPS.jpg width="500">
 
 
   **Pin on the GPS module** | **Pin on the Arduino**
