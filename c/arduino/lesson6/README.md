@@ -11,14 +11,14 @@
 
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/arduino-uno-r3.png)
-- [MicroSD Card Module](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/bmp180.png)
-- [BMP 180](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson1/photos/BMP_both.jpg)
+- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/arduino-ide.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/arduino-uno-r3.png)
+- [MicroSD Card Module](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/bmp180.png)
+- [BMP 180](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1/photos/BMP_both.jpg)
 
-- [GPS module](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson1/photos/GPS_NEO-6M.JPG)
-- [Breadboard](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson6/screenshots/breadboard.png)
-- [Wires](https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/1956-02.jpg)
+- [GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1/photos/GPS_NEO-6M.JPG)
+- [Breadboard](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson6/screenshots/breadboard.png)
+- [Wires](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson3/screenshots/1956-02.jpg)
 
 #### What you will be learning:
 - How to connect multiple different sensors or devices to the Arduino at the same time
