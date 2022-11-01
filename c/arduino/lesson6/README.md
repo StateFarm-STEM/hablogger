@@ -35,6 +35,10 @@ Pin on the Arduino | Pin on the Breadboard
 ------ | ------
 5v | Power on the breadboard
 GND  | GND on the breadboard
+
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerardiuno.jpg width="250"> <img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbreadboard.jpg width="250">
+
+
 #### Wiring the SD card
 Pin on SD card reader | Pin on Arduino/breadboard 
 ------ | ------
@@ -44,6 +48,10 @@ MISO   | 12
 MOSI   | 11  
 SCK   | 13  
 CS   | 10  
+
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggersd.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggersdcardbreadboard.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/DataLoggerSDFront.jpg width="250">
+
+
 #### Wiring the BMP 180
 Pin on the BMP 180 | Pin on Arduino/breadboard 
 ------ | ------
@@ -51,6 +59,10 @@ VIN | Power on the breadboard
 GND   | GND on the breadboard
 SCL   | A5
 SDA   | A4 
+
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbmp.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbmpbreadboard.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbmparduino.jpg width="250">
+
+
 #### Wiring the GPS
 Pin on the GPS | Pin on Arduino/breadboard 
 ------ | ------
@@ -58,6 +70,9 @@ VCC | Power on the breadboard
 GND   | GND on the breadboard
 RXD | 4
 TXD  | 3
+
+
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerGPS.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerGPSbreadboard.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerGPSarduino.jpg width="250">
 
 
 ### Working Code - Copy and paste this into your sketch 
