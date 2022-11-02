@@ -10,20 +10,21 @@
 - How to connect to the Arduino to your computer
 - Make the onboard LED blink 
 
-## Blink the LED
+### Parts required:
+- Ardiuno 
 
-#### What you will be using:
- - [Arduino IDE picture](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
-- [Link to Arduino IDE download](https://www.arduino.cc/en/software)
-- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+![Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+- PC or laptop with Ardunino IDE installed, linked [here](https://www.arduino.cc/en/software)
 
-#### What you will be learning:
+![Arduino IDE picture](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
+ )
+
+### What you will be learning:
 - How to download the Arduino IDE software
 - How to create a new Arduino Sketch project
-- How to write the code in the Arduino IDE and upload it to the Arduino
-  - blink the LED
+- How to write code in the Arduino IDE and upload it to the Arduino in order to blink the LED
 
-### Guide
+## Guide
 [Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
 
 #### Helpful video shortcuts
