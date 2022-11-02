@@ -25,10 +25,10 @@
 - How to write code in the Arduino IDE and upload it to the Arduino in order to blink the LED
 
 ## Guide
-[Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
+Click this link and watch the youtube video[Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
 
 #### Helpful video shortcuts
-- [Download the Arduino IDE software](https://youtu.be/fJWR7dBuc18?t=167)
+- [Downloading the Arduino IDE software](https://youtu.be/fJWR7dBuc18?t=167)
 - [How to connect the Arduino to your PC](https://youtu.be/fJWR7dBuc18?t=437)
 - [What is a COM port?](https://youtu.be/fJWR7dBuc18?t=556)
 - [Where is the onboard LED?](https://youtu.be/fJWR7dBuc18?t=715)
@@ -48,7 +48,7 @@ void loop() {
   delay(900);
 }
 ```
-- if you are having trouble please make sure that the usb cord that came with your kit is plugged in to both the ardiuno and the pc/laptop that you are using
+- If you are having trouble make sure that the usb cord is plugged in to both the arduino and the pc/laptop that you are using
 
 
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
