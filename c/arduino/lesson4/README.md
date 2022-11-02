@@ -35,7 +35,7 @@
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 
 ## Videos
-[How to use the GT U7 GPS module](https://youtu.be/7zw2ULu73DY)
+Click this link and watch this youtube video [How to use the GT U7 GPS module](https://youtu.be/7zw2ULu73DY)
 
 
 **Video on how to install the library**
@@ -43,6 +43,27 @@
 https://user-images.githubusercontent.com/91698286/181350144-9dad1089-92e9-4f3b-83c9-cef32049bd07.mp4
 
 
+
+#### Helpful video shortcuts
+- [connect the GPS GT-U7 to the Arduino](https://youtu.be/7zw2ULu73DY?t=54)
+#### Tips
+- Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below.
+- **Unplug the Arduino from the computer before doing this**
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/GPSback.jpg width="500">
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArduinoBackGPS.jpg width="500">
+
+<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArdiunoFrountGPS.jpg width="500">
+
+
+  **Pin on the GPS module** | **Pin on the Arduino**
+  --------------- | --------------- 
+  TXD   | Digital pin 10
+  RXD   | Digital pin 11
+  GND  | Any Ground pin 
+  VDC   | 5 volts
+  
+  
+  
 #### How to get the TinyGPSPlus library:
 - Navigate to the sketch menu and hover over include library and then click manage libraries
 - Type in TinyGPSPlus and install the library and then restart the IDE
@@ -96,23 +117,7 @@ void loop() {
   ```
 
 
-#### Helpful video shortcuts
-- [connect the GPS GT-U7 to the Arduino](https://youtu.be/7zw2ULu73DY?t=54)
-#### Tips
-- Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below.
-- **Unplug the Arduino from the computer before doing this**
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/GPSback.jpg width="500">
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArduinoBackGPS.jpg width="500">
 
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArdiunoFrountGPS.jpg width="500">
-
-
-  **Pin on the GPS module** | **Pin on the Arduino**
-  --------------- | --------------- 
-  TXD   | Digital pin 10
-  RXD   | Digital pin 11
-  GND  | Any Ground pin 
-  VDC   | 5 volts
 
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
 
