@@ -25,7 +25,7 @@
 - How to write code in the Arduino IDE and upload it to the Arduino in order to blink the LED
 
 ## Guide
-Click this link and watch the youtube video [Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
+Click this link and watch the YouTube video [Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
 
 #### Helpful video shortcuts
 - [Downloading the Arduino IDE software](https://youtu.be/fJWR7dBuc18?t=167)
