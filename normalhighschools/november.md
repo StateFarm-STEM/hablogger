@@ -23,6 +23,8 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
         -	Teams will need to be prepared BEFORE the December session; no time will be provided in the December session for prep
 
 
+
+
 ### Power / Battery issues:
   - Some assumptions / constraints:
     - Average flight time is 4 hours
