@@ -281,7 +281,11 @@ void initBMP(){
 ```
 
 ### Trouble shooting
-- Sd card formating needs to be fat32 or I have had difficulty getting the program to run
+- Unplug the Arduino and check all of the connections ard try running it agian
+- Sd card formating needs to be fat32 or the program will not run
+- GPS not reading cooridinates is likley caused by obstruction of the signal so moving outside may be necessary
+
+
 
 
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
