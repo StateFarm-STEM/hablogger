@@ -3,7 +3,7 @@
 ## Working with SD card using the Arduino language
 
 #### Pre-requisites:
-- it is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
+- It is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
 
 
 #### Objectives:
@@ -22,16 +22,17 @@
 - How to connect the SD card to the Arduino using a breadboard
 - How to create a new Arduino Sketch project using the SDI Library
 - Write the code in the Arduino IDE and upload it to the Arduino
-  - create a file on the SD card
+  - Create a file on the SD card
   - Write some data to the SD card
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 
-### Guide
+## Guide
 [SD Card Module with Arduino: How to Read/Write Data](https://create.arduino.cc/projecthub/electropeak/sd-card-module-with-arduino-how-to-read-write-data-37f390)
 ### Wiring
 - Here is a wiring chart
 - **Unplug the Arduino from the computer before doing this**
 
+### Pinout chart
 Pin on SD card reader | Pin on Arduino  
 ------ | ------
 GND   | GND  
