@@ -9,7 +9,7 @@
 
 ## Introduction
 
-Below are topics to be assigned to small groups in the classrooms. The small group will need to research details and evaluate where problems may arise and how to proactively solve them. Mentors can help facilitate if students get stuck!
+Below are topics to be assigned to small groups in the classrooms. The small group will need to research details and evaluate where problems may arise and how to proactively solve them. Mentors can help facilitate if students get stuck! Each sub section is one per group to be assigned by the teacher / lead mentor.
 
 ### Power / Battery issues:
   - Some assumptions / constraints:
