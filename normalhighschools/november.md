@@ -6,7 +6,7 @@
 - Use resources available to solve problems
 - Work as a small group to spread the work
 - Present the research in the December session
-
+<br><br><br>
 ## Game Plan
 
 Below are topics to be assigned to small groups in the classrooms. The small group will need to research details and evaluate where problems may arise and how to proactively solve them. Mentors can help facilitate if students get stuck! Each sub section is one per group to be assigned by the teacher / lead mentor.
@@ -21,10 +21,7 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
     -	It is at the teacher’s discretion how they present to the class (open discussion, PowerPoints, etc.)
     -	The December session will be spend doing the share out taking the entire class time
         -	Teams will need to be prepared BEFORE the December session; no time will be provided in the December session for prep
-
-
-
-
+<br><br><br>
 ### Power / Battery issues:
   - Some assumptions / constraints:
     - Average flight time is 4 hours
