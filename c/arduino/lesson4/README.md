@@ -33,7 +33,7 @@
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 
 ## Guide
-Click this link and watch this youtube video [How to use the GT U7 GPS module](https://youtu.be/7zw2ULu73DY)
+Click this link and watch this YouTube video [How to use the GT U7 GPS module](https://youtu.be/7zw2ULu73DY)
 
 
 #### Helpful video shortcuts
@@ -45,8 +45,12 @@ https://user-images.githubusercontent.com/91698286/181350144-9dad1089-92e9-4f3b-
 
 
 #### Tips
-- Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below.
 - **Unplug the Arduino from the computer before doing this**
+- Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below. 
+- The color of the wires do not matter as long as they are connected to the right pins
+
+
+
 <img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/GPSback.jpg width="500">
 <img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArduinoBackGPS.jpg width="500">
 
@@ -117,7 +121,9 @@ void loop() {
   ```
 
 
-
+## Troubleshooting 
+- If your GPS is not reading out coordinates on the COM port you may have to move outside
+- You need to have the TinyGPSPlus library installed in order for the code to work, refer to the video further up this page for more help
 
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
 
