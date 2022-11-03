@@ -11,8 +11,6 @@
 - Print the GPS sensor data to the serial port
 - Monitor data on the serial monitor in the Arduino IDE
 
-## Reading GPS location data using the GPS GT-U7 Module
-
 #### What you will be using:
 - [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/arduino-ide.png)
 - [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/arduino-uno-r3.png)
@@ -34,18 +32,18 @@
   - Print your results to the Arduino's serial port
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 
-## Videos
+## Guide
 Click this link and watch this youtube video [How to use the GT U7 GPS module](https://youtu.be/7zw2ULu73DY)
 
+
+#### Helpful video shortcuts
+- [Connect the GPS GT-U7 to the Arduino](https://youtu.be/7zw2ULu73DY?t=54)
 
 **Video on how to install the library**
 
 https://user-images.githubusercontent.com/91698286/181350144-9dad1089-92e9-4f3b-83c9-cef32049bd07.mp4
 
 
-
-#### Helpful video shortcuts
-- [connect the GPS GT-U7 to the Arduino](https://youtu.be/7zw2ULu73DY?t=54)
 #### Tips
 - Make sure everything is wired correctly, if you did not catch the wiring in the video, use the chart below.
 - **Unplug the Arduino from the computer before doing this**
@@ -54,6 +52,8 @@ https://user-images.githubusercontent.com/91698286/181350144-9dad1089-92e9-4f3b-
 
 <img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/ArdiunoFrountGPS.jpg width="500">
 
+
+### Pinout chart
 
   **Pin on the GPS module** | **Pin on the Arduino**
   --------------- | --------------- 
