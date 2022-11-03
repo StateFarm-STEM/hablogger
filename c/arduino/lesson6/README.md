@@ -22,10 +22,11 @@
 
 #### What you will be learning:
 - How to connect multiple different sensors or devices to the Arduino at the same time
-  -  This will involve using a breadboard to connect all the sensors back to the Arduino
+  -  Breadboarding circuits
 - How to read a CSV file from the serial port
+- Putting together all of the other lessons in order to make a final product
 
-### Wiring all the sensors and devices to the Arduino
+## Wiring all the sensors and devices to the Arduino
 
 
 - Remember you do not have to use the same color of jumper wire as this, but insure that your connections are the same. 
