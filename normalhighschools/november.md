@@ -11,7 +11,7 @@
 
 Below are topics to be assigned to small groups in the classrooms. The small group will need to research details and evaluate where problems may arise and how to proactively solve them. Mentors can help facilitate if students get stuck!
 
-- Power / Battery issues:
+### Power / Battery issues:
   - Some assumptions / constraints:
     - Average flight time is 4 hours
     - Research average temperatures in the upper atmosphere
@@ -26,7 +26,9 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
     - [Tracker](http://qrp-labs.com/lightaprsw2)
       - Assume same power as Arduino 
   - Any other items of note to share from your research or further questions?
-- Tracking:
+
+
+### Tracking:
   - How can we track the balloon in flight?
     - Telemetry broadcasting of extra sensors is a plus, at a minimum we need latitude, longitude, and altitude near real time
     - Need for recovery of the payload
@@ -37,14 +39,18 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
     - Is there a way to record the flight data for retrieval later for each option?
     - How would we mount it in the foam cooler (12"x12"x12")
   - Any other items of note to share from your research or further questions?
-- Laws and regs
+
+
+### Laws and regs
   - What laws and regulations are we restricted to by the FAA?
     - Payload weight
     - Rigging cords
     - Notifications
   - Who would we notify of our flight? (NOTAMs (Notice to Airmen) via the FAA’s Federal NOTAM System)
   - Any other items of note to share from your research or further questions?
-- Cameras
+
+
+### Cameras
   - What area should be recorded during the flight and why
   - What kind of camera should we use
     - Power usage, weight, orientation, weather resistant or easy way to make it weather proof, etc
@@ -53,20 +59,30 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
   - Will there be a problem with [RFI](https://en.wikipedia.org/wiki/Radio_frequency)? What measures can be taken to prevent issues with RFI?
   - How to mount them in the foam cooler (12"x12"x12")
   - Any other items of note to share from your research or further questions?
-- Payload stabilization and rigging:
+
+
+### Payload stabilization and rigging:
   - How to retrieve is caught in a tree, roof, other obstruction
   - How do we keep the ballooon from spinning too much?
   - Tangle hazards that would prevent the parachute from working
   - Proposed methods to attach the balloon to the payload?
     - Assumption is the payload is a foam cooler (12'x12'x12')
   - Any other items of note to share from your research or further questions?
-- Landing prediction:
+
+
+
+### Landing prediction:
   - How can we plan for approximate landing location of the HAB
   - What factors impact or go into the prediction
   - When should the prediction be run
   - Any other items of note to share from your research or further questions?
-- Lift gas:
+
+
+
+### Lift gas:
   - Options for lift gas in our balloon
+    - Safety concerns, availability, cost, where to buy, quality, regulations
+    - Pros and cons
   - How much do we need for a [1600 gram balloon](https://www.kaymont.com/_files/ugd/a13aac_8b84755b308c473b8ac99f1dc39b80e1.pdf) carrying a 4lb payload
   - How do we know how much gas we dispnsed from the tank
   - Any other items of note to share from your research or further questions?
