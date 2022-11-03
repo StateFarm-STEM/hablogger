@@ -7,9 +7,21 @@
 - Work as a small group to spread the work
 - Present the research in the December session
 
-## Introduction
+## Game Plan
 
 Below are topics to be assigned to small groups in the classrooms. The small group will need to research details and evaluate where problems may arise and how to proactively solve them. Mentors can help facilitate if students get stuck! Each sub section is one per group to be assigned by the teacher / lead mentor.
+
+-	There are 7 main topics and the largest class has 7 teams. This allows one major topic for every team
+    -	If the class has less than 7 teams, choose from the topics and assign to teams
+    -	The teacher and lead mentor can divide topics across the teams as they see fit
+    -	If the lead mentor can report back which mentor has what topics that would be helpful
+-	Teams are welcome to explore the topic beyond the thought starters I have listed
+-	Research will be needed, use ALL resources available to research as a team (cell phones, laptops, etc. to search the internet). These topics should EASILY fill the class period with discussion
+-	Each team is to present in December their findings / solutions to the issues they were assigned
+    -	It is at the teacher’s discretion how they present to the class (open discussion, PowerPoints, etc.)
+    -	The December session will be spend doing the share out taking the entire class time
+        -	Teams will need to be prepared BEFORE the December session; no time will be provided in the December session for prep
+
 
 ### Power / Battery issues:
   - Some assumptions / constraints:
