@@ -44,3 +44,12 @@ Load and run [BlinkOnboardLEDwithLoop.py](code/BlinkOnboardLEDwithLoop.py) on th
 
 Below is a picture of the LED when it is on, it isn't very bright.
 ![Raspberry Pi Onboard LED On](images/RaspberryPiOnboardLEDOn.jpg)
+
+## Step 3: Wire the Breadboard
+
+Next we will connect the Pi to a breadboard and wire an LED to one of its pins.
+
+Below is an image of a breadboard, let's get oriented with how it works.  Notice there are a number of rows, marked with numbers and two sets of columns, one marked with letters and another with a + (plus) an - (minus) sign.  Also notice there is a central lane separating the two halves of the breadboard.  
+
+All of the holes in the column with a + (plus) sign are connected and all of the holes in the column with the - (minus) sign are connected.  This allows us to provide power or ground to any pin/device.  The middle matrix of rows/columns marked with numbers/letters are connected differently.  Each numbered row on each side of the center lane is connected as well.
+![BreadboardMarked.jpg](images/BreadboardMarked.jpg)
