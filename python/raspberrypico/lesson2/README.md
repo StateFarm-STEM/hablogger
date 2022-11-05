@@ -52,7 +52,7 @@ Next we will connect the Pi to a breadboard and wire an LED to one of its pins.
 Below is an image of a breadboard, let's get oriented with how it works.  Notice there are a number of rows, marked with numbers and two sets of columns, one marked with letters and another with a + (plus) an - (minus) sign.  Also notice there is a central lane separating the two halves of the breadboard.  
 
 All of the holes in the column with a + (plus) sign are connected and all of the holes in the column with the - (minus) sign are connected.  This allows us to provide power or ground to any pin/device.  The middle matrix of rows/columns marked with numbers/letters are connected differently.  Each numbered row on each side of the center lane is connected as well.
-![BreadboardMarked.jpg](images/BreadboardMarked.jpg)
+<img src="images/BreadboardMarked.jpg" width="50%" >
 
 Next you should insert the Raspberry Pi into the breadboard as in the image below, with the first pins of the Pi in row 1 of the breadboard.  Make sure the Pi straddles the center lane so that each pin in connected indepentedly.  If you were to connect all of the pins on the same side of the board, the Pi would be damaged/destroyed since pins would be connected to each other.  
 
@@ -64,13 +64,13 @@ Next, let's wire an LED to the Pi using the breadboard.  You will need a single 
 
 Below is an LED (Light Emitting Diode).  Notice that one leg of the LED is longer than the other.  The longer leg is the positive (+) side and the shorter leg is the negative (-) side.  This is important to remember.  Wiring the LED backward wil not allow it to light up (and could destroy it).
 
-![LEDPolarity.jpg](images/LEDPolarity.jpg)
+<img src="images/LEDPolarity.jpg" width=25% >
 
 You will also need a resistor, which is pictured below.  The more resistance provided by the resistor, the less current is allowed to flow to the LED.  More current means a brighter light, less current means a dimmer light.  If you were to skip the resistor (or use one with too little resistance), you will damage both the LED and the Pi because the LED would get more current than it can handle and the Pi would be sending more current than it can support through that pin.  The resistor is important to protect the circut from overloading.  
 
 Notice the colored bands on the resistor, these indicate the amount of resistance that will be provided.  It is admittedly a pretty cryptic system, but resistors are small so it is what it is.  You can decode the bands using online resitor color code calculators, like [this one](https://circuitdigest.com/calculators/5-band-resistor-color-code-calculator).  For our needs we will use a resistor that is between 220 and 330 Ohms.  The resistor pictured below is 330 Ohms and has band colors Orange, Orange, Black, Black, Brown.
 
-![Resistor.jpg](images/Resistor.jpg)
+<img src="images/Resistor.jpg" width="75%" >
 
 Ok, let's wire up the breadboard with the LED and resistor!
 
