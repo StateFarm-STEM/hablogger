@@ -90,3 +90,23 @@ Next, you'll need to ground the negative (-) leg (the short side) of the LED to 
 
 ![RaspberryPiOneLEDWired.jpg](images/RaspberryPiOneLEDWired.jpg)
 
+## Step 4: Blink the External LED
+
+The following code will blink the LED we wired up (assuming you used all the same PINs as I did).  Take some time to read the comments in this code so you understand what is happening.  
+
+```python
+from machine import Pin  # This imports the libraries needed for us to access the Pico and it's pins
+import time # the time library will enable us to use the sleep method
+
+# The next few lines creates and initializes a variable "led" as type "Pin" with initialization parameters.  It can also be written in one line like this... led = Pin(15, Pin.OUT)
+led = Pin( # Initialize a variable called "led" as a "Pin" object
+    11, # Assign pin number 11 (or whichever pin you connected the LED to)
+    Pin.OUT) # Specify this is an output pin, meaning we will send data to the pin vs recieving data from it
+
+while True: # A while loop will run until the argument is no longer true.  In this case, True will always be true so it will run forever until we forcefully stop the program
+    led.toggle() # call the "toggle()" function of the led object
+    time.sleep(1) # call the sleep() function of the time object and pass it "1" so it sleeps for 1 second
+```
+
+Load and run [BlinkOneLEDwithLoop.py](code/BlinkOneLEDwithLoop.py) on the Pi and the external LED should blink.
+
