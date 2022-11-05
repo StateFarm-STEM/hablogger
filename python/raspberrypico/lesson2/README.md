@@ -110,3 +110,49 @@ while True: # A while loop will run until the argument is no longer true.  In th
 
 Load and run [BlinkOneLEDwithLoop.py](code/BlinkOneLEDwithLoop.py) on the Pi and the external LED should blink.
 
+## Step 5: Wire Three LEDs
+
+Using the same principles you learned above, wire two more LEDs, connecting them to PIN 12 and PIN 13.  The image below is what the final circuit should look like.  Be careful that none of the resistor or LED wires are touching each other, it can get pretty crowded on the breadboard.
+
+![RaspberryPiThreeLEDsWired.jpg](images/RaspberryPiThreeLEDsWired.jpg)
+
+## Step 6: Blink the LEDs
+
+The following code will blink the LEDs we wired up in sequence (assuming you used all the same PINs as I did).  Take some time to read the comments in this code so you understand what is happening.  
+
+```python
+from machine import Pin  # This imports the libraries needed for us to access the Pico and it's pins
+import time  # the time library will enable us to use the sleep method
+
+# Create variables for each LED, initializaing them to the pins they are connected to   
+redled = Pin(11, Pin.OUT)
+yellowled = Pin(12, Pin.OUT) 
+greenled = Pin(13, Pin.OUT)
+
+# Create a variable to control how long the LED will stay on, in seconds
+timerPeriod = 1
+
+while True:  # A while loop will run until the argument is no longer true.  In this case, True will always be true so it will run forever until we forcefully stop the program
+    greenled.on()  # Turn the green LED on
+    time.sleep(timerPeriod)  # Sleeping now will keep the LED on for the period specified by the variable you created ealier
+    greenled.off()  # Turn the green LED off
+    # what line of code would you add here to keep the LED off for a specified period?
+    yellowled.on()  # Turn the yellow LED on
+    time.sleep(timerPeriod)  
+    yellowled.off()  
+    redled.on()  
+    time.sleep(timerPeriod) 
+    redled.off()  
+    time.sleep(timerPeriod)  
+    
+```
+
+Load and run [BlinkThreeLEDs.py](code/BlinkThreeLEDs.py) on the Pi and the LEDs should blink in sequence.
+
+#### Challenge: Modify your code to make the LEDs blink every half a second.
+#### Challenge: Modify your code to reverse the order that the LEDs blink
+
+## Step 7: Celebrate Your Success!
+
+Congratulations, you have succesfully wired a Raspberry Pi Pico to a breadboard with external LEDs, learned what resistors do, and wrote code to control your device.  In the next lessons, you will learn how to add sensors to your circuit, read data from them, and store and analyze that data for later study.    
+
