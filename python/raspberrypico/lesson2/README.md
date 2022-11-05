@@ -24,8 +24,6 @@ This is the bottom of the Pico.  Notice that all of the pins are labeled.  We wi
 
 ## Step 2: Blink the onboard LED
 
-# Blinks onboard LED
-
 The onboard LED is mapped to pin 25 on the Raspberry Pi Pico.  The following code will blink the onboard LED.  Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson.  In python, comments are marked with an '#'.
 
 ```python
@@ -41,3 +39,8 @@ while True: #A while loop will run until the argument is no longer true.  In thi
     led.toggle() #Call the "toggle()" function of the led object
     time.sleep(1) #Call the sleep() function of the time object and pass it "1" so it sleeps for 1 second
 ```
+
+Load and run [BlinkOnboardLEDwithLoop.py](code/BlinkOnboardLEDwithLoop.py) on the Pi and the onboard LED should blink.
+
+Below is a picture of the LED when it is on, it isn't very bright.
+![Raspberry Pi Onboard LED On](images/RaspberryPiOnboardLEDOn.jpg)
