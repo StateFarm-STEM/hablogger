@@ -93,7 +93,7 @@ void loop() {
 
 
 ### Troubleshooting
-- If using a sd card larger that 32gb partitioning down to 32gb or less and formatting to fat32 may be required
+- If using a SD card larger that 32gb partitioning down to 32gb or less and formatting to fat32 may be required
 - If the SD card is not registering check all your connections first, if this doesn't work insure that the card is empty and formatted to fat 32
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
 
