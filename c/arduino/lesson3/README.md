@@ -36,15 +36,15 @@
 ## Guide
 [Python with Arduino LESSON 9 Measuring Pressure and Temperature with the BMP180 Sensor](https://toptechboy.com/python-with-arduino-lesson-9-measuring-pressure-and-temperature-with-the-bmp180-sensor/)
 #### Helpful video shortcuts
-- [connect the BMP180 to the Arduino](https://youtu.be/z9AzZM1-Dns?t=105)
-- [how to add the Adafruit Library to the Arduino IDE](https://youtu.be/z9AzZM1-Dns?t=152)
-- [write the code and run it on the Arduino](https://youtu.be/z9AzZM1-Dns?t=396)
-- [convert pascals to inches of mercury](https://youtu.be/z9AzZM1-Dns?t=985)
+- [Connect the BMP180 to the Arduino](https://youtu.be/z9AzZM1-Dns?t=105)
+- [How to add the Adafruit Library to the Arduino IDE](https://youtu.be/z9AzZM1-Dns?t=152)
+- [Write the code and run it on the Arduino](https://youtu.be/z9AzZM1-Dns?t=396)
+- [Convert pascals to inches of mercury](https://youtu.be/z9AzZM1-Dns?t=985)
 ### Connecting Up the BMP180 Pressure and Temperature Sensor
-**Unplug the Ardiuno from the computer before doing this**
+**Unplug the Arduino from the computer before doing this**
 
- <img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMP_BACKWIRE.jpg" width="500" >
- <img src="https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMPWIRE2.jpg" width="500" >
+ <img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMP_BACKWIRE.jpg width="500" >
+ <img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMPWIRE2.jpg width="500" >
  
 ### Pinout chart
 
@@ -57,7 +57,7 @@ SDA	| A4
 
 ### Tips
 - The color of the wires do not matter as long as they are connected to the right pins
-- Make sure that you have the librarys installed [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
+- Make sure that you have the libraries installed [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
 
 
 
