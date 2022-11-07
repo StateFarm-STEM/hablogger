@@ -1,6 +1,6 @@
 # Welcome to Lesson #6: putting it all together
 
-## Working to make the final data logger
+## Making the Final Data Logger
 
 #### Pre-requisites:
 - It is recommended that you have successfully completed all the previous lessons 
@@ -114,7 +114,7 @@ static const int RXPin = 4, TXPin = 3;
 static const uint32_t GPSBaud = 9600;
 TinyGPSPlus gps;
 
-// map sofware serial to gps
+// map software serial to gps
 SoftwareSerial serialgps(TXPin, RXPin);
 
 Adafruit_BMP085 bmp;
@@ -282,9 +282,9 @@ void initBMP(){
 ```
 
 ### Trouble shooting
-- Unplug the Arduino and check all of the connections ard try running it agian
-- Sd card formating needs to be fat32 or the program will not run
-- GPS not reading cooridinates is likley caused by obstruction of the signal so moving outside may be necessary
+- Unplug the Arduino and check all of the connections and try running it again
+- Sd card formatting needs to be fat32 or the program will not run
+- GPS not reading coordinates is likely caused by obstruction of the signal so moving outside may be necessary
 
 
 
