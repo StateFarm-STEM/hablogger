@@ -11,10 +11,10 @@
 - Make the onboard LED blink 
 
 ### Parts required:
-- Ardiuno 
+- Arduino 
 
 ![Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
-- PC or laptop with Ardunino IDE installed, linked [here](https://www.arduino.cc/en/software)
+- PC or laptop with Arduino IDE installed, linked [here](https://www.arduino.cc/en/software)
 
 ![Arduino IDE picture](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
  )
@@ -34,7 +34,7 @@ Click this link and watch the YouTube video [Arduino basics with hands on labs](
 - [Where is the onboard LED?](https://youtu.be/fJWR7dBuc18?t=715)
 
 #### Working project
-- [sketch-blink-onboard-led](https://github.com/StateFarm-STEM/pyinthesky/blob/main/my-workspace/blink-onboard-led/blink-onboard-led.ino)
+- Copy and paste this code into your sketch
 ```void setup() {
   // put your setup code here, to run once:
   pinMode(13,OUTPUT);
@@ -48,7 +48,7 @@ void loop() {
   delay(900);
 }
 ```
-- If you are having trouble make sure that the usb cord is plugged in to both the arduino and the pc/laptop that you are using
+- If you are having trouble make sure that the USB cord is plugged in to both the Arduino and the pc/laptop that you are using
 
 
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
