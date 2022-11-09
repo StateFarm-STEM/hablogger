@@ -30,6 +30,12 @@ Lessons will be broken up into short lessons students can work on by themselves 
 - Analyzing telemetry and log data
   - Samples to interpret flight data
 
+### Accessing the lessons
+
+The content is divided up by language and within the language you can choose the platform (where applicable).
+- [C](https://github.com/StateFarm-STEM/hablogger/tree/main/c)
+- [Java](https://github.com/StateFarm-STEM/hablogger/tree/main/python)
+
 
 ### Need some help?
 
