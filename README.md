@@ -1,8 +1,6 @@
 # High altitude Balloon (HAB) Logger
 
-## Py in The Sky - High Altitude Balloon Data Tracker
-
-### This is a STEM project meant to introduce the following:
+## This is a STEM project meant to introduce the following:
 
 - Microcontrollers / electronics basics
   - Arduino and Raspberry Pico lessons included
