@@ -11,9 +11,9 @@
 
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/arduino-uno-r3.png)
-- [MicroSD Card Module](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/screenshots/bmp180.png)
+- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
+- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+- [MicroSD Card Module](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/sd_card_module.png)
 - [BMP 180](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1/photos/BMP_both.jpg)
 
 - [GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1/photos/GPS_NEO-6M.JPG)
