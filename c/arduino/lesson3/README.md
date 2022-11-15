@@ -110,7 +110,7 @@ void loop() {
 </code> while attempting to open your serial monitor, insure that your Arduino is still plugged in and everything is wired correctly
 
 
-# Reveiw
+### Reveiw
 - Learned how to connect the BMP180 to the Arduino using a breadboard in order to gather data such as pressure
 - Learned How to create a new Arduino Sketch project using the Adafruit BMP085 Library
   - Measure the temperature in Celsius from the BMP180 and convert to Fahrenheit
