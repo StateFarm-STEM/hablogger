@@ -125,5 +125,10 @@ void loop() {
 - If your GPS is not reading out coordinates on the COM port you may have to move outside
 - You need to have the TinyGPSPlus library installed in order for the code to work, refer to the video further up this page for more help
 
+### Review
+- Learned how to connect the GPS GT-U7 to the Arduino without using a breadboard (changes it up just a little here compared to lesson 3)
+- How to create a new Arduino Sketch project using the TinyGPSPlus Library
+
+
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
 
