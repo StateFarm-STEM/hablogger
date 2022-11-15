@@ -287,6 +287,11 @@ void initBMP(){
 - GPS not reading coordinates is likely caused by obstruction of the signal so moving outside may be necessary
 
 
+### Review
+- Learned how to connect multiple different sensors or devices to the Arduino at the same time
+  -  Breadboarding circuits
+- How to read a CSV file from the serial port
+- Put all of the other lessons together in order to make a final product
 
 
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
