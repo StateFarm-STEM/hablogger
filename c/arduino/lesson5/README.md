@@ -95,5 +95,13 @@ void loop() {
 ### Troubleshooting
 - If using a SD card larger that 32gb partitioning down to 32gb or less and formatting to fat32 may be required
 - If the SD card is not registering check all your connections first, if this doesn't work insure that the card is empty and formatted to fat 32
+
+
+### Review
+- Learned how to connect the SD card to the Arduino using a breadboard
+- How to create a new Arduino Sketch project using the SDI Library
+  - Create a file on the SD card
+  - Write some data to the SD card
+
 ### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
 
