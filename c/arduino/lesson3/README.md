@@ -99,7 +99,7 @@ void loop() {
   delay(250); //Pause between readings.
 }
 ```
-### [Need help?](https://github.com/StateFarm-STEM/hablogger#Needsomehelp?)
+
 
 
 
@@ -108,3 +108,13 @@ void loop() {
 - After you run the code if you don't see data, make sure to open your serial monitor. ctrl + shift + m or enter the tools menu and select the serial monitor. 
 - If you get in error like this one <code>Error opening serial port 'COM3'. (Port not found)
 </code> while attempting to open your serial monitor, insure that your Arduino is still plugged in and everything is wired correctly
+
+
+# Reveiw
+- Learned how to connect the BMP180 to the Arduino using a breadboard in order to gather data such as pressure
+- Learned How to create a new Arduino Sketch project using the Adafruit BMP085 Library
+  - Measure the temperature in Celsius from the BMP180 and convert to Fahrenheit
+  - Read the pressure in pascals and convert to inches of mercury
+  - Print your calculations to the Arduino's serial port
+
+### [Need help?](https://github.com/StateFarm-STEM/hablogger#Needsomehelp?)
