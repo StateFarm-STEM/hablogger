@@ -17,15 +17,15 @@
 * Learn the importance of MicroPython drivers and how to use them
 * A functioning program for reading temperature, pressure, and altitude using the BMP-180
 
- ## Steps
+## Steps
 
   **IMPORTANT** Before wiring your Pico, UNPLUG IT FROM YOUR COMPUTER. If plugged in while wiring, you risk damaging the Pico or BMP-180 module.
 
 1. Wire the BMP-180 to the Raspberry Pi Pico.
     BMP-180 Pins | Description | Pi Pico Pins
     ------------ | ----------- | ------------
-    VIN          | (Voltage In): Provides power to the BMP-180. Connect to the 5V pin on Pico | GND (38)
-    GND          | (Ground): Connect to the ground pin on Pico | 5V (40)
+    VIN          | (Voltage In): Provides power to the BMP-180. Connect to the 5V pin on Pico | 5V (40)
+    GND          | (Ground): Connect to the ground pin on Pico | GND (38)
     SCL          | (Serial Clock): Accepts clock pulses from the Pico to synchronize data transmission | GP17 (22)
     SDA          | (Serial Data): Used for data exchange | GP16 (21)
 
@@ -33,7 +33,7 @@
 
 ### Install BMP-180 Driver
 
-Drivers are code modules for enabling certain functionality, oftentimes provided by the open source community. One such driver allows us to read data from the BMP-180 module.. This driver is called `bmp180.py`. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
+Drivers are code modules for enabling certain functionality, oftentimes provided by the open source community. One such driver allows us to read data from the BMP-180 module. This driver is called `bmp180.py`. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
 
 1. Download the driver called `bmp180.py` located in the [src/drivers](./src/drivers/) folder. This driver was originally found within the [micropython-IMU](https://github.com/micropython-IMU/micropython-bmp180) project, but requires some modification to work with our project. Therefore a copy of this driver is located within this lesson for us to use.
 
