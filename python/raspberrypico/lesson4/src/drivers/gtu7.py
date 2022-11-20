@@ -68,9 +68,7 @@ class GTU7 :
                     num_satellites = parts[7]
                     gps_time = parts[1][0:2] + ":" + parts[1][2:4] + ":" + parts[1][4:6]
                     
-                    self.fix_status = True
-                    
-                    return [latitude, longitude, num_satellites, gps_time]
+                    return [float(latitude), float(longitude), int(num_satellites), gps_time]
             
             if (time.time() > timeout_e) :
                 return None
