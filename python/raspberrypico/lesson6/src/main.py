@@ -47,8 +47,7 @@ def initSDCard(sd_dir) :
      
     os.mount(sd,sd_dir)
 
-def writeCsv(sd_dir, file_name, dataset) :
-    # print("Writing data to '%s/%s'..." % (sd_dir, file_name))
+def writeCsvToSDCard(sd_dir, file_name, dataset) :
     with open(sd_dir + '/' + file_name,'a+') as csv_out :
         for data in dataset :
             if data == dataset[-1] :
@@ -56,27 +55,23 @@ def writeCsv(sd_dir, file_name, dataset) :
             else :
                 csv_out.write('"'+str(data)+'",')
         csv_out.write('\n')
-    print("Done.")
 
 
-def readCsv(sd_dir, file_name) :
+def readCsvFromSDCard(sd_dir, file_name) :
     csv_data = []
-    # print("Reading data from '%s/%s'..." % (sd_dir, file_name))
     with open(sd_dir + '/' + file_name,'r') as csv_in :
         for line in csv_in:
             line=line.rstrip('\n')
             line=line.rstrip('\r')
             csv_data.append(line.split(','))
-    print("Done")
 
     return csv_data
 
 
-def cleanupDir(rmdir) :
+def cleanupDirSDCard(rmdir) :
     print("Deleting files from '%s'..." % rmdir)
     for file in os.listdir(rmdir)[1:] :
         os.remove(rmdir + '/' + file)
-    print("Done.")
 
 
 if __name__ == "__main__" :   
@@ -92,12 +87,12 @@ if __name__ == "__main__" :
 
     # print(bmp_data)
 
-    writeCsv(sd_dir, "data.csv", bmp_data)
+    writeCsvToSDCard(sd_dir, "data.csv", bmp_data)
     
     # Read all the rows from the CSV and print them to the console.
-    for row in readCsv(sd_dir, "data.csv") :
+    for row in readCsvFromSDCard(sd_dir, "data.csv") :
         print(row)
 
-    # cleanupDir(sd_dir)
+    cleanupDirSDCard(sd_dir)
     
 
