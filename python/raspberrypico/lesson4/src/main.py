@@ -15,10 +15,10 @@ if __name__ == "__main__" :
         try :
             gps_data = gps_module.get_gps_data()
             
-            print("Latitude: \t %d" % gps_data[0])
-            print("Longitude: \t %d" % gps_data[1])
+            print("Latitude: \t %s" % gps_data[0])
+            print("Longitude: \t %s" % gps_data[1])
             print("Satellites: \t %d" % gps_data[2])
-            print("Time:\t\t %d \n" % gps_data[3])
+            print("Time:\t\t %s \n" % gps_data[3])
             
         except Exception as e :
-            print("No GPS data returned.")
+            print("No GPS data returned.\n")
