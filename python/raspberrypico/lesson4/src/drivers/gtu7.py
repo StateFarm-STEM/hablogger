@@ -4,28 +4,19 @@ class GTU7 :
     """GT-U7 driver for capturing GPS data."""
     
     def __init__(self, uart) :
-        self.gtu7 = uart
+        self.uart = uart
         
-        self.buff = bytearray(255)
-        self.poll = 500 # polling interval in ms
+        self.buff = bytearray(255, 'utf-8')
         self.timeout = 8 # total length of time in seconds to poll for GPS data
-        
-        self.gtu7_init(uart)
-        
-        
-    def gtu7_init(self, uart) :
-        self.buff = uart.readline()
 
         
-    def get_gps_data(self, timeout=None, poll=None) :
-        """Get GPS data
+    def gpgga(self, timeout=None) :
+        """Get GPS GPGGA data
 
         Parameters
         ----------
         timeout : int, optional
             The total length of time in seconds to poll for GPS data
-        poll : int, optional
-            The polling interval in ms
 
         Returns
         -------
@@ -34,17 +25,15 @@ class GTU7 :
         """
         
         if not timeout: timeout = self.timeout
-        if not poll: poll = self.poll
         
         timeout_e = time.time() + timeout
         
         while True:
-            self.buff = str(self.gtu7.readline())
-            
+            self.buff = str(self.uart.readline())
             parts = self.buff.split(',')
             
-            # Example 15 length GPGGA data. Sometimes this varies. We are only interested in the integrity of length 15.
-            # 15 ["b'$GPGGA", '161636.00', '4026.77522', 'N', '08902.07820', 'W', '2', '11', '0.79', '262.3', 'M', '-33.2', 'M', '', "0000*67\\r\\n'"]
+            # Example GPGGA (http://aprs.gids.nl/nmea/#gga)
+            # $GPGGA,hhmmss.ss,llll.ll,a,yyyyy.yy,a,x,xx,x.x,x.x,M,x.x,M,x.x,xxxx*hh
             if (parts[0] == "b'$GPGGA" and len(parts) == 15) :
                 
                 # Check if there are values in each part, otherwise continue to poll for GPS data
@@ -66,16 +55,65 @@ class GTU7 :
                         longitude = '-' + longitude
 
                     num_satellites = parts[7]
-                    gps_time = parts[1][0:2] + ":" + parts[1][2:4] + ":" + parts[1][4:6]
+                    gps_time = self.__stringifyGpsTime(parts[1])
                     
-                    return [float(latitude), float(longitude), int(num_satellites), gps_time]
+                    return [gps_time, float(latitude), float(longitude), int(num_satellites)]
             
             if (time.time() > timeout_e) :
-                return None
+                return []
             
-            utime.sleep_ms(self.poll)
+    def gprmc(self, timeout=None) :
+        """Get GPS GPRMC data
+
+        Parameters
+        ----------
+        timeout : int, optional
+            The total length of time in seconds to poll for GPS data
+
+        Returns
+        -------
+        list
+            a list of formatted GPS GPRMC data
+        """
+        
+        if not timeout: timeout = self.timeout
+        
+        timeout_e = time.time() + timeout
+        
+        while True:
+            self.buff = str(self.uart.readline())
+            parts = self.buff.split(',')
             
-    def __convertToDegree(degrees) :
+            # Example GPRMC (http://aprs.gids.nl/nmea/#rmc)
+            # $GPRMC,hhmmss.ss,A,llll.ll,a,yyyyy.yy,a,x.x,x.x,ddmmyy,x.x,a*hh
+            if (parts[0] == "b'$GPRMC" and len(parts) == 13) :
+                try:
+                    latitude = self.__convertToDegree(parts[3])
+                except:
+                    latitude = parts[3]
+
+                if (parts[4] == 'S'):
+                    latitude = '-' + latitude
+
+                try:
+                    longitude = self.__convertToDegree(parts[5])
+                except:
+                    longitude = parts[5]
+
+                if (parts[6] == 'W') :
+                    longitude = '-' + longitude
+
+                gps_time = self.__stringifyGpsTime(parts[1])
+                
+                gps_date = self.__stringifyGpsDate(parts[9])
+                
+                return [gps_date, gps_time, float(latitude), float(longitude), float(parts[7])]
+            
+            if (time.time() > timeout_e) :
+                return []
+    
+    
+    def __convertToDegree(self, degrees) :
         firstdigits = int(degrees / 100) 
         nexttwodigits = degrees - float(firstdigits * 100) 
 
@@ -83,3 +121,13 @@ class GTU7 :
         converted = '{0:.6f}'.format(converted)
         
         return str(converted)
+
+
+    def __stringifyGpsTime(self, t) :
+        return t[0:2] + ":" + t[2:4] + ":" + t[4:6]
+    
+    
+    def __stringifyGpsDate(self, d) :
+        return d[0:2] + "-" + d[2:4] + "-" + d[4:6]
+        
+
