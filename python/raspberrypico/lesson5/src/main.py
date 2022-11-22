@@ -81,10 +81,6 @@ if __name__ == "__main__" :
 
     # Initialize the SD card to Pico GPIO Pin 13 on chip select (CS) pin
     sd = sdcard.SDCard(spi,Pin(13))
-
-    # Create a instance of MicroPython Unix-like Virtual File System (VFS)
-    # It's important to have already formatted your SD card to FAT32.
-    vfs = os.VfsFat(sd)
      
     # Mount the SD card at specified directory
     os.mount(sd,sd_dir)

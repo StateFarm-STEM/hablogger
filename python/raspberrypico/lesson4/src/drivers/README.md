@@ -2,6 +2,8 @@
 
 ## GPS data returned from GT-U7 module
 
+All GPS sentence data can be found at the [NMEA sentence information](http://aprs.gids.nl/nmea/) website.
+
 |$GPXXX  | Description |
 | ------ | ----------- |
 | $GPGGA | Global Positioning System Fix Data. 3D location and accuracy data. |
