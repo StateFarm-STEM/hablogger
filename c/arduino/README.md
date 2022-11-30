@@ -7,11 +7,11 @@
 - Microcontroller / electronics basics
 - Introduction to coding concepts
   - Arduino Language being the language of choice
-- Test the finished product in a high altitude balloon flight to the stratosphere (90-125k feet)
+- How to build and test a finished product in a high altitude balloon flight to the stratosphere (90-125k feet)
 - Collect telemetry data and retreive logged data
 - Analyze collected data
 
-Lessons will be broken up into short lessons students can work on by themselves or in small groups. 
+Lessons will be broken up into short lessons, students can work on by themselves or in small groups. 
 
 ### Lessons:
 
