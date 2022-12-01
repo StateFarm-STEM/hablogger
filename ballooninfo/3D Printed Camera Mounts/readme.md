@@ -5,7 +5,7 @@
 
 ### Assembling the cam mount
 - The design uses a small chanel to align the two halves
-- M5 bolt is used with the head on the cone side, A square nut can be used in the cutout to thread the bolt into, or a nut can be placed ontop of the wall
+- An M5 bolt is used with the head on the cone side, A square nut can be used in the cutout to thread the bolt into, or a nut can be placed ontop of the wall
 
 
 
