@@ -35,7 +35,7 @@ Click this link and watch the YouTube video [Arduino basics with hands on labs](
 
 #### Working project
 - Copy and paste this code into your sketch
-```void setup() {
+void setup() {
   // put your setup code here, to run once:
   pinMode(13,OUTPUT);
 }
