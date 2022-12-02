@@ -57,8 +57,10 @@ SDA	| A4
 
 ### Tips
 - The color of the wires do not matter as long as they are connected to the right pins
-- Make sure that you have the libraries installed [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
-
+- Make sure that you have the libraries installed
+  - Install the Adafruit BMP085 library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for "Adafruit bmp085 library"
+  - Install the BusIO library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO"
+  - If that doesn't work, you can install the BMP library [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
 
 
 
