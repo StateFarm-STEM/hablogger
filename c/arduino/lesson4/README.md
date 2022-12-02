@@ -61,8 +61,8 @@ https://user-images.githubusercontent.com/91698286/181350144-9dad1089-92e9-4f3b-
 
   **Pin on the GPS module** | **Pin on the Arduino**
   --------------- | --------------- 
-  TXD   | Digital pin 10
-  RXD   | Digital pin 11
+  TXD   | Digital pin 11
+  RXD   | Digital pin 10
   GND  | Any Ground pin 
   VDC   | 5 volts
   
