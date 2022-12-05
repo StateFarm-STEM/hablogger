@@ -34,17 +34,22 @@ The two images below should give you an idea of the kinds of information availab
 
 ## Weak Signal Propagation Reporter (WSPR)
 
-WSPR (prounced "whisper") is a 
+WSPR (prounced "whisper") is a protocol designed for weak-signal radio communication.  It is commonly used to by amateur radio operators for sending and recieving very low-power transmissions to test propagatino path on the Medium Frequency (MF) and High Frequency (HF) bands.  The protocol is designed and written initially by Joe Taylor (K1JT) and uses open source software developed and supported by  small team.  WSPR transmission, similiar to APRS, use a standard message format, carrying the station's call sign, Madienhead grid locator, and transmitter power in dBm.  The program decodes signals with a signal-to-noise (SNR) as low as -28 dB, with stations sending reports to online central database called WSPRnet, which includes mapping.
 
-WSPR (pronounced "whisper") is an acronym for Weak Signal Propagation Reporter. It is a protocol, implemented in a computer program, used for weak-signal radio communication between amateur radio operators. The protocol was designed, and a program written initially, by Joe Taylor, K1JT. The software code is now open source and is developed by a small team. The program is designed for sending and receiving low-power transmissions to test propagation paths on the MF and HF bands.
+### References
 
+![Weak Signal Propagation Reporter (WSPR)](https://en.wikipedia.org/wiki/WSPR_(amateur_radio_software))
+![WSPR - Distant Whispers](http://www.g4ilo.com/wspr.html)
+![WSPRNet](http://www.wsprnet.org/drupal/wsprnet/map)
 
 ## Tracking the balloon
 
 
 
+
 ## Getting your licensce
 
+![Ham Radio School](https://www.hamradioschool.com/)
 
 
 ## Helpful links
