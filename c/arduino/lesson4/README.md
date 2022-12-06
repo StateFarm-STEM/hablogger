@@ -3,7 +3,7 @@
 ## Working with GPS sensor data using the Arduino language
 
 #### Pre-requisites:
-- It is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/pyinthesky/tree/main/lesson2#welcome-to-lesson-2)
+- It is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/hablogger/tree/Carter12312-patch-1/c/arduino/lesson2)
 
 #### Objectives:
 - Wire up the GPS to the Arduino
