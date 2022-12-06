@@ -107,7 +107,7 @@ void loop() {
 
 
 ### Trouble shooting
-- If you get an error code that looks like this `fatal error: Adafruit_I2CDevice.h` you are missing the BusIO library, follow [this guide](https://www.chippiko.com/ii2cdevice-no-such-file) to solve this issue
+- If you get an error code that looks like this `fatal error: Adafruit_I2CDevice.h` you are are likley missing the BusIO library, to check to see if it is installed go to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO", this should be installed. 
 - If you get in error like this one <code>Error opening serial port 'COM3'. (Port not found)
 </code> while attempting to open your serial monitor, insure that your Arduino is still plugged in and everything is wired correctly
 
