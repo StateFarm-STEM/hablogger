@@ -21,7 +21,7 @@ Lessons will be broken up into short lessons, students can work on by themselves
 - [Working with the GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson4)
 - [Working with the SD card module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson5)
 - [Putting it all together - evolving](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson6)
-- [Analyzing telemetry and log data](https://github.com/StateFarm-STEM/pyinthesky/blob/main/telemetry-analysis/README.md)
+- [Analyzing telemetry and log data](https://github.com/StateFarm-STEM/hablogger/tree/main/telemetry-analysis)
 
 ### Need some help?
 
