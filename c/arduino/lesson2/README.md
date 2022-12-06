@@ -14,7 +14,7 @@
 - Arduino 
 
 ![Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
-- PC or laptop with Arduino IDE installed, linked [here](https://www.arduino.cc/en/software)
+- PC or laptop, in the guide below we will be downloading the Arduino IDE
 
 ![Arduino IDE picture](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
  )
