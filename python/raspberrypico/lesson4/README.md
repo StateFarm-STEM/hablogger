@@ -2,6 +2,22 @@
 
 ## High Altitude Balloon Data Logging
 
+### Pre-requisites
+* Complete [Lesson 1: Blinking Light](../lesson1/README.md)
+* [Thonny Python IDE](https://thonny.org/) installed on your computer
+* All necessary hardware components (Raspberry Pi Pico, GTU-7 module, breadboard, wires, USB cable, computer)
+
+### Objectives
+* Use breadboard to wire GTU-7 module to Raspberry Pi Pico
+* Install the GTU-7 MicroPython driver to the Raspberry Pi Pico
+* Print GPS coordinates to the console
+
+### Results
+* Familiarity with wiring a breadboard
+* Understanding of basic MicroPython code
+* Learn the importance of MicroPython drivers and how to use them
+* A functioning program for reading GPS data and printing the information to the console
+
 ## Steps
 
   **IMPORTANT** Before wiring your Pico, UNPLUG IT FROM YOUR COMPUTER. If plugged in while wiring, you risk damaging the Pico or GT-U7 module.
@@ -17,9 +33,9 @@
 
 ### Install GT-U7 Driver
 
-Drivers are code modules for enabling certain functionality, oftentimes provided by the open source community. One such driver allows us to read data from the GT-U7 module. This driver is called `gtu7.py`. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
+Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the GTU-7 module. This driver is called `gtu7.py` and is located in the [../drivers/src/gtu7.py](../drivers/src/gtu7.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
 
-1. Download the driver called `gtu7.py` located in the [src/drivers](./src/drivers/) folder.
+1. Download the driver called `gtu7.py` located in the [../drivers/src/gtu7.py](../drivers/src/gtu7.py) location.
 
 1. Connect your Raspberry Pi Pico to your computer using the USB cable.
 
@@ -29,7 +45,7 @@ Drivers are code modules for enabling certain functionality, oftentimes provided
 
     You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny.
 
-1. Create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
+1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
     ![drivers-directory](./docs/thonny-2.png)
 
@@ -39,7 +55,7 @@ Drivers are code modules for enabling certain functionality, oftentimes provided
 
     Click _File_ then _Save as..._. Choose _Raspberry Pi Pico_. Double-click the `drivers` folder created in a previous step. Then save the `gtu7.py` file being sure to name it `gtu7.py`.
 
-1. Create a new file in Thonny called `__init__.py`. 
+1. If a file called `__init__.py` does not already exist in the `/drivers` folder, create a new file in Thonny called `__init__.py`. 
 
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
 
