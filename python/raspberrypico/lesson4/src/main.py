@@ -13,8 +13,8 @@ if __name__ == "__main__" :
     
     gps_module = gtu7.GTU7(uart)
 
-    gprmc_data = gps_module.gprmc()
-    print(gprmc_data)
-    
     gpgga_data = gps_module.gpgga()
     print(gpgga_data)
+
+    gprmc_data = gps_module.gprmc()
+    print(gprmc_data)
