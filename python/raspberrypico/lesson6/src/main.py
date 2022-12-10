@@ -1,13 +1,9 @@
-from machine import Pin, SPI, Timer, I2C, UART
+from machine import Pin, SPI, I2C, UART
 from drivers import sdcard
 from drivers import gtu7 as gpsdriver
 from drivers import bmp180 as bmp180driver
 
 import os
-
-
-def blinkLed(timer_one) :   
-    led.toggle()
 
 
 def initBmp180() :
@@ -86,7 +82,7 @@ def cleanupDirSDCard(rmdir) :
 
 if __name__ == "__main__" :   
     led = Pin(25, Pin.OUT)  # Assign on board LED to variable
-    machine.Timer().init(freq=1, mode=Timer.PERIODIC, callback=blinkLed)
+    led.toggle()
     
     sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
     initSDCard(sd_dir)
@@ -124,3 +120,5 @@ if __name__ == "__main__" :
     # Read all the rows from the CSV and print them to the console.
     for row in readCsvFromSDCard(sd_dir, "data.csv") :
         print(row)
+
+    led.toggle()
