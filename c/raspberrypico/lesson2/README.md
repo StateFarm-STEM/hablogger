@@ -30,15 +30,22 @@ This is the bottom of the Pico.  Notice that all of the pins are labeled.  We wi
 
 Open a VS Code IDE.
 Click on start, start typing "Developer", open the "Developer Command Prompt for VS 2022" application.
-Change to your user profile directory `cd %USERPROFILE`
-Change to the directory `cd c\raspberrypico\code`
-Open VS code in that directory `code .`
+Change to your user profile directory 
+```
+cd %USERPROFILE
+```
+Open VS code in the code directory 
+```
+code c\raspberrypico\code
+```
+
 
 The onboard LED is mapped to pin 25 on the Raspberry Pi Pico.  The following code will blink the onboard LED.  Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson.  In c, comments are marked with an '//', comment code blocks start with /* and end with */.
 
 Update main.c to be the following code.
 
-```#include "pico/stdlib.h" // include the standard libraries for interacting with the pico
+```
+#include "pico/stdlib.h" // include the standard libraries for interacting with the pico
 
 int main() {
     const uint LED_PIN = PICO_DEFAULT_LED_PIN; // Use the default LED pin
@@ -112,7 +119,8 @@ Next, you'll need to ground the negative (-) leg (the short side) of the LED to 
 
 The following code will blink the LED we wired up (assuming you used all the same PINs as I did).  Take some time to read the comments in this code so you understand what is happening.  
 
-```#include "pico/stdlib.h" // include the standard libraries for interacting with the pico
+```
+#include "pico/stdlib.h" // include the standard libraries for interacting with the pico
 
 int main() {
     const uint LED_PIN = 11; // Use the 11 pin
@@ -139,7 +147,8 @@ Using the same principles you learned above, wire two more LEDs, connecting them
 
 The following code will blink the LEDs we wired up in sequence (assuming you used all the same PINs as I did).  Take some time to read the comments in this code so you understand what is happening.  
 
-```#include "pico/stdlib.h" // include the standard libraries for interacting with the pico
+```
+#include "pico/stdlib.h" // include the standard libraries for interacting with the pico
 
 int main() {
     // setting up pins for each led
