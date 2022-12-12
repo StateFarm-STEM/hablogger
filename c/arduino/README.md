@@ -15,7 +15,7 @@ Lessons will be broken up into short lessons, students can work on by themselves
 
 ### Lessons:
 
-- [Introduction and how to get started](/lesson1/)
+- [Introduction and how to get started](c/arduino/lesson1/)
 - [Blinking lights - Arduino 101](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
 - [Working with the weather sensor](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson3)
 - [Working with the GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson4)
