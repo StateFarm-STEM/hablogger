@@ -15,13 +15,13 @@ Lessons will be broken up into short lessons, students can work on by themselves
 
 ### Lessons:
 
-- [Introduction and how to get started](c/arduino/lesson1/)
-- [Blinking lights - Arduino 101](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
-- [Working with the weather sensor](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson3)
-- [Working with the GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson4)
-- [Working with the SD card module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson5)
-- [Putting it all together - evolving](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson6)
-- [Analyzing telemetry and log data](https://github.com/StateFarm-STEM/hablogger/tree/main/telemetry-analysis)
+- [Introduction and how to get started](./lesson1)
+- [Blinking lights - Arduino 101](./lesson2)
+- [Working with the weather sensor](./lesson3)
+- [Working with the GPS module](./lesson4)
+- [Working with the SD card module](./lesson5)
+- [Putting it all together - evolving](./lesson6)
+- [Analyzing telemetry and log data](/telemetry-analysis/)
 
 ### Need some help?
 
