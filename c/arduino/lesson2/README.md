@@ -3,7 +3,7 @@
 ## Arduino Basics: Blink the built-in LED on the Arduino
 
 #### Pre-requisites:
-- none
+- None
 
 #### Objectives:
 - How to download the Arduino IDE software
