@@ -28,7 +28,8 @@ This is the bottom of the Pico.  Notice that all of the pins are labeled.  We wi
 
 ## Step 2: Blink the onboard LED
 
-Open a VS Code IDE.
+### Open a VS Code IDE.
+
 Click on start, start typing "Developer", open the "Developer Command Prompt for VS 2022" application.
 Change to your user profile directory 
 ```
@@ -36,9 +37,8 @@ cd %USERPROFILE
 ```
 Open VS code in the code directory 
 ```
-code c\raspberrypico\code
+code hablogger\c\raspberrypico\code
 ```
-
 
 The onboard LED is mapped to pin 25 on the Raspberry Pi Pico.  The following code will blink the onboard LED.  Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson.  In c, comments are marked with an '//', comment code blocks start with /* and end with */.
 

@@ -137,5 +137,5 @@ cd %USERPROFILE
 
 Open VS code in the code directory 
 ```
-code c\raspberrypico\code
+code hablogger\c\raspberrypico\code
 ```
