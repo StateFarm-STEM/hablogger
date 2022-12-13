@@ -6,12 +6,11 @@ from drivers import bmp180 as bmp180driver
 import os
 
 
-def initBmp180() :
+def init_bmp180(test=False) :
     bus =  I2C(0,
                scl=Pin(17),
                sda=Pin(16),
                freq=100000)
-
 
     # Initialize BMP180 with previously defined I2C config
     bmp180 = bmp180driver.BMP180(bus)
@@ -19,10 +18,32 @@ def initBmp180() :
     bmp180.oversample_sett = 2 # Accuracy, as defined in driver docs: https://github.com/micropython-IMU/micropython-bmp180
     bmp180.baseline = 101325   # Baseline pressure, as defined in driver docs: https://github.com/micropython-IMU/micropython-bmp180
 
+    if test :
+        try :
+            assert isinstance(bmp180.temperature, float)
+        except AssertionError :
+            print("BMP180_TEMPERATURE: FAIL")
+        else :
+            print("BMP180_TEMPERATURE: PASS")
+
+        try :
+            assert isinstance(bmp180.pressure, float)
+        except AssertionError :
+            print("BMP180_PRESSURE: FAIL")
+        else :
+            print("BMP180_PRESSURE: PASS")
+
+        try :
+            assert isinstance(bmp180.altitude, float)
+        except AssertionError :
+            print("BMP180_ALTITUDE: FAIL")
+        else :
+            print("BMP180_ALTITUDE: PASS")
+
     return bmp180
 
 
-def initGtu7() :
+def init_gtu7() :
     uart = UART(1,
                 baudrate=9600,
                 timeout=3600,
@@ -34,7 +55,7 @@ def initGtu7() :
     return gtu7
 
 
-def initSDCard(sd_dir) :
+def init_sdcard(folder, mount=True) :
     spi = machine.SPI(1,
                       baudrate=1000000,     # 1 MHz
                       polarity=0,
@@ -44,13 +65,16 @@ def initSDCard(sd_dir) :
                       sck=machine.Pin(10),  # Pico GPIO Pin 10
                       mosi=machine.Pin(11), # Pico GPIO Pin 11
                       miso=machine.Pin(12)) # Pico GPIO Pin 12
-    sd=sdcard.SDCard(spi,Pin(13))
-     
-    os.mount(sd,sd_dir)
+    sd = sdcard.SDCard(spi,Pin(13))
+    
+    if mount :
+        os.mount(sd,folder)
+    else :
+        os.umount(folder)
 
 
-def writeCsvToSDCard(sd_dir, file_name, dataset, header=None) :
-    with open(sd_dir + '/' + file_name,'a+') as csv_out :
+def write_csv_to_sdcard(folder, file_name, dataset, header=None) :
+    with open(folder + '/' + file_name,'a+') as csv_out :
         if header :
             dataset = header
             
@@ -63,9 +87,9 @@ def writeCsvToSDCard(sd_dir, file_name, dataset, header=None) :
         csv_out.write('\n')
 
 
-def readCsvFromSDCard(sd_dir, file_name) :
+def read_csv_from_sdcard(folder, file_name) :
     csv_data = []
-    with open(sd_dir + '/' + file_name,'r') as csv_in :
+    with open(folder + '/' + file_name,'r') as csv_in :
         for line in csv_in:
             line=line.rstrip('\n')
             line=line.rstrip('\r')
@@ -74,23 +98,24 @@ def readCsvFromSDCard(sd_dir, file_name) :
     return csv_data
 
 
-def cleanupDirSDCard(rmdir) :
-    print("Deleting files from '%s'..." % rmdir)
-    for file in os.listdir(rmdir)[1:] :
-        os.remove(rmdir + '/' + file)
-
-
-if __name__ == "__main__" :   
+def delete_files_from_sdcard_folder(folder) :
+    print("Deleting files from '%s'..." % folder)
+    for file in os.listdir(folder)[1:] :
+        os.remove(folder + '/' + file)
+            
+            
+if __name__ == "__main__" :
+    
     led = Pin(25, Pin.OUT)  # Assign on board LED to variable
     led.toggle()
     
     sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
-    initSDCard(sd_dir)
+    init_sdcard(sd_dir)     # Initialize the SD Card
     
-    bmp180 = initBmp180()   # Initialize the BMP_180 (Temp/Pressure module)
-    gtu7 = initGtu7()       # Initialize the GT-U7 (GPS module)
-    
-    cleanupDirSDCard(sd_dir) # This helper function cleans up the SD card. Uncomment this to delete SD card data.
+    bmp180 = init_bmp180(True)  # Initialize the BMP_180 (Temp/Pressure module)
+    gtu7 = init_gtu7()      # Initialize the GT-U7 (GPS module)
+
+    delete_files_from_sdcard_folder('/sd') # This helper function cleans up the SD card. Uncomment this to delete SD card data.
 
     csv_header = [
         "date",
@@ -103,9 +128,9 @@ if __name__ == "__main__" :
         "pressure",
         "altitude",
         ]
-    writeCsvToSDCard(sd_dir, "data.csv", None, csv_header) # Initialize CSV header
+    write_csv_to_sdcard(sd_dir, "data.csv", None, csv_header) # Initialize CSV header
     
-    for x in range(10) :
+    for x in range(1) :
         temp = bmp180.temperature  # Capture temperature, assign to `temp` variable
         p = bmp180.pressure        # Capture pressure, assign to `p` variable
         altitude = bmp180.altitude # Capture altitude, assign to `altitude` variable
@@ -115,10 +140,10 @@ if __name__ == "__main__" :
         
         data = [gprmc[0], gprmc[1], gprmc[2], gprmc[3], gprmc[4], gpgga[3], temp, p, altitude]
         
-        writeCsvToSDCard(sd_dir, "data.csv", data)
+        write_csv_to_sdcard(sd_dir, "data.csv", data)
     
     # Read all the rows from the CSV and print them to the console.
-    for row in readCsvFromSDCard(sd_dir, "data.csv") :
+    for row in read_csv_from_sdcard(sd_dir, "data.csv") :
         print(row)
 
     led.toggle()
