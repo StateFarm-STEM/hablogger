@@ -4,7 +4,7 @@
 To track the High Altitude Baloon, Amateur Radio is leveraged.  There are other tracking optinos not requiring a license but one of the goals is:
  - Introduce amateur radio to students and educators
  - Demonstrate the benefits of Amateur Radio beyond the baloon project, such as being able to communicate during emergencies
- -Show students there are Amater Radio scholarships available, if they obtain their license.
+ - Show students there are Amater Radio scholarships available, if they obtain their license.
 
 ## Overview
 Amateur Radio is utilize to track and collect real-time flight telemetry information of the High Altitude Baloon, and then to locate the payload once it has landed.  Tracking via Amateur Radio can be performed via two means:
@@ -21,30 +21,35 @@ APRS was designed to support rapid, reliable exchange of information for local, 
 
 The two images below should give you an idea of the kinds of information available to the operator on a APRS radio. On the left is the Kenwood D710 radio showing the station list, and on the right is the attached GPS map display showing the location of other APRS stations.
 
-![Kenwood D710](http://www.aprs.org/D7xx/AB9FXd710list1.JPG)
-![GPS Map](http://www.aprs.org/avmap/AVMAPg5_new_iconXx.JPG)
+[Kenwood D710](http://www.aprs.org/D7xx/AB9FXd710list1.JPG)
+[GPS Map](http://www.aprs.org/avmap/AVMAPg5_new_iconXx.JPG)
 
 ![Frequencies by geographic area](http://www.aprs.org/maps/APRSVHFworldmapXx.jpg)
 
 ### References
 
-![APRS Overview and more information](http://www.aprs.org/)
-![What is AFSK](https://www.notblackmagic.com/bitsnpieces/afsk//#what-is-afsk)
-![2-Meter Amateur Radio Band](https://en.wikipedia.org/wiki/2-meter_band)
+[APRS Overview and more information](http://www.aprs.org/)
+[What is AFSK](https://www.notblackmagic.com/bitsnpieces/afsk//#what-is-afsk)
+[2-Meter Amateur Radio Band](https://en.wikipedia.org/wiki/2-meter_band)
 
 ## Weak Signal Propagation Reporter (WSPR)
 
-WSPR (prounced "whisper") is a 
+WSPR (prounced "whisper") is a protocol designed for weak-signal radio communication.  It is commonly used to by amateur radio operators for sending and recieving very low-power transmissions to test propagatino path on the Medium Frequency (MF) and High Frequency (HF) bands.  The protocol is designed and written initially by Joe Taylor (K1JT) and uses open source software developed and supported by  small team.  WSPR transmission, similiar to APRS, use a standard message format, carrying the station's call sign, Madienhead grid locator, and transmitter power in dBm.  The program decodes signals with a signal-to-noise (SNR) as low as -28 dB, with stations sending reports to online central database called WSPRnet, which includes mapping.
 
-WSPR (pronounced "whisper") is an acronym for Weak Signal Propagation Reporter. It is a protocol, implemented in a computer program, used for weak-signal radio communication between amateur radio operators. The protocol was designed, and a program written initially, by Joe Taylor, K1JT. The software code is now open source and is developed by a small team. The program is designed for sending and receiving low-power transmissions to test propagation paths on the MF and HF bands.
+### References
 
+[Weak Signal Propagation Reporter (WSPR)](https://en.wikipedia.org/wiki/WSPR_(amateur_radio_software))
+[WSPR - Distant Whispers](http://www.g4ilo.com/wspr.html)
+[WSPRNet](http://www.wsprnet.org/drupal/wsprnet/map)
 
 ## Tracking the balloon
 
 
 
+
 ## Getting your licensce
 
+[Ham Radio School](https://www.hamradioschool.com/)
 
 
 ## Helpful links

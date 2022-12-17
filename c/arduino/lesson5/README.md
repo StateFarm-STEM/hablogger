@@ -3,7 +3,7 @@
 ## Working with SD card using the Arduino language
 
 #### Pre-requisites:
-- It is recommended that you have successfully completed the [blinky lights lesson](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson2)
+- It is recommended that you have successfully completed the [blinky lights lesson](/c/arduino/lesson1/)
 
 
 #### Objectives:
