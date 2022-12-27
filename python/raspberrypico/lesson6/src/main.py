@@ -5,35 +5,26 @@ from drivers import bmp180 as bmp180driver
 from ssd1306 import SSD1306_I2C
 
 import os
+import time
+import _thread
+    
+    
+def init_oled():
+    # https://www.tomshardware.com/how-to/oled-display-raspberry-pi-pico
+    i2c = I2C(0,
+            sda=Pin(16),
+            scl=Pin(17),
+            freq = 400000)
+    
+    oled = SSD1306_I2C(128, 64, i2c) # width is 128, height is 64
+    
+    return oled
 
 
-class Logger():
-    def __init__(self) :
-        self.oled = self.__init_oled()
-        
-    def disp(self, text, pos):
-        self.oled.text(text, pos[0], pos[1])
-        self.oled.show()
-        
-    def __init_oled(self):
-        # https://www.tomshardware.com/how-to/oled-display-raspberry-pi-pico
-        i2c = I2C(1,
-                sda=Pin(14),
-                scl=Pin(15),
-                freq = 400000)
-        oled = SSD1306_I2C(128, 64, i2c) # width is 128, height is 64
-        
-        return oled
-
-
-def logger(text):
-    print("text")
-
-
-def init_bmp180(test=False):
+def init_bmp180(test=True):
     bus =  I2C(0,
-               scl=Pin(17),
                sda=Pin(16),
+               scl=Pin(17),
                freq=100000)
 
     # Initialize BMP180 with previously defined I2C config
@@ -46,30 +37,30 @@ def init_bmp180(test=False):
         try:
             assert isinstance(bmp180.temperature, float)
         except AssertionError:
-            log.disp("BMP180_TEMP: ERR", [0,0])
+            oled.text("BMP180_TEMP: ERR", 0, 0)
         else:
-            log.disp("BMP180_TEMP: OK", [0,0])
+            oled.text("BMP180_TEMP: OK", 0, 0)
 
         try:
             assert isinstance(bmp180.pressure, float)
         except AssertionError:
-            log.disp("BMP180_PRES: ERR", [0,10])
+            oled.text("BMP180_PRES: ERR", 0,10)
         else:
-            log.disp("BMP180_PRES: OK", [0,10])
+            oled.text("BMP180_PRES: OK", 0, 10)
 
         try:
             assert isinstance(bmp180.altitude, float)
         except AssertionError:
-            log.disp("BMP180_ALTI: ERR", [0,20])
+            oled.text("BMP180_ALTI: ERR", 0, 20)
         else:
-            log.disp("BMP180_ALTI: OK", [0,20])
+            oled.text("BMP180_ALTI: OK", 0, 20)
             
-        print("read prompt timer")
+        oled.show()
 
     return bmp180
 
 
-def init_gtu7():
+def init_gtu7(test=True):
     uart = UART(1,
                 baudrate=9600,
                 timeout=3600,
@@ -77,11 +68,28 @@ def init_gtu7():
                 rx=Pin(5))
 
     gtu7 = gpsdriver.GTU7(uart)
+    
+    if test:
+        try:
+            assert len(gtu7.gpgga()) == 4
+        except AssertionError:
+            oled.text("GTU7_GPGGA : ERR", 0, 30)
+        else:
+            oled.text("GTU7_GPGGA : OK", 0, 30)
+
+        try:
+            assert len(gtu7.gprmc()) == 5
+        except AssertionError:
+            oled.text("GTU7_GPRMC : ERR", 0,40)
+        else:
+            oled.text("GTU7_GPRMC : OK", 0, 40)
+            
+        oled.show()
 
     return gtu7
 
 
-def init_sdcard(folder, mount=True):
+def init_sdcard(folder, test=True):
     spi = machine.SPI(1,
                       baudrate=1000000,     # 1 MHz
                       polarity=0,
@@ -93,10 +101,17 @@ def init_sdcard(folder, mount=True):
                       miso=machine.Pin(12)) # Pico GPIO Pin 12
     sd = sdcard.SDCard(spi,Pin(13))
     
-    if mount:
-        os.mount(sd,folder)
-    else:
-        os.umount(folder)
+    os.mount(sd,folder)
+    
+    if test:
+        try:
+            assert folder[1:] in os.listdir()
+        except AssertionError:
+            oled.text("SD_CARD    : ERR", 0, 50)
+        else:
+            oled.text("SD_CARD    : OK", 0, 50)
+            
+        oled.show()
 
 
 def write_csv_to_sdcard(folder, file_name, dataset, header=None):
@@ -130,20 +145,23 @@ def delete_files_from_sdcard_folder(folder):
         os.remove(folder + '/' + file)
             
             
-if __name__ == "__main__":          
-    log = Logger()  # create Logger object which allows logging to OLED module
-    #log.disp('Hello, World 0!', [0, 0])
-    
+if __name__ == "__main__":   
     led = Pin(25, Pin.OUT)  # Assign onboard LED to variable
-    led.toggle()
+    led.toggle()            # Toggle on the onboard LED
+    
+    oled = init_oled()      # Initialize the OLED display module
     
     sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
     init_sdcard(sd_dir)     # Initialize the SD Card
     
-    bmp180 = init_bmp180(True)  # Initialize the BMP_180 (Temp/Pressure module)
+    bmp180 = init_bmp180()  # Initialize the BMP_180 (Temp/Pressure module)
     gtu7 = init_gtu7()      # Initialize the GT-U7 (GPS module)
 
     delete_files_from_sdcard_folder('/sd') # This helper function cleans up the SD card. Uncomment this to delete SD card data.
+    
+    # Start a new thread and power off the OLED after a certain amount of time (in seconds)
+    oled_off = lambda: (time.sleep(30), oled.poweroff())
+    _thread.start_new_thread(oled_off, ())
 
     csv_header = [
         "date",
@@ -158,7 +176,7 @@ if __name__ == "__main__":
         ]
     write_csv_to_sdcard(sd_dir, "data.csv", None, csv_header) # Initialize CSV header
     
-    for x in range(1):
+    for x in range(10):
         temp = bmp180.temperature  # Capture temperature, assign to `temp` variable
         p = bmp180.pressure        # Capture pressure, assign to `p` variable
         altitude = bmp180.altitude # Capture altitude, assign to `altitude` variable
@@ -173,5 +191,5 @@ if __name__ == "__main__":
     # Read all the rows from the CSV and print them to the console.
     for row in read_csv_from_sdcard(sd_dir, "data.csv"):
         print(row)
-
-    led.toggle()
+    
+    led.toggle() # Toggle off the onboard LED
