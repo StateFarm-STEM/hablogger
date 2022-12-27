@@ -140,9 +140,11 @@ def read_csv_from_sdcard(folder, file_name):
 
 
 def delete_files_from_sdcard_folder(folder):
-    print("Deleting files from '%s'..." % folder)
-    for file in os.listdir(folder)[1:]:
-        os.remove(folder + '/' + file)
+    for file in os.listdir(folder):
+        try:
+            os.remove(folder + '/' + file)
+        except Exception as e:
+            pass
             
             
 if __name__ == "__main__":   
@@ -151,45 +153,52 @@ if __name__ == "__main__":
     
     oled = init_oled()      # Initialize the OLED display module
     
-    sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
-    init_sdcard(sd_dir)     # Initialize the SD Card
-    
-    bmp180 = init_bmp180()  # Initialize the BMP_180 (Temp/Pressure module)
-    gtu7 = init_gtu7()      # Initialize the GT-U7 (GPS module)
+    try:
+        sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
+        init_sdcard(sd_dir)     # Initialize the SD Card
+        
+        bmp180 = init_bmp180()  # Initialize the BMP_180 (Temp/Pressure module)
+        gtu7 = init_gtu7()      # Initialize the GT-U7 (GPS module)
 
-    delete_files_from_sdcard_folder('/sd') # This helper function cleans up the SD card. Uncomment this to delete SD card data.
-    
-    # Start a new thread and power off the OLED after a certain amount of time (in seconds)
-    oled_off = lambda: (time.sleep(30), oled.poweroff())
-    _thread.start_new_thread(oled_off, ())
+        delete_files_from_sdcard_folder('/sd') # Uncomment this to delete a folder and its contents.
+        
+        # Start a new thread and power off the OLED after a certain amount of time (in seconds)
+        oled_off = lambda: (time.sleep(30), oled.poweroff())
+        _thread.start_new_thread(oled_off, ())
 
-    csv_header = [
-        "date",
-        "time",
-        "latitude",
-        "longitude",
-        "velocity",
-        "numSatellites",
-        "temperature",
-        "pressure",
-        "altitude",
-        ]
-    write_csv_to_sdcard(sd_dir, "data.csv", None, csv_header) # Initialize CSV header
-    
-    for x in range(10):
-        temp = bmp180.temperature  # Capture temperature, assign to `temp` variable
-        p = bmp180.pressure        # Capture pressure, assign to `p` variable
-        altitude = bmp180.altitude # Capture altitude, assign to `altitude` variable
+        csv_header = [
+            "date",
+            "time",
+            "latitude",
+            "longitude",
+            "velocity",
+            "numSatellites",
+            "temperature",
+            "pressure",
+            "altitude",
+            ]
+        write_csv_to_sdcard(sd_dir, "data.csv", None, csv_header) # Initialize CSV header
         
-        gpgga = gtu7.gpgga() # Capture NMEA GPGGA GPS data (http://aprs.gids.nl/nmea/#gga)
-        gprmc = gtu7.gprmc() # Capture NMEA GPRMC GPS data (http://aprs.gids.nl/nmea/#rmc)
+        for x in range(10):
+            temp = bmp180.temperature  # Capture temperature, assign to `temp` variable
+            p = bmp180.pressure        # Capture pressure, assign to `p` variable
+            altitude = bmp180.altitude # Capture altitude, assign to `altitude` variable
+            
+            gpgga = gtu7.gpgga() # Capture NMEA GPGGA GPS data (http://aprs.gids.nl/nmea/#gga)
+            gprmc = gtu7.gprmc() # Capture NMEA GPRMC GPS data (http://aprs.gids.nl/nmea/#rmc)
+            
+            data = [gprmc[0], gprmc[1], gprmc[2], gprmc[3], gprmc[4], gpgga[3], temp, p, altitude]
+            
+            write_csv_to_sdcard(sd_dir, "data.csv", data)
+            
+    except Exception as e:
+        print(e)
+        oled.fill(False)
+        oled.text(str(e), 0, 0)
+        oled.show()
         
-        data = [gprmc[0], gprmc[1], gprmc[2], gprmc[3], gprmc[4], gpgga[3], temp, p, altitude]
-        
-        write_csv_to_sdcard(sd_dir, "data.csv", data)
-    
     # Read all the rows from the CSV and print them to the console.
-    for row in read_csv_from_sdcard(sd_dir, "data.csv"):
-        print(row)
+    #for row in read_csv_from_sdcard(sd_dir, "data.csv"):
+    #    print(row)
     
     led.toggle() # Toggle off the onboard LED
