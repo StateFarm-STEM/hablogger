@@ -1,15 +1,22 @@
-# pyinthesky - Data Analysis
+# Telemetry Data Analysis
 
-## Py in The Sky - High Altitude Balloon Data Analysis
+## High Altitude Balloon Data Analysis
 
 ### Objective
 
-- Collect telemetry data
-- Introduction to data analysis
+- Retrieve telemetry data
+  - Hypothesis formation
+  - International Standard Atmosphere (ISA) reference data
+- Introduction to Jupyter Notebooks
   - Python & Pandas Dataframes
-  - Preparing and Cleaning Data
-  - Graphing and Visualization
-- Analyze high altitude balloon flight data against International Standard Atmosphere (ISA) reference data
+  - Reading data
+- Cleaning and preparing telemetry data
+  - Cleaning data
+  - Preparing data
+- Plotting and visualizing data
+  - Plotting data
+- Analyzing data and confirming hypothesis
+  -
 
 ### Lessons
 
@@ -21,4 +28,3 @@
 - report an issue by clicking the issue link towards the top of the page
 - Schedule a working session with your mentor and myself or between each other
 - Reach out to other students in other groups and bring back to your group what you learned
-
