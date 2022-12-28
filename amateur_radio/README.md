@@ -26,18 +26,17 @@ APRS in its most widely used form, uses data transport over the AX.25 protocol o
 
 Each APRS packet transmitted by a station may be received and relayed by a local digital repeater, or "digipeater".  This is especially important for mobile stations, such as those in vehicles.  In the United States, there is an extensive "digipeater" network providing transport and relay of APRS packets to ensure information is re-transmitted and received by all area participants.  Many digipeaters have Internet Gateway (iGates) connecting the on-the-air APRS with the APRS Internet System (APRS-IS) network which provides a worldwide high-bandwidth backbone for data sharing.  This allows APRS data to be shared with APRS websites, such as [APRS.fi](https://www.apfs.fi/) and others, for web-based aggregation and mapping.
 
+## APRS Mobile Stations
 The two images below should give you an idea of the kinds of information available to the operator on a APRS radio. On the left is the Kenwood D710 radio showing the station list, and on the right is the attached GPS map display showing the location of other APRS stations.
 
-### APRS Mobile Stations
-<br/>
-| APRS Messages | GPS Map |
-| ------------- | ------- |
+| **Raw Messages** | **GPS Map** |
+| :----------: | :-----: |
 | <img src="http://www.aprs.org/D7xx/AB9FXd710list1.JPG" width="450" /> | <img src="http://www.aprs.org/avmap/AVMAPg5_new_iconXx.JPG" width="500" /> |
 
 <br/>
 
 <details>
-<summary>More Information</summary>
+<summary><b>More Information</b></summary>
 
 ### APRS Frequencies Globally
 Different frequencies are allocated for APRS across the globe.  For pico-balloon flights that maybe traveling across international boundaries, APRS geofencing must be supported by the tracker to ensure messages continue to be received.
@@ -52,8 +51,8 @@ PATH settings determine what kind and how many digipeaters will be used to relay
 
 </details>
 
+## References
 
-### References
 
 [APRS Overview and more information](http://www.aprs.org/)
 [What is AFSK](https://www.notblackmagic.com/bitsnpieces/afsk//#what-is-afsk)
