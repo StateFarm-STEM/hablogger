@@ -30,6 +30,7 @@ The two images below should give you an idea of the kinds of information availab
 
 ### APRS Mobile Stations
 | APRS Messages | GPS Map | <br>
+|---------------|---------| <br>
 | <img src="http://www.aprs.org/D7xx/AB9FXd710list1.JPG" width="450" /> | <img src="http://www.aprs.org/avmap/AVMAPg5_new_iconXx.JPG" width="500" /> | <br>
 
 
