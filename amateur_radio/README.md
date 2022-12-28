@@ -29,8 +29,8 @@ Each APRS packet transmitted by a station may be received and relayed by a local
 The two images below should give you an idea of the kinds of information available to the operator on a APRS radio. On the left is the Kenwood D710 radio showing the station list, and on the right is the attached GPS map display showing the location of other APRS stations.
 
 ### APRS Mobile Stations
-| APRS Messages | GPS Map |
-| <img src="http://www.aprs.org/D7xx/AB9FXd710list1.JPG" width="450" /> | <img src="http://www.aprs.org/avmap/AVMAPg5_new_iconXx.JPG" width="500" /> |
+| APRS Messages | GPS Map | <br>
+| <img src="http://www.aprs.org/D7xx/AB9FXd710list1.JPG" width="450" /> | <img src="http://www.aprs.org/avmap/AVMAPg5_new_iconXx.JPG" width="500" /> | <br>
 
 
 
