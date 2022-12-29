@@ -10,4 +10,14 @@
 
 ## Protype #1
 
+- View into the box from an open position. Notice the spaces labeled and standoffs for the two microcontrollers. We are getting the parts we will be using to emasure the standoffs for the other components. We have found different versions have different boards and mounts.  
+  ![Top View](top_view.jpg)
+- The hinge for the box is printed in place
+  ![Hinge View](hinge.jpg)
+- An inner lip was created in the box to ensure a tight fit and loose parts wouldnt slip out
+  ![Inner Lip](inner_lip.jpg)
+- the space for the microcontrollers (holds both the Arduino and Pico) has access to ports on the ends
+  ![Microcontroller Port Access](microcontroller_access.jpg)
+
+
 
