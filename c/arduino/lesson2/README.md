@@ -52,4 +52,6 @@ void loop() {
 - If you are having trouble make sure that the USB cord is plugged in to both the Arduino and the pc/laptop that you are using
 
 
-### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
+### Need help?
+Watch the walkthrough video for guidence
+[![Watch the video](videos/Lesson2.jpg)](videos/Lesson2.mp4)
