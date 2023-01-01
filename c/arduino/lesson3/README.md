@@ -127,4 +127,4 @@ void loop() {
 <br><br>
 
 ### Need help?
-Watch the walkthrough [video](videos/Lesson2.mp4?raw=true) for guidence!
+Watch the walkthrough [video](videos/Lesson3.mp4?raw=true) for guidence!
