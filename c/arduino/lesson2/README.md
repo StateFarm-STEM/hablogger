@@ -13,10 +13,10 @@
 ### Parts required:
 - Arduino 
 
-![Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+![Arduino Uno](/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
 - PC or laptop, in the guide below we will be downloading the Arduino IDE
 
-![Arduino IDE picture](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
+![Arduino IDE picture](/c/arduino/lesson4/screenshots/arduino-ide.png)
  )
 
 ### What you will be learning:
@@ -49,7 +49,7 @@ void loop() {
   delay(900);
 }
 ```
-## Troublehsooting
+## Troubleshooting
 - Is the USB cord plugged in to both the Arduino and the pc/laptop?
 - Is the board selected from dropdown in the Arduino IDE?
 
