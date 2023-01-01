@@ -49,12 +49,9 @@ void loop() {
   delay(900);
 }
 ```
-- If you are having trouble make sure that the USB cord is plugged in to both the Arduino and the pc/laptop that you are using
-
+## Troublehsooting
+- Is the USB cord plugged in to both the Arduino and the pc/laptop?
+- Is the board selected from dropdown in the Arduino IDE?
 
 ### Need help?
-Watch the walkthrough video for guidence
-[label](videos/Lesson2.mp4?raw=true)
-
-[![Watch the video](videos/Lesson2.jpg)](videos/Lesson2.mp4?raw=true)
-https://github.com/StateFarm-STEM/hablogger/blob/TrevBart_lessonUpdates/c/arduino/lesson2/videos/Lesson2.mp4?raw=true
+Watch the walkthrough [video](videos/Lesson2.mp4?raw=true) for guidence!
