@@ -4,25 +4,28 @@
 ## Working with weather sensor data using the Arduino language
 
 #### Pre-requisites:
-- It is recommended that you have successfully completed the [blinky lights lesson](/c/arduino/lesson1/)
+- It is recommended that you have successfully completed the [blinky lights lesson](/c/arduino/lesson2/)
+<br><br>
 
 
 #### Objectives:
 - Breadboard a circuit
 - Read weather sensor data
 - Print the weather sensor data to the serial port
-
+<br><br>
 
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
-- [BMP180 Sensor](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/bmp180.png)
-- [5 pin connector](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/5-pin-connector.png)
-- [Breadboard](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/breadboard.png)
-- [Jumper Wires](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson3/screenshots/1956-02.jpg)
+- [Arduino IDE](/c/arduino/lesson4/screenshots/arduino-ide.png)
+- [Arduino Uno](/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+- [BMP180 Sensor](/c/arduino/lesson3/screenshots/bmp180.png)
+- [5 pin connector](/c/arduino/lesson4/screenshots/5-pin-connector.png)
+- [Breadboard](/c/arduino/lesson4/screenshots/breadboard.png)
+- [Jumper Wires](/c/arduino/lesson3/screenshots/1956-02.jpg)
+<br><br>
 
-#### Note: the BMP180 Sensor didn't detect the pressure and temp accurately until I soldered the 5 pin connector to the BMP180<br>
+#### Note: the BMP180 Sensor didn't detect the pressure and temp accurately until I soldered the 5 pin connector to the BMP180
+<br>
 
 #### What you will be learning:
 - How to connect the BMP180 to the Arduino using a breadboard
@@ -32,20 +35,27 @@
   - Read the pressure in pascals and convert to inches of mercury
   - Print your calculations to the Arduino's serial port
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
+<br><br>
 
 ## Guide
 [Python with Arduino LESSON 9 Measuring Pressure and Temperature with the BMP180 Sensor](https://toptechboy.com/python-with-arduino-lesson-9-measuring-pressure-and-temperature-with-the-bmp180-sensor/)
+<br><br>
+
 #### Helpful video shortcuts
 - [Connect the BMP180 to the Arduino](https://youtu.be/z9AzZM1-Dns?t=105)
 - [How to add the Adafruit Library to the Arduino IDE](https://youtu.be/z9AzZM1-Dns?t=152)
 - [Write the code and run it on the Arduino](https://youtu.be/z9AzZM1-Dns?t=396)
 - [Convert pascals to inches of mercury](https://youtu.be/z9AzZM1-Dns?t=985)
-### Connecting Up the BMP180 Pressure and Temperature Sensor
-**Unplug the Arduino from the computer before doing this**
+<br><br>
 
- <img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMP_BACKWIRE.jpg width="500" >
- <img src=https://github.com/StateFarm-STEM/pyinthesky/blob/main/lesson3/screenshots/BMPWIRE2.jpg width="500" >
- 
+### Connecting Up the BMP180 Pressure and Temperature Sensor
+**NOTE: Unplug the Arduino from the computer before doing this**
+
+ <img src="screenshots/BMP_BACKWIRE.jpg" width="350" >
+ <br>
+ <img src=screenshots/BMPWIRE2.jpg width="350" >
+<br><br>
+
 ### Pinout chart
 
 | BMP180 Pin | Arduino Pin |
@@ -62,12 +72,9 @@ SDA	| A4
   - Install the BusIO library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO"
   - If that doesn't work, you can install the BMP library [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
 - In order to see the serial monitor, where your data will be printing out, press ctrl + shift + m or enter the tools menu and select the serial monitor
-
-
-
+<br><br>
 
 #### Working Code 
-
 ```
 //#include <SD.h> // load the SD library
 //#include <SPI.h> // load the SPI library
@@ -85,8 +92,6 @@ void setup(){
   mySensor.begin();   //initialize mySensor
 }
 
-
-
 void loop() {
   tempC = mySensor.readTemperature(); //  Read Temperature
   tempF = tempC*1.8 + 32.; // Convert degrees C to F
@@ -102,21 +107,24 @@ void loop() {
   delay(250); //Pause between readings.
 }
 ```
+<br>
 
-
-
-
-### Trouble shooting
-- If you get an error code that looks like this `fatal error: Adafruit_I2CDevice.h` you are are likley missing the BusIO library, to check to see if it is installed go to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO", this should be installed. 
-- If you get in error like this one <code>Error opening serial port 'COM3'. (Port not found)
-</code> while attempting to open your serial monitor, insure that your Arduino is still plugged in and everything is wired correctly
-
-
-### Reveiw
+### Review
 - Learned how to connect the BMP180 to the Arduino using a breadboard in order to gather data such as pressure
 - Learned How to create a new Arduino Sketch project using the Adafruit BMP085 Library
   - Measure the temperature in Celsius from the BMP180 and convert to Fahrenheit
   - Read the pressure in pascals and convert to inches of mercury
   - Print your calculations to the Arduino's serial port
+<br><br>
 
-### [Need help?](https://github.com/StateFarm-STEM/hablogger#Needsomehelp?)
+### Trouble shooting
+- If you get an error code that looks like this `fatal error: Adafruit_I2CDevice.h` you are are likley missing the BusIO library, to check to see if it is installed go to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO", this should be installed. 
+- If you get in error like this one <code>Error opening serial port 'COM3'. (Port not found)
+</code> while attempting to open your serial monitor, insure that your Arduino is still plugged in and everything is wired correctly
+- Make sure to open the serial monitor to see the output:<br>
+*(Ctrl + Shift + M)*
+- Addjust the time to lower waits if you are having trouble reading the data:<br> <code>delay(250); //Pause between readings.</code>
+<br><br>
+
+### Need help?
+Watch the walkthrough [video](videos/Lesson2.mp4?raw=true) for guidence!
