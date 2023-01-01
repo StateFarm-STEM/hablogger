@@ -54,6 +54,7 @@ void loop() {
 
 ### Need help?
 Watch the walkthrough video for guidence
-[label](videos/Lesson2.mp4)
+[label](videos/Lesson2.mp4?raw=true)
 
-[![Watch the video](videos/Lesson2.jpg)](videos/Lesson2.mp4)
+[![Watch the video](videos/Lesson2.jpg)](videos/Lesson2.mp4?raw=true)
+https://github.com/StateFarm-STEM/hablogger/blob/TrevBart_lessonUpdates/c/arduino/lesson2/videos/Lesson2.mp4?raw=true
