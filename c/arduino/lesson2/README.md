@@ -54,4 +54,6 @@ void loop() {
 
 ### Need help?
 Watch the walkthrough video for guidence
+[label](videos/Lesson2.mp4)
+
 [![Watch the video](videos/Lesson2.jpg)](videos/Lesson2.mp4)
