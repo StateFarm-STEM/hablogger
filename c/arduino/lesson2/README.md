@@ -17,7 +17,6 @@
 - PC or laptop, in the guide below we will be downloading the Arduino IDE
 
 ![Arduino IDE picture](/c/arduino/lesson4/screenshots/arduino-ide.png)
- )
 
 ### What you will be learning:
 - How to download the Arduino IDE software
