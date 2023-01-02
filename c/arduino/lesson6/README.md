@@ -1,44 +1,52 @@
 # Welcome to Lesson #6: putting it all together
 
 ## Making the Final Data Logger
+<br>
 
 #### Pre-requisites:
 - It is recommended that you have successfully completed all the previous lessons 
+<br><br>
 
 #### Objectives:
 - Breadboard the final circuit
 - Create a device that logs data such as humidity, altitude and temperature onto a CSV file within a micro Sd card. 
-
+<br><br>
 
 #### What you will be using:
-- [Arduino IDE](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-ide.png)
-- [Arduino Uno](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
-- [MicroSD Card Module](https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson5/screenshots/sd_card_module.png)
-- [BMP 180](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1/photos/BMP_both.jpg)
-
-- [GPS module](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1/photos/GPS_NEO-6M.JPG)
-- [Breadboard](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson6/screenshots/breadboard.png)
-- [Wires](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson3/screenshots/1956-02.jpg)
+- [Arduino IDE](/c/arduino/lesson4/screenshots/arduino-ide.png)
+- [Arduino Uno](/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
+- [MicroSD Card Module](/c/arduino/lesson5/screenshots/sd_card_module.png)
+- [BMP 180](/c/arduino/lesson1/photos/BMP_both.jpg)
+- [GPS module](/c/arduino/lesson1/photos/GPS_NEO-6M.JPG)
+- [Breadboard](/c/arduino/lesson6/screenshots/breadboard.png)
+- [Wires](/c/arduino/lesson3/screenshots/1956-02.jpg)
+<br><br>
 
 #### What you will be learning:
 - How to connect multiple different sensors or devices to the Arduino at the same time
   -  Breadboarding circuits
 - How to read a CSV file from the serial port
 - Putting together all of the other lessons in order to make a final product
+<br><br>
 
 ## Wiring all the sensors and devices to the Arduino
-
+<br>
 
 - Remember you do not have to use the same color of jumper wire as this, but insure that your connections are the same. 
 - **Unplug the Arduino from the computer while you are wiring it up**
+<br><br>
+
 #### Wiring the Arduino to the Breadboard
+<br>
+
 Pin on the Arduino | Pin on the Breadboard
 ------ | ------
 5v | Power on the breadboard
 GND  | GND on the breadboard
 
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerardiuno.jpg width="250"> <img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbreadboard.jpg width="250">
-
+<img src="picture/dataloggerardiuno.jpg" width="250"><br>
+<img src=picture/dataloggerbreadboard.jpg width="250">
+<br><br>
 
 #### Wiring the SD card
 Pin on SD card reader | Pin on Arduino/breadboard 
@@ -50,8 +58,10 @@ MOSI   | 11
 SCK   | 13  
 CS   | 10  
 
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggersd.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggersdcardbreadboard.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/DataLoggerSDFront.jpg width="250">
-
+<img src="picture/dataloggersd.jpg" width="250"><br>
+<img src="picture/dataloggersdcardbreadboard.jpg" width="250"><br>
+<img src="picture/DataLoggerSDFront.jpg" width="250">
+<br><br>
 
 #### Wiring the BMP 180
 Pin on the BMP 180 | Pin on Arduino/breadboard 
@@ -61,8 +71,10 @@ GND   | GND on the breadboard
 SCL   | A5
 SDA   | A4 
 
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbmp.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbmpbreadboard.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerbmparduino.jpg width="250">
-
+<img src="picture/dataloggerbmp.jpg" width="250"><br>
+<img src="picture/dataloggerbmpbreadboard.jpg" width="250"><br>
+<img src="picture/dataloggerbmparduino.jpg" width="250">
+<br><br>
 
 #### Wiring the GPS
 Pin on the GPS | Pin on Arduino/breadboard 
@@ -73,11 +85,13 @@ RXD | 4
 TXD  | 3
 
 
-<img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerGPS.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerGPSbreadboard.jpg width="250"><img src=https://github.com/StateFarm-STEM/hablogger/blob/main/c/arduino/lesson6/picture/dataloggerGPSarduino.jpg width="250">
-
+<img src="picture/dataloggerGPS.jpg" width="250"><br>
+<img src="picture/dataloggerGPSbreadboard.jpg" width="250"><br>
+<img src="picture/dataloggerGPSarduino.jpg" width="250">
+<br><br>
 
 ### Working Code - Copy and paste this into your sketch 
-
+<br>
 
 ``` 
 /*
@@ -281,17 +295,18 @@ void initBMP(){
 }
 ```
 
-### Trouble shooting
-- Unplug the Arduino and check all of the connections and try running it again
-- Sd card formatting needs to be fat32 or the program will not run
-- GPS not reading coordinates is likely caused by obstruction of the signal so moving outside may be necessary
-
-
 ### Review
 - Learned how to connect multiple different sensors or devices to the Arduino at the same time
   -  Breadboarding circuits
 - How to read a CSV file from the serial port
 - Put all of the other lessons together in order to make a final product
+<br><br>
 
+### Trouble shooting
+- Unplug/reset the Arduino and check all of the connections and try running it again
+- Sd card formatting needs to be fat32 or the program will not run
+- GPS not reading coordinates is likely caused by obstruction of the signal so moving outside may be necessary
+<br><br>
 
-### [Need help?](https://github.com/StateFarm-STEM/pyinthesky#need-some-help)
+### Need help?
+Watch the walkthrough [video](videos/Lesson6.mp4?raw=true) for guidence!
