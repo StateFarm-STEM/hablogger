@@ -56,7 +56,7 @@ CS   | 10
 
 ## Formatting the SD Card
 The SD card module works with a maximum of 32GB. This means you can either use a 32GB card or partition a larger card with a smaller drive. You can use the disk management application availble on Windows OS to do this function.<br><br>
-$\textcolor{red}{\text{***NOTICE:***}}$ Use caution with this toolas it can alter your boot drive as well.
+***NOTICE:*** Use caution with this toolas it can alter your boot drive as well.
 
 ![Alt text](videos/sdCardFormat.gif)
 <br><br>
