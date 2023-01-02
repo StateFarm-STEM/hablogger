@@ -295,6 +295,9 @@ void initBMP(){
 }
 ```
 
+## Full wire up
+<img src="picture/fullWired.jpg" width="500">
+
 ### Review
 - Learned how to connect multiple different sensors or devices to the Arduino at the same time
   -  Breadboarding circuits
