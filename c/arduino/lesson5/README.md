@@ -46,6 +46,7 @@ MISO   | 12
 MOSI   | 11  
 SCK   | 13  
 CS   | 10  
+
 <br><br>
 
 <img src=screenshots/SDCardSIDE.jpg width="350" ><br>
