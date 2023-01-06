@@ -42,16 +42,9 @@
 
 ### Install SD Card MicroPython Driver
 
-MicroPython offers a set of drivers used to interface with modules and devices. One of these drivers allows us to write Python code to interface with SD cards. This driver is called `sdcard.py`. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
+Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the SD Card module. This driver is called `sdcard.py` and is located in the [../drivers/src/sdcard.py](../drivers/src/sdcard.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
 
-1. Download the latest version of the `sdcard.py` driver from [MicroPython](https://github.com/micropython/micropython)
-    1. Navigate to the [MicroPython releases](https://github.com/micropython/micropython/releases/) page.
-    1. Click on the latest release tag (for example, v1.19)
-    1. Click the `/drivers` folder
-    1. Click the `/sdcard` folder
-    1. Click the _Raw_ button in the top right of the file
-    1. Download, or otherwise save the file to your computer as `sdcard.py`
-    1. As an example, here is a direct link to v1.19 of the `sdcard.py` driver: https://raw.githubusercontent.com/micropython/micropython/v1.19/drivers/sdcard/sdcard.py
+1. Download the driver called `sdcard.py` located in the [../drivers/src/sdcard.py](../drivers/src/sdcard.py) location.
 
 1. Connect your Raspberry Pi Pico to your computer using the USB cable.
 
@@ -61,7 +54,7 @@ MicroPython offers a set of drivers used to interface with modules and devices. 
 
     You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny.
 
-1. Create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
+1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
     ![drivers-directory](./docs/thonny-2.png)
 
@@ -71,7 +64,7 @@ MicroPython offers a set of drivers used to interface with modules and devices. 
 
     Click _File_ then _Save as..._. Choose _Raspberry Pi Pico_. Double-click the `drivers` folder created in a previous step. Then save the `sdcard.py` file being sure to name it `sdcard.py`.
 
-1. Create a new file in Thonny called `__init__.py`. 
+1. If a file called `__init__.py` does not already exist in the `/drivers` folder, create a new file in Thonny called `__init__.py`. 
 
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
 

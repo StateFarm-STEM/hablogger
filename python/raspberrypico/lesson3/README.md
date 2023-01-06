@@ -8,7 +8,7 @@
 
 ### Objectives
 * Use breadboard to wire BMP-180 module to Raspberry Pi Pico
-* Install a MicroPython driver to the Raspberry Pi Pico
+* Install the BPM-180 MicroPython driver to the Raspberry Pi Pico
 * Print temperature, pressure, and altitude to the console
 
 ### Results
@@ -33,9 +33,9 @@
 
 ### Install BMP-180 Driver
 
-Drivers are code modules for enabling certain functionality, oftentimes provided by the open source community. One such driver allows us to read data from the BMP-180 module. This driver is called `bmp180.py`. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
+Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the BMP-180 module. This driver is called `bmp180.py` and is located in the [../drivers/src/bmp180.py](../drivers/src/bmp180.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
 
-1. Download the driver called `bmp180.py` located in the [src/drivers](./src/drivers/) folder. This driver was originally found within the [micropython-IMU](https://github.com/micropython-IMU/micropython-bmp180) project, but requires some modification to work with our project. Therefore a copy of this driver is located within this lesson for us to use.
+1. Download the driver called `bmp180.py` located in the [../drivers/src/bmp180.py](../drivers/src/bmp180.py) location.
 
 1. Connect your Raspberry Pi Pico to your computer using the USB cable.
 
@@ -45,7 +45,7 @@ Drivers are code modules for enabling certain functionality, oftentimes provided
 
     You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny.
 
-1. Create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
+1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
     ![drivers-directory](./docs/thonny-2.png)
 
@@ -55,7 +55,7 @@ Drivers are code modules for enabling certain functionality, oftentimes provided
 
     Click _File_ then _Save as..._. Choose _Raspberry Pi Pico_. Double-click the `drivers` folder created in a previous step. Then save the `bmp180.py` file being sure to name it `bmp180.py`.
 
-1. Create a new file in Thonny called `__init__.py`. 
+1. If a file called `__init__.py` does not already exist in the `/drivers` folder, create a new file in Thonny called `__init__.py`. 
 
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
 
