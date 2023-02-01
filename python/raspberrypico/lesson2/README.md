@@ -156,3 +156,6 @@ Load and run [BlinkThreeLEDs.py](code/BlinkThreeLEDs.py) on the Pi and the LEDs 
 
 Congratulations, you have succesfully wired a Raspberry Pi Pico to a breadboard with external LEDs, learned what resistors do, and wrote code to control your device.  In the next lessons, you will learn how to add sensors to your circuit, read data from them, and store and analyze that data for later study.    
 
+
+## Need help?
+Watch the walkthrough [video](videos/Lesson2.mp4?raw=true) for guidence!
