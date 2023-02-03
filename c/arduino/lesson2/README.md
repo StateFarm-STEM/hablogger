@@ -4,7 +4,7 @@
 <br>
 
 #### Pre-requisites:
-- None
+- [Lesson1](https://github.com/StateFarm-STEM/hablogger/tree/main/c/arduino/lesson1)
 <br><br>
 
 #### Objectives:
