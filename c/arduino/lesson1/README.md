@@ -56,7 +56,7 @@
 - IT's VERY important to keep in mind polarity:
   - Electronics only work one way, if you connect the positive wire to the negative terminal, and the negative wire to the positive terminal, you may ruin the component you are working with. We don't want to release the [magic smoke](https://en.m.wikipedia.org/wiki/Magic_smoke)!!
 
-#### [LED]((https://en.wikipedia.org/wiki/Light-emitting_diode)
+#### [LED](https://en.wikipedia.org/wiki/Light-emitting_diode)
 - LED stands for Light Emitting Diode
 - LED's are semiconductors that light when current flows through them
 - LED's have polarity which means the way power is appliec should be done only one way! On the bottom of the LED's in the kit, you will notice the leads are different lengths
@@ -64,7 +64,7 @@
   - Cathode (shorter) is negative
 - Where do you have LED's around you throughout your day?
 
-#### [Resistors]((https://en.wikipedia.org/wiki/Resistor)
+#### [Resistors](https://en.wikipedia.org/wiki/Resistor)
 - Resistors are used to reduce current in a circuit
 - Resistors will be used with LED's in Lesson 2
   - For the work we are doing you an experiment with different resistors and see what they do with the brightness of your LED's in Lesson 2
