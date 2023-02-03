@@ -1,4 +1,4 @@
-# Lesson #0. Introduction and how to get started
+# Lesson #0. High Altitude Balloon
 
 
 ## Objective:

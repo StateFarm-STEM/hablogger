@@ -54,7 +54,7 @@
     - The red and blue arrows are pointing to the positive and negative power rails respectively. The yellow arrow is illustrating which pin are connected. The pins are connected in the same direction as the yellow arrow, but separated by the channel in the middle. They are connected horizontally and not vertically in this picture. 
     - If you want more information on breadboards please refer to <a href=https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all title="How to Use a Breadboard">This article</a>
 - IT's VERY important to keep in mind polarity:
-  - Electronics only work one way, if you connect the positive wire to the negative terminal, and the negative wire to the positive terminal, you may ruin the component you are working with. We don't want to release the magic smoke!!
+  - Electronics only work one way, if you connect the positive wire to the negative terminal, and the negative wire to the positive terminal, you may ruin the component you are working with. We don't want to release the [magic smoke](https://en.m.wikipedia.org/wiki/Magic_smoke)!!
 
 #### [LED]((https://en.wikipedia.org/wiki/Light-emitting_diode) )
 - LED stands for Light Emitting Diode
@@ -106,7 +106,7 @@
 - When working with microcontrollers, always ensure they are unpluged from the computer and power while wiring components together into a circuit(s)
 - ALWAYS double check the instructions to ensure your circuit is wired correctly. All the lessons have detailed pictures AND charts to help
    - Have another group member or even two double check the other persons work
-   - NO [MAGIC SMOKE](https://en.wikipedia.org/wiki/Magic_smoke#:~:text=Magic%20smoke%20(also%20factory%20smoke,burning%20plastic%20and%20other%20chemicals.) should be released!
+   - NO [MAGIC SMOKE](https://en.m.wikipedia.org/wiki/Magic_smoke) should be released!
 
 
 ### Getting started with the IDE
