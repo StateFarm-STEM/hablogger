@@ -21,7 +21,7 @@
 - PC or laptop, in the guide below we will be downloading the Arduino IDE
 
 ![Arduino IDE picture](/c/arduino/lesson4/screenshots/arduino-ide.png)
-- If using chromebooks or you cannot install the above application, try the [Chrome extension](https://create.arduino.cc/editor) to run the IDE from the web!
+- If using chromebooks or you cannot install the above application, try the [Web version of arduino studio](https://create.arduino.cc/editor) to run the IDE from the web!
   - Youll need to login to use the web app
   - You ponly get 25 code pushes per day so use them wisely 
 
