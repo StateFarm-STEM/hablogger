@@ -1,4 +1,4 @@
-# Lesson #0. High Altitude Balloon
+# Lesson #0. High Altitude Balloon Project
 
 
 ## Objective:

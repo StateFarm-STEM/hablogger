@@ -56,7 +56,7 @@
 - IT's VERY important to keep in mind polarity:
   - Electronics only work one way, if you connect the positive wire to the negative terminal, and the negative wire to the positive terminal, you may ruin the component you are working with. We don't want to release the [magic smoke](https://en.m.wikipedia.org/wiki/Magic_smoke)!!
 
-#### [LED]((https://en.wikipedia.org/wiki/Light-emitting_diode) )
+#### [LED]((https://en.wikipedia.org/wiki/Light-emitting_diode)
 - LED stands for Light Emitting Diode
 - LED's are semiconductors that light when current flows through them
 - LED's have polarity which means the way power is appliec should be done only one way! On the bottom of the LED's in the kit, you will notice the leads are different lengths
@@ -64,7 +64,7 @@
   - Cathode (shorter) is negative
 - Where do you have LED's around you throughout your day?
 
-#### [Resistors]((https://en.wikipedia.org/wiki/Resistor))
+#### [Resistors]((https://en.wikipedia.org/wiki/Resistor)
 - Resistors are used to reduce current in a circuit
 - Resistors will be used with LED's in Lesson 2
   - For the work we are doing you an experiment with different resistors and see what they do with the brightness of your LED's in Lesson 2
@@ -74,20 +74,20 @@
   - Resistance is measured in OHM's. The value is noted by the colors and orders of the bands on the side of the resistor. have a look at the ones in the kit
   - [Ohm's law](https://en.wikipedia.org/wiki/Ohm%27s_law) can be used to calculate your needs based on different situations
 
-#### BMP-180
+#### [BMP-180](https://www.adafruit.com/product/1603)
 - This small sensor allows us to measure the temperature and barometric pressure
 - This device uses something called [I2C](https://en.wikipedia.org/wiki/I%C2%B2C which allows many devices to be connected to the same pins on the microcontrolles but have unique address's to identify each component
   - This allows sensors like the BMP-180 to provide readings to be taken by multiple devices but only using two pins on the microcontroller. 
     - A use for this would be to have multiple BMP-180 sensors reading the temperature inside the payload and another measuring outside or even on various things in the payload
 
-#### GPS Module
+#### [GPS Module](https://www.u-blox.com/en/product/neo-6-series)
 - This device is the actual component (components actually) to allow us to track [latitude](https://en.wikipedia.org/wiki/Latitude), [longitude](https://en.wikipedia.org/wiki/Longitude), [altitude](https://en.wikipedia.org/wiki/Altitude), time in [UTC](https://en.wikipedia.org/wiki/Coordinated_Universal_Time), and track how many satellites signals received to determine accuracy as well as its just plain cool to know!
 - GPS stands for [Global Positioning System](https://en.wikipedia.org/wiki/Global_Positioning_System) which in short triangulates the devices position based on details from multiple satellites (4 or more, the more satellites in the calculation the more accurate the reading)
 - The model we are using is extremely accurate and consists of two pieces, the board and the antenna. location can be determined withing inches!
 - To work best the antenna needs unobstructed access to the sky, sometimes however the readings can work inside a building. When working on the GPS lab this is an error you may encounter.
 - What are some things that use GPS technology that you know of?
 
-#### SD Card Reader
+#### SD [Card Reader](https://electropeak.com/micro-sd-tf-card-adapter-module)
 - This device will be used to write data for later interpretation. The software written will save data every 30 seconds to track details throughout the flight
 - SD cards come in two sizes, we will be using micro SD cards in an adapter to allow them to be read by multiple types of SD readers on computers
 - SD stands for secure digital
