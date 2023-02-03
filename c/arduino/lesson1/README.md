@@ -116,3 +116,29 @@
   - [Arduino Web Editor](https://create.arduino.cc/editor)
 - This tool allows users to write code, interact with their microcontroller, view output, and much more
 
+### Let's give it a try!
+
+- Start up Arduino IDE
+- Connect your Arduino using the USB cable
+- Find the Arduino in the software
+- Push this code to the board
+<br><br>
+
+- Copy and paste this code into your sketch
+```
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(13,OUTPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  digitalWrite(13,HIGH);
+  delay(100);
+  digitalWrite(13,LOW); 
+  delay(900);
+}
+```
+
+- Are you see the tiny LED on the Arduino flash?
+
