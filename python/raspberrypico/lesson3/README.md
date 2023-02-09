@@ -98,3 +98,7 @@ The steps in this section will use the previous hardware and driver sections to 
 * [Raspberry Pi Pico Pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf)
 * [Raspberry Pi Pico SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
 * [MicroPython-IMU BMP-180 Driver source code](https://github.com/micropython-IMU/micropython-bmp180)
+<br><br>
+
+## Need help?
+Watch the walkthrough [video](videos/Lesson3.mp4?raw=true) for guidence!

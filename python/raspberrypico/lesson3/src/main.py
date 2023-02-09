@@ -1,13 +1,10 @@
 from machine import Pin, I2C
 from drivers import bmp180
-import time  # the time library will enable us to use the sleep method
+import time
 
 if __name__ == "__main__" :
     # Main entrypoint. Primary code functions start here.
     
-    # Create a variable to control how long the LED will stay on, in seconds
-    timerPeriod = 1
-
     # Initialize I2C using available I2C pins
     bus =  I2C(0,
                scl=Pin(17),
@@ -30,4 +27,4 @@ if __name__ == "__main__" :
         print("Pressure (Pa):  \t %d" % p)
         print("Altitude (m):   \t %d" % altitude)
         print("")
-        time.sleep(timerPeriod)
+        time.sleep(1)
