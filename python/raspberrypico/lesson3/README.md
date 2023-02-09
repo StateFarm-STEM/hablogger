@@ -31,6 +31,8 @@
 
     ![bmp-180-diagram](./docs/pi-pico-bmp180.png)
 
+    ![Lesson Three](./docs/lesson3.jpg)
+
 ### Install BMP-180 Driver
 
 Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the BMP-180 module. This driver is called `bmp180.py` and is located in the [../drivers/src/bmp180.py](../drivers/src/bmp180.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
