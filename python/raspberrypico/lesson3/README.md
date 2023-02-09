@@ -61,9 +61,9 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
 ### BMP-180 Program
 
-The steps in this section will use the previous hardware and driver sections to allow reading temperature, pressure, and altitude from the BMP-180 module. The code example for this lesson is located in [./src/lesson3/main.py](./src/lesson3/main.py).
+The steps in this section will use the previous hardware and driver sections to allow reading temperature, pressure, and altitude from the BMP-180 module. The code example for this lesson is located in [./src/main.py](./src/main.py).
 
-1. Using Thonny, open the `main.py` file in [./src/lesson3/main.py](./src/lesson3/main.py).
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py).
 
 1. Run the script.
 
