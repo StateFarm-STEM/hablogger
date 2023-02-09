@@ -31,6 +31,8 @@
 
     ![bmp-180-diagram](./docs/pi-pico-bmp180.png)
 
+    ![Lesson Three](./docs/lesson3.jpg)
+
 ### Install BMP-180 Driver
 
 Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the BMP-180 module. This driver is called `bmp180.py` and is located in the [../drivers/src/bmp180.py](../drivers/src/bmp180.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
@@ -61,9 +63,9 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
 ### BMP-180 Program
 
-The steps in this section will use the previous hardware and driver sections to allow reading temperature, pressure, and altitude from the BMP-180 module. The code example for this lesson is located in [./src/lesson3/main.py](./src/lesson3/main.py).
+The steps in this section will use the previous hardware and driver sections to allow reading temperature, pressure, and altitude from the BMP-180 module. The code example for this lesson is located in [./src/main.py](./src/main.py).
 
-1. Using Thonny, open the `main.py` file in [./src/lesson3/main.py](./src/lesson3/main.py).
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py).
 
 1. Run the script.
 
@@ -98,3 +100,7 @@ The steps in this section will use the previous hardware and driver sections to 
 * [Raspberry Pi Pico Pinout](https://datasheets.raspberrypi.com/pico/Pico-R3-A4-Pinout.pdf)
 * [Raspberry Pi Pico SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
 * [MicroPython-IMU BMP-180 Driver source code](https://github.com/micropython-IMU/micropython-bmp180)
+<br><br>
+
+## Need help?
+Watch the walkthrough [video](videos/Lesson3.mp4?raw=true) for guidence!
