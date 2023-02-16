@@ -45,7 +45,9 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
     ![stop-restart](./docs/thonny-1.png)
 
-    You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny.
+    You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny. If the "Files" window is not displaying add it from the View > Files menu.
+
+    ![files-menu](./docs/FilesView.jpg)
 
 1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
@@ -60,6 +62,9 @@ Drivers are code modules for enabling certain functionality. One such driver all
 1. If a file called `__init__.py` does not already exist in the `/drivers` folder, create a new file in Thonny called `__init__.py`. 
 
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
+
+    Your finished folders and files should look like this:
+    ![files-menu](./docs/FinishedFiles.png)
 
 ### BMP-180 Program
 
@@ -82,6 +87,25 @@ The steps in this section will use the previous hardware and driver sections to 
     ```
 
 **Congratulations! You have successfully completed Lesson 3.**
+<br><br>
+
+## Want more?
+If you have finished with the base lesson, check out the items below.
+<br><br>
+
+Update the code to do any/all of the following:
+1. Add the units to the end of the output
+1. Convert the temperature to degrees Fahrenheit (or Kelvin 🥶)
+1. Convert the pressure to inches of mercury or atmospheres
+1. Convert the altitude to feet (or furlongs 🤔)
+1. Create a function for unit conversions to pass variables and print output.
+
+Things to think about, validate, and/or try:
+* How can you change the temperature surrounding the BMP180 (Don't touch it 😅)
+* What should the pressure reading be?
+* Is the altitude correct? 
+* How sensitive is the reading?
+<br><br>
 
 ## Troubleshooting
 
@@ -103,4 +127,4 @@ The steps in this section will use the previous hardware and driver sections to 
 <br><br>
 
 ## Need help?
-Watch the walkthrough [video](videos/Lesson3.mp4?raw=true) for guidence!
+Watch the walk-through [video](videos/Lesson3.mp4?raw=true) for guidance!

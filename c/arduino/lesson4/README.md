@@ -137,5 +137,5 @@ void loop() {
 </br></br>
 
 ### Need help?
-Watch the walkthrough [video](videos/Lesson4.mp4?raw=true) for guidence!
+Watch the walk-through [video](videos/Lesson4.mp4?raw=true) for guidance!
 
