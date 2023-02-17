@@ -24,8 +24,8 @@
 - [Jumper Wires](/c/arduino/lesson3/screenshots/1956-02.jpg)
 <br><br>
 
-#### Note: the BMP180 Sensor didn't detect the pressure and temp accurately until I soldered the 5 pin connector to the BMP180
-<br>
+<!--#### Note: the BMP180 Sensor didn't detect the pressure and temp accurately until I soldered the 5 pin connector to the BMP180
+<br>-->
 
 #### What you will be learning:
 - How to connect the BMP180 to the Arduino using a breadboard
@@ -37,7 +37,7 @@
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 <br><br>
 
-## Guide
+<!-- ## Guide
 [Python with Arduino LESSON 9 Measuring Pressure and Temperature with the BMP180 Sensor](https://toptechboy.com/python-with-arduino-lesson-9-measuring-pressure-and-temperature-with-the-bmp180-sensor/)
 <br><br>
 
@@ -46,7 +46,7 @@
 - [How to add the Adafruit Library to the Arduino IDE](https://youtu.be/z9AzZM1-Dns?t=152)
 - [Write the code and run it on the Arduino](https://youtu.be/z9AzZM1-Dns?t=396)
 - [Convert pascals to inches of mercury](https://youtu.be/z9AzZM1-Dns?t=985)
-<br><br>
+<br><br> -->
 
 ### Connecting Up the BMP180 Pressure and Temperature Sensor
 **NOTE: Unplug the Arduino from the computer before doing this**
@@ -55,6 +55,9 @@
  <br>
  <img src=screenshots/BMPWIRE2.jpg width="350" >
 <br><br>
+
+**You are welcome to use the bread board as well to wire everything up.**
+![Lesson Three](./images/bmpBreadBoardWire.jpg)
 
 ### Pinout chart
 
@@ -70,7 +73,6 @@ SDA	| A4
 - Make sure that you have the libraries installed
   - Install the Adafruit BMP085 library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for "Adafruit bmp085 library"
   - Install the BusIO library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO"
-  - If that doesn't work, you can install the BMP library [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
 - In order to see the serial monitor, where your data will be printing out, press ctrl + shift + m or enter the tools menu and select the serial monitor
 <br><br>
 
@@ -117,14 +119,39 @@ void loop() {
   - Print your calculations to the Arduino's serial port
 <br><br>
 
+## Want more?
+If you have finished with the base lesson, check out the items below.
+<br><br>
+
+Update the code to do any/all of the following:
+1. Convert the pressure to atmospheres
+1. Create a function for unit conversions to pass variables and print output.
+<br><br>
+
+Things to think about, validate, and/or try:
+* How can you change the temperature surrounding the BMP180? (Don't touch it 😅)
+* What should the pressure reading be?
+* List the raw values measured by the sensor? What are their units?
+<br><br>
+
+### Altitude?
+The BMP_180 also measures Altitude! Add the appropriate code to capture the altitude and record the altitude in the Serial Monitor. Output the altitude after the other two measurements. Look up to see what that number means. Label the output appropriately. Just as the temperature was changed to a more common measure in the United States, change the Altitude to a more common measure in the United States. Label the output appropriately.
+* Is there an altitude available from the sensor? 
+* Can you print the reading? 
+* What can/should you convert it to?
+* Is the altitude correct? 
+* How sensitive is the reading? 
+<br><br>
+
 ### Trouble shooting
 - If you get an error code that looks like this `fatal error: Adafruit_I2CDevice.h` you are are likley missing the BusIO library, to check to see if it is installed go to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO", this should be installed. 
 - If you get in error like this one <code>Error opening serial port 'COM3'. (Port not found)
 </code> while attempting to open your serial monitor, insure that your Arduino is still plugged in and everything is wired correctly
 - Make sure to open the serial monitor to see the output:<br>
 *(Ctrl + Shift + M)*
+- If that doesn't work, you can install the BMP library [found here](https://learn.adafruit.com/bmp085/using-the-bmp085)
 - Addjust the time to lower waits if you are having trouble reading the data:<br> <code>delay(250); //Pause between readings.</code>
 <br><br>
 
 ### Need help?
-Watch the walkthrough [video](videos/Lesson3.mp4?raw=true) for guidence!
+Watch the walk-through [video](videos/Lesson3.mp4?raw=true) for guidance!

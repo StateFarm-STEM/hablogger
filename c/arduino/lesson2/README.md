@@ -148,4 +148,4 @@ void loop()
 Congratulations! You have successfully looped a multi LED circut.
 
 ### Need help?
-Watch the walkthrough [video](videos/Lesson2.1.mp4?raw=true) for guidence!
+Watch the walk-through [video](videos/Lesson2.1.mp4?raw=true) for guidance!

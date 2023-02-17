@@ -158,4 +158,4 @@ Congratulations, you have succesfully wired a Raspberry Pi Pico to a breadboard 
 
 
 ## Need help?
-Watch the walkthrough [video](videos/Lesson2.mp4?raw=true) for guidence!
+Watch the walk-through [video](videos/Lesson2.mp4?raw=true) for guidance!
