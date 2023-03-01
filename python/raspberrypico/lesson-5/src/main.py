@@ -1,4 +1,4 @@
-from machine import Pin, SPI, Timer
+from machine import Pin, SPI
 from drivers import sdcard
 from time import sleep, gmtime
 
@@ -11,62 +11,50 @@ import os
 # Dummy information is written to a CSV file, then read and printed to the console.
 # An optional function can be used to delete the files in the SD card directory.
 
-
-def blinkLed(timer_one) :
-    # Toggle LED functionality
+def write_csv_to_sdcard(folder, file_name, dataset, header=None):
+    """Write CSV data to SD Card"""
     
-    led.toggle()
-
-
-def writeCsv(sd_dir, file_name, dataset) :
-    # Write dataset to CSV using list dataset passed in.
-    
-    # Open a new file if it doesn't exist, otherwise append an existing file.
-    print("Writing data to '%s/%s'..." % (sd_dir, file_name))
-    with open(sd_dir + '/' + file_name,'a+') as csv_out :
-        for data in dataset :
-            if data == dataset[-1] :
+    # Open the file if it already exists. Otherwise create a new one.
+    with open(folder + '/' + file_name,'a+') as csv_out:
+        if header:
+            dataset = header
+            
+        for data in dataset:
+            if data == dataset[-1]:
                 # If last element in the dataset, don't add a comma.
                 csv_out.write('"'+str(data)+'"')
-            else :
+            else:
                 csv_out.write('"'+str(data)+'",')
         csv_out.write('\n')
-    print("Done.")
 
 
-def readCsv(sd_dir, file_name) :
-    # Returns a list of CSV rows.
-    
+def read_csv_from_sdcard(folder, file_name):
+    """Read CSV file from SD Card"""
     csv_data = []
     # Open the CSV file in read mode. Store each CSV line in a list called csv_data.
-    print("Reading data from '%s/%s'..." % (sd_dir, file_name))
-    with open(sd_dir + '/' + file_name,'r') as csv_in :
+    with open(folder + '/' + file_name,'r') as csv_in:
         for line in csv_in:
             line=line.rstrip('\n')
             line=line.rstrip('\r')
             csv_data.append(line.split(','))
-    print("Done")
 
     return csv_data
 
 
-def cleanupDir(rmdir) :
-    # Deletes all the files in a directory passed in. Does not delete sub-directories.
+def delete_files_from_sdcard_folder(folder):
+    """Delete all files from SD Card folder"""
+    for file in os.listdir(folder):
+        try:
+            os.remove(folder + '/' + file)
+        except Exception as e:
+            pass
 
-    print("Deleting files from '%s'..." % rmdir)
-    for file in os.listdir(rmdir)[1:] :
-        os.remove(rmdir + '/' + file)
-    print("Done.")
 
-
-if __name__ == "__main__" :
+if __name__ == "__main__":
     # Main entrypoint. Primary code functions start here.
     
     led = Pin(25, Pin.OUT)  # Assign on board LED to variable
     sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
-        
-    # Initialize Timer() and blink the onboard LED until control interrupt (Stop/Restart backend)
-    machine.Timer().init(freq=1, mode=Timer.PERIODIC, callback=blinkLed)
 
     # Intialize SPI peripheral
     spi = machine.SPI(1,
@@ -85,17 +73,18 @@ if __name__ == "__main__" :
     # Mount the SD card at specified directory
     os.mount(sd,sd_dir)
     
-    for x in range(6) :
+    for x in range(6):
         # temp, humidity, pressure, lat, long, alt, time
         dataset = [98.6, 84.5, 29.74, 40.4492267, -89.0431831, 244, str(gmtime())]
-        writeCsv(sd_dir, "data.csv", dataset)
+        write_csv_to_sdcard(sd_dir, "data.csv", dataset)
         sleep(1) # Sleep for x seconds.
     
     # Read all the rows from the CSV and print them to the console.
-    for row in readCsv(sd_dir, "data.csv") :
+    for row in read_csv_from_sdcard(sd_dir, "data.csv") :
         print(row)
 
     # Remove all files within the directory passed in. Useful for cleaning things up during testing.
+    # You can move this to earlier in the code to clean things up ahead of time, or at the end.
     # Comment this out if you want the files to not be deleted.
-    cleanupDir(sd_dir)
+    # delete_files_from_sdcard_folder(sd_dir)
     
