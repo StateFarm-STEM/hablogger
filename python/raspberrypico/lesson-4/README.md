@@ -28,8 +28,10 @@
     VCC          | (Voltage In): Provides power. Connect to the 5V pin on Pico | 5V (40)
     GND          | (Ground): Connect to the ground pin on Pico | GND (38)
     PPS          | (Pulse Per Second): Assists with synchronization | N/A
-    TXD          | (Transmit): Transmission pin used for serial communication | UART1 RX / GP4 (7)
-    RXD          | (Receive): Receiver pin used for serial communication | UART1 TX / GP5 (6)
+    TXD          | (Transmit): Transmission pin used for serial communication | UART1 RX / GP5 (7)
+    RXD          | (Receive): Receiver pin used for serial communication | UART1 TX / GP4 (6)
+
+    ![gtu7-diagram](./docs/pi-pico-gtu7.png)
 
 ### Install GT-U7 Driver
 
