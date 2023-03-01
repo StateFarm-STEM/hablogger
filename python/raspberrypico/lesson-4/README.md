@@ -37,6 +37,8 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
 
     ![gtu7-diagram](./docs/pi-pico-gtu7.png)
 
+    ![Lesson Four](./images/WireUp.jpg)
+
 ### Install GT-U7 Driver
 
 Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the GTU-7 module. This driver is called `gtu7.py` and is located in the [../drivers/src/gtu7.py](../drivers/src/gtu7.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
