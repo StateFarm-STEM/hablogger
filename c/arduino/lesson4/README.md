@@ -58,9 +58,9 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
 - The color of the wires do not matter as long as they are connected to the right pins
 </br></br>
 
-<img src="screenshots/GPSback.jpg" width="350"></br>
+<!-- <img src="screenshots/GPSback.jpg" width="350"></br>
 <img src=screenshots/ArduinoBackGPS.jpg width="350"></br>
-<img src=screenshots/ArdiunoFrountGPS.jpg width="350"></br>
+<img src=screenshots/ArdiunoFrountGPS.jpg width="350"></br> -->
 
 ### Pinout chart
 
@@ -72,7 +72,7 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
   VDC   | 5 volts
 </br>  
 
-**You are welcome to use the bread board as well to wire everything up.**
+<!-- **You are welcome to use the bread board as well to wire everything up.** -->
 ![Lesson Four](./images/WireUp.jpg)
   
 #### How to get the TinyGPSPlus library:
@@ -97,8 +97,8 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
 // TX pin --> Arduino analog 11
 //
 // In the code below on line 14 is the constructor.
-// use the TX pin number as the first argument
-// use the RX pin number as the second argument
+// use the RX pin number as the first argument
+// use the TX pin number as the second argument
 SoftwareSerial serial_connection(10, 11);
 
 TinyGPSPlus gps;
