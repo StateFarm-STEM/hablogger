@@ -31,9 +31,13 @@
 - How to write code in the Arduino IDE and upload it to the Arduino in order to blink the LED
 <br><br>
 
-## Guide
-Click this link and watch the YouTube video [Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson2.mp4?raw=true) for guidance!
 <br><br>
+
+<!-- ## Guide
+Click this link and watch the YouTube video [Arduino basics with hands on labs](https://youtu.be/fJWR7dBuc18?t=1)
+<br><br> -->
 
 ### Unable to download?
 If you are unable to download the software due to access issues or hardware restricitons, feel free to use the Online IDE. Follow these [Setup instructions](https://docs.arduino.cc/arduino-cloud/getting-started/getting-started-web-editor) to create an account and configure the plugin.

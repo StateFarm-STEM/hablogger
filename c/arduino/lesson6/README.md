@@ -29,6 +29,10 @@
 - Putting together all of the other lessons in order to make a final product
 <br><br>
 
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson6.mp4?raw=true) for guidance!
+<br><br>
+
 ## Wiring all the sensors and devices to the Arduino
 <br>
 

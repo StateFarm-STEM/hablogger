@@ -18,7 +18,7 @@
 #### What you will be using:
 - [Arduino IDE](/c/arduino/lesson4/screenshots/arduino-ide.png)
 - [Arduino Uno](/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
-- [BMP180 Sensor](/c/arduino/lesson3/screenshots/bmp180.png)
+- BMP180 Sensor<br>![BMP180 Sensor](/c/arduino/lesson3/screenshots/bmp180.png)
 - [5 pin connector](/c/arduino/lesson4/screenshots/5-pin-connector.png)
 - [Breadboard](/c/arduino/lesson4/screenshots/breadboard.png)
 - [Jumper Wires](/c/arduino/lesson3/screenshots/1956-02.jpg)
@@ -47,6 +47,10 @@
 - [Write the code and run it on the Arduino](https://youtu.be/z9AzZM1-Dns?t=396)
 - [Convert pascals to inches of mercury](https://youtu.be/z9AzZM1-Dns?t=985)
 <br><br> -->
+
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson3.mp4?raw=true) for guidance!
+<br><br>
 
 ### Connecting Up the BMP180 Pressure and Temperature Sensor
 **NOTE: Unplug the Arduino from the computer before doing this**

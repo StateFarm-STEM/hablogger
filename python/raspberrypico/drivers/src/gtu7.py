@@ -1,4 +1,4 @@
-import utime, time
+import utime, time, math
 
 class GTU7 :
     """GT-U7 driver for capturing GPS data."""
@@ -34,9 +34,12 @@ class GTU7 :
             
             # Example GPGGA (http://aprs.gids.nl/nmea/#gga)
             # $GPGGA,hhmmss.ss,llll.ll,a,yyyyy.yy,a,x,xx,x.x,x.x,M,x.x,M,x.x,xxxx*hh
+            # https://latlongdata.com/lat-long-converter/
             if (parts[0] == "b'$GPGGA" and len(parts) == 15) :
+                #print(parts)
                 try:
-                    latitude = self.__convertToDegree(parts[2])
+                    #latitude = self.__convertToDegree(parts[2])
+                    latitude = parts[2]
                 except:
                     latitude = parts[2]
 
@@ -44,7 +47,8 @@ class GTU7 :
                     latitude = '-' + latitude
 
                 try:
-                    longitude = self.__convertToDegree(parts[4])
+                    #longitude = self.__convertToDegree(parts[4])
+                    longitude = parts[4]
                 except:
                     longitude = parts[4]
 
@@ -119,14 +123,13 @@ class GTU7 :
                 return []
     
     
-    def __convertToDegree(self, degrees) :
-        firstdigits = int(degrees / 100) 
-        nexttwodigits = degrees - float(firstdigits * 100) 
-
-        converted = float(firstdigits + nexttwodigits / 60.0)
-        converted = '{0:.6f}'.format(converted)
+    def __convertToDegree(self, ddm) :
+        degrees = math.floor(ddm / 100)
+        minutes = ddm - degrees * 100
+        dd = degrees + minutes / 60.0
+        dd = '{0:.6f}'.format(dd)
         
-        return str(converted)
+        return str(dd)
 
 
     def __stringifyGpsTime(self, t) :
@@ -141,3 +144,4 @@ class GTU7 :
             return d[0:2] + "-" + d[2:4] + "-" + d[4:6]
         else :
             return ''
+

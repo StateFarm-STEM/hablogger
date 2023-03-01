@@ -29,10 +29,14 @@
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 <br><br>
 
-## Guide
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson5.mp4?raw=true) for guidance!
+<br><br>
+
+<!-- ## Guide
 Read this article  and follow the steps
 - [SD Card Module with Arduino: How to Read/Write Data](https://create.arduino.cc/projecthub/electropeak/sd-card-module-with-arduino-how-to-read-write-data-37f390)
-<br><br>
+<br><br> -->
 
 ### Wiring
 - **Unplug the Arduino from the computer before doing this**
