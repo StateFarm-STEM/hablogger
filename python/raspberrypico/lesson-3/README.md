@@ -15,7 +15,11 @@
 * Familiarity with wiring a breadboard
 * Understanding of basic MicroPython code
 * Learn the importance of MicroPython drivers and how to use them
-* A functioning program for reading temperature, pressure, and altitude using the BMP-180
+* A functioning program for reading temperature, pressure, and altitude using the BMP-180<br><br>
+
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson3.mp4?raw=true) for guidance!
+<br><br>
 
 ## Steps
 

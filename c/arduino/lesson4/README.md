@@ -16,7 +16,7 @@
 #### What you will be using:
 - [Arduino IDE](/c/arduino/lesson5/screenshots/arduino-ide.png)
 - [Arduino Uno](/c/arduino/lesson5/screenshots/arduino-uno-r3.png)
-- [GPS GT-U7 Sensor (GPS NEO 6M clone)](/c/arduino/lesson4/screenshots/gps-gt-u7.png)
+- GPS GT-U7 Sensor<br>![GPS GT-U7 Sensor (GPS NEO 6M clone)](/c/arduino/lesson4/screenshots/gps-gt-u7.png)
 - [5 pin connector](/c/arduino/lesson4/screenshots/5-pin-connector.png)
 - [Breadboard](/c/arduino/lesson5/screenshots/breadboard.png)
 - [Jumper Wires](/c/arduino/lesson3/screenshots/1956-02.jpg)
@@ -40,13 +40,17 @@
 - Watch your code run on the Arduino using Arduino IDE's serial monitor
 </br></br>
 
-## Guide
+<!-- ## Guide
 Click this link and watch this YouTube video [How to use the GT U7 GPS module](https://youtu.be/7zw2ULu73DY)
 </br></br>
 
 #### Helpful video shortcuts
 - [Connect the GPS GT-U7 to the Arduino](https://youtu.be/7zw2ULu73DY?t=54)
-</br></br>
+</br></br> -->
+
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?raw=true) for guidance!
+<br><br>
 
 #### Tips
 - **Unplug the Arduino from the computer before doing this**
@@ -67,11 +71,18 @@ Click this link and watch this YouTube video [How to use the GT U7 GPS module](h
   GND  | Any Ground pin 
   VDC   | 5 volts
 </br>  
+
+**You are welcome to use the bread board as well to wire everything up.**
+![Lesson Four](./images/WireUp.jpg)
   
 #### How to get the TinyGPSPlus library:
-- Navigate to the sketch menu and hover over include library and then click manage libraries
-- Type in TinyGPSPlus and install the library and then restart the IDE
+- Install theTinyGPSPlus library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for "TinyGPSPlus"
+<br><br>
+
+## Steps
+- Verify the TinyGPSPlus library is installed 
 - Copy and paste this code into a sketch and run it
+- In order to see the serial monitor, where your data will be printing out, press ctrl + shift + m or enter the tools menu and select the serial monitor
 </br></br>
 
 ``` 
@@ -127,13 +138,25 @@ void loop() {
 - How to create a new Arduino Sketch project using the TinyGPSPlus Library
 </br></br>
 
+## Want more?
+If you have finished with the base lesson, check out the items below.
+<br><br>
+
+Things to think about, validate, and/or try:
+* What are the units/formats of the module output? 🤔
+* How accurate are the coordinates returned?
+
+Update the code to do any/all of the following:
+* Add the units to the end/middle of the output 😁
+<br><br>
+
 ## Troubleshooting 
 - If your GPS is not reading out coordinates on the COM port 
   - you may have to move outside
   - move close to a window
-  - wait for a satelite(s) to be accquiried
+  - wait for a satellite(s) to be acquired
 - You need to have the TinyGPSPlus library installed in order for the code to work, refer to the video further up this page for more help
-- The GPUs unit should have a solid red light when looking for satalites and start blinking when it connects with a satelite(s)
+- The GPUs unit should have a solid red light when looking for satellites and start blinking when it connects with a satellite(s)
 </br></br>
 
 ### Need help?

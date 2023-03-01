@@ -16,7 +16,11 @@
 * Familiarity with wiring a breadboard
 * Understanding of basic MicroPython code
 * Learn the importance of MicroPython drivers and how to use them
-* A functioning program for reading GPS data and printing the information to the console
+* A functioning program for reading GPS data and printing the information to the console<br><br>
+
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?raw=true) for guidance!
+<br><br>
 
 ## Steps
 
@@ -122,7 +126,7 @@ Update the code to do any/all of the following:
 
 * `ERROR: No module named (drivers, bmp180, ...)`
     
-    If you see this error it means Python is not able to locate a module to be imported. This can occur because the version of MicroPyhon you are using does not support the module you are trying to import. Specifically for this lesson it likely applies to the `drivers` step. Ensure the `drivers` folder and its contents, `bmp180.py` and `__init__.py`, are saved to the Raspberry Pi Pico device and _not_ your computer.
+    If you see this error it means Python is not able to locate a module to be imported. This can occur because the version of MicroPyhon you are using does not support the module you are trying to import. Specifically for this lesson it likely applies to the `drivers` step. Ensure the `drivers` folder and its contents, `gtu7.py` and `__init__.py`, are saved to the Raspberry Pi Pico device and _not_ your computer.
 
     Example error message:
     ```sh
@@ -132,4 +136,4 @@ Update the code to do any/all of the following:
     ```
 
 ## Need help?
-Watch the walk-through [video](videos/Lesson3.mp4?raw=true) for guidance!
+Watch the walk-through [video](videos/Lesson4.mp4?raw=true) for guidance!

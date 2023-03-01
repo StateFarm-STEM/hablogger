@@ -12,7 +12,11 @@
  - Make the onboard LED blink
  - Connect the Pico to three LEDs via a breadboard
  - Blink the three LEDs in sequence
- - Get creative with your code
+ - Get creative with your code<br><br>
+
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson2.mp4?raw=true) for guidance!
+<br><br>
 
 ## Step 1: Get familiar with the Raspberry Pi Pico
 
