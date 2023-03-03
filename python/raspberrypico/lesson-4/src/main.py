@@ -12,7 +12,7 @@ if __name__ == "__main__" :
                 tx=Pin(4),
                 rx=Pin(5))
     
-    # Loop for GPS coordinates and toggle the LED for action
+    # Loop for GPS coordinates
     while True:
         gps_module = gtu7.GTU7(uart)
 
