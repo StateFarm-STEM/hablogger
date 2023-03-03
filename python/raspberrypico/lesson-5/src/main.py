@@ -8,12 +8,12 @@ import os
 # This project uses the `sdcard.py` MicroPython driver to interface with a
 # HW-125 SDCard peripheral attached to a Raspberry Pi Pico.
 # 
-# Dummy information is written to a CSV file, then read and printed to the console.
+# Example information is written to a CSV file, then read and printed to the console.
 # An optional function can be used to delete the files in the SD card directory.
 
 def write_csv_to_sdcard(folder, file_name, dataset, header=None):
     """Write CSV data to SD Card"""
-    
+
     # Open the file if it already exists. Otherwise create a new one.
     with open(folder + '/' + file_name,'a+') as csv_out:
         if header:
@@ -30,6 +30,7 @@ def write_csv_to_sdcard(folder, file_name, dataset, header=None):
 
 def read_csv_from_sdcard(folder, file_name):
     """Read CSV file from SD Card"""
+
     csv_data = []
     # Open the CSV file in read mode. Store each CSV line in a list called csv_data.
     with open(folder + '/' + file_name,'r') as csv_in:
@@ -43,18 +44,20 @@ def read_csv_from_sdcard(folder, file_name):
 
 def delete_files_from_sdcard_folder(folder):
     """Delete all files from SD Card folder"""
+
+    print("Deleting files in %s" % folder)
     for file in os.listdir(folder):
         try:
             os.remove(folder + '/' + file)
         except Exception as e:
             pass
+    print("Done.\n\n")
 
 
 if __name__ == "__main__":
     # Main entrypoint. Primary code functions start here.
     
-    led = Pin(25, Pin.OUT)  # Assign on board LED to variable
-    sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
+    sd_dir = '/sd' # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
 
     # Intialize SPI peripheral
     spi = machine.SPI(1,
@@ -73,18 +76,20 @@ if __name__ == "__main__":
     # Mount the SD card at specified directory
     os.mount(sd,sd_dir)
     
+    print("Writing example data to SD card...")
     for x in range(6):
-        # temp, humidity, pressure, lat, long, alt, time
+        # Example: temp, humidity, pressure, lat, long, alt, time
         dataset = [98.6, 84.5, 29.74, 40.4492267, -89.0431831, 244, str(gmtime())]
         write_csv_to_sdcard(sd_dir, "data.csv", dataset)
-        sleep(1) # Sleep for x seconds.
+    print("Done.\n\n")
     
     # Read all the rows from the CSV and print them to the console.
+    print("Reading and printing data from SD card...")
     for row in read_csv_from_sdcard(sd_dir, "data.csv") :
         print(row)
+    print("Done.\n\n")
 
     # Remove all files within the directory passed in. Useful for cleaning things up during testing.
     # You can move this to earlier in the code to clean things up ahead of time, or at the end.
-    # Comment this out if you want the files to not be deleted.
-    # delete_files_from_sdcard_folder(sd_dir)
+    delete_files_from_sdcard_folder(sd_dir) # Comment this out if you do not want the files to be deleted.
     
