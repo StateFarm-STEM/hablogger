@@ -1,5 +1,5 @@
 # Import all needed libraries
-from machine import UART
+from machine import Pin, UART
 import time
 from drivers import gtu7
 
