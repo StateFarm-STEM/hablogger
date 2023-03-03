@@ -6,7 +6,7 @@ from drivers import gtu7
 if __name__ == "__main__" :
     
     led = Pin( #Initialize a variable called "led" as a "Pin" object
-    "LED", #Assign pin number 25/LED (which is the onboard led)
+    25, #Assign pin number for onboard led (25 for Pico and "LED" for PicoW)
     Pin.OUT) #Specify this is an output pin, meaning we will send data to the pin vs recieving data from it
     
     # Define our UART(Universal Asynchronous Receiver/Transmitter)
