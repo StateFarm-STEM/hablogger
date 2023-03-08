@@ -72,7 +72,7 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
 The steps in this section will use the previous hardware and driver sections to allow writing to, and reading from a CSV file. The code example for this lesson is located in [./src/lesson5/main.py](./src/lesson5/main.py).
 
-1. Using Thonny, open the `main.py` file in [./src/lesson5/main.py](./src/lesson5/main.py).
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py).
 
 1. Run the script.
 
