@@ -38,6 +38,9 @@
 
     ![sd-card-diagram](./docs/pi-pico-hw150.png)
 
+    Finished wire up:
+    ![sd-card-diagram](./docs/WireUp.jpg)
+
 1. Format the micro SD card as `FAT32`. Use [How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html) as a guide.
 
     ***NOTE:*** If you do not have a 32GB card you can [partition](/c/arduino/lesson5/videos/sdCardFormat.gif) a larger card down to 32GB and it will work as well but use caution with this tool as it can alter your boot drive as well!
