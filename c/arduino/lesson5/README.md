@@ -59,6 +59,9 @@ CS   | 10
 - Remember you do not have to use the same color of jumper wire as this, but insure that your connections are the same. 
 <br><br>
 
+**You are welcome to use the bread board as well to wire everything up.**
+![Lesson Five](./screenshots/WireUp.png)
+
 ## Formatting the SD Card
 The SD card module works with a maximum of 32GB. This means you can either use a 32GB card or partition a larger card with a smaller drive. You can use the disk management application availble on Windows OS to do this function.<br><br>
 ***NOTICE:*** Use caution with this tool as it can alter your boot drive as well.
@@ -119,6 +122,20 @@ void loop() {
 - How to create a new Arduino Sketch project using the SDI Library
   - Create a file on the SD card
   - Write some data to the SD card
+<br><br>
+
+## Want more?
+If you have finished with the base lesson, check out the items below.
+<br><br>
+
+Things to think about, validate, and/or try:
+* How big is the file?
+* Is CSV the best output format?
+* How long before we run out of space on the SD card? 🤔
+
+Update the code to do any/all of the following:
+1. Write your own custom output to the file and change the filename
+1. Use a loop to write the even numbers from 0 to 100 into the file 😵
 <br><br>
 
 ### Troubleshooting
