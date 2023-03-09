@@ -74,7 +74,14 @@ if __name__ == "__main__":
     sd = sdcard.SDCard(spi,Pin(13))
      
     # Mount the SD card at specified directory
-    os.mount(sd,sd_dir)
+    #os.mount(sd,sd_dir)
+    # Some SD cards require another mount attempt to function
+    try:
+        print("Attempting mount...")
+        os.mount(sd,sd_dir)
+    except:
+        print("Second mount attempt...")
+        os.mount(sd,sd_dir)
     
     print("Writing example data to SD card...")
     for x in range(6):
@@ -91,5 +98,5 @@ if __name__ == "__main__":
 
     # Remove all files within the directory passed in. Useful for cleaning things up during testing.
     # You can move this to earlier in the code to clean things up ahead of time, or at the end.
-    delete_files_from_sdcard_folder(sd_dir) # Comment this out if you do not want the files to be deleted.
+    #delete_files_from_sdcard_folder(sd_dir) # Comment this out if you do not want the files to be deleted.
     
