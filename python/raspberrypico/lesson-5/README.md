@@ -20,6 +20,10 @@
 * Learn the importance of MicroPython drivers and how to use them
 * A functioning program for storing data on an SD card connected to the Raspberry Pi Pico
 
+### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson5.mp4?raw=true) for guidance!
+<br><br>
+
  ## Steps
 
  ### Hardware Configuration and Wiring
@@ -95,7 +99,7 @@ The steps in this section will use the previous hardware and driver sections to 
 
 **Congratulations! You have successfully completed Lesson 5.**
 
-<br><br>
+<br>
 
 ## Want more?
 If you have finished with the base lesson, check out the items below.
@@ -131,3 +135,6 @@ Update the code to do any/all of the following:
 * [Raspberry Pi Pico SDK](https://datasheets.raspberrypi.com/pico/raspberry-pi-pico-python-sdk.pdf)
 * [MicroPython releases for Pico](https://micropython.org/download/rp2-pico/)
 * [MicroPython libraries](https://docs.micropython.org/en/latest/library/index.html)
+
+## Need help?
+Watch the walk-through [video](videos/Lesson5.mp4?raw=true) for guidance!
