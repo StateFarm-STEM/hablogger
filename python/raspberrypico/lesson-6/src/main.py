@@ -2,7 +2,6 @@ from machine import Pin, SPI, I2C, UART
 from drivers import sdcard
 from drivers import gtu7 as gpsdriver
 from drivers import bmp180 as bmp180driver
-from ssd1306 import SSD1306_I2C
 
 import os
 
@@ -87,9 +86,8 @@ def delete_files_from_sdcard_folder(folder):
             pass
             
             
-if __name__ == "__main__":   
-    led = Pin(25, Pin.OUT)  # Assign onboard LED to variable
-    led.toggle()            # Toggle on the onboard LED
+if __name__ == "__main__":
+    """Start of the main program. All functions are called form here."""
     
     sd_dir = '/sd'          # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
     init_sdcard(sd_dir)     # Initialize the SD Card
@@ -98,6 +96,7 @@ if __name__ == "__main__":
     gtu7 = init_gtu7()      # Initialize the GT-U7 (GPS module)
 
     delete_files_from_sdcard_folder('/sd') # Uncomment this to delete a folder and its contents.
+                                           # This can be useful when you want to clean up the CSV file.
 
     # We set the CSV column headers here. Be sure these headers line up with the data you are
     # reading in and writing to the CSV.
@@ -133,5 +132,3 @@ if __name__ == "__main__":
     # Read all the rows from the CSV and print them to the console.
     for row in read_csv_from_sdcard(sd_dir, "data.csv") :
         print(row)
-
-led.toggle() # Toggle off the onboard LED
