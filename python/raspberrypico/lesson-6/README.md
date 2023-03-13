@@ -27,7 +27,7 @@
 
 The code in this lesson will use lessons 3 through 5 to perform all actions of the modules and write data to the SD Card.
 
-1. Using Thonny, open the `main.py` file in [./src/lesson6/main.py](./src/lesson6/main.py).
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py).
 
 1. Run the script.
 
