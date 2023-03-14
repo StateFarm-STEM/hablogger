@@ -94,6 +94,9 @@ TXD  | 3
 <img src="picture/dataloggerGPSarduino.jpg" width="250">
 <br><br>
 
+## Full wire up
+<img src="picture/fullWired.jpg" width="500">
+
 ### Working Code - Copy and paste this into your sketch 
 <br>
 
@@ -299,8 +302,20 @@ void initBMP(){
 }
 ```
 
-## Full wire up
-<img src="picture/fullWired.jpg" width="500">
+<br>
+
+## Want more?
+If you have finished with the base lesson, check out the items below.
+<br><br>
+
+Things to think about, validate, and/or try:
+* Is the data being written out correct? 🤔
+* What are some things you could do to test all the modules at once?
+
+Update the code to do any/all of the following:
+1. Change the order/format of the output file data to your liking.
+1. Write the output as fast as the modules can be read. What is your speed? 😵
+<br><br>
 
 ### Review
 - Learned how to connect multiple different sensors or devices to the Arduino at the same time
