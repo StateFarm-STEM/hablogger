@@ -3,6 +3,7 @@ from drivers import sdcard
 from drivers import gtu7 as gpsdriver
 from drivers import bmp180 as bmp180driver
 from ssd1306 import SSD1306_I2C
+import time
 
 import os
 
@@ -115,7 +116,7 @@ if __name__ == "__main__":
     write_csv_to_sdcard(sd_dir, "data.csv", None, csv_header) # Initialize CSV header
     
     print("Reading data from sensors and writing CSV to SD card...")
-    for x in range(10):
+    for x in range(30):
         temp = bmp180.temperature  # Capture temperature, assign to `temp` variable
         p = bmp180.pressure        # Capture pressure, assign to `p` variable
         altitude = bmp180.altitude # Capture altitude, assign to `altitude` variable
@@ -126,7 +127,10 @@ if __name__ == "__main__":
         # These are the data elements we want to line up with our CSV column headers
         data = [gprmc[0], gprmc[1], gprmc[2], gprmc[3], gprmc[4], gpgga[3], temp, p, altitude]
         
+        print(data)
+        
         write_csv_to_sdcard(sd_dir, "data.csv", data)
+        time.sleep(1)
         
     print("Done.\n\n")
         
@@ -135,3 +139,4 @@ if __name__ == "__main__":
         print(row)
 
 led.toggle() # Toggle off the onboard LED
+
