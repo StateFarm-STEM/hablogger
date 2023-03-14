@@ -3,9 +3,9 @@
 
 ### Pre-requisites
 * Complete previous sensor lessons
-    * [Lesson 3: Blinking Light](../lesson-3/README.md)
-    * [Lesson 4: Blinking Light](../lesson-4/README.md)
-    * [Lesson 5: Blinking Light](../lesson-5/README.md)
+    * [Lesson 3: Temperature, Pressure, and Altitude](../lesson-3/README.md)
+    * [Lesson 4: GPS Coordinates](../lesson-4/README.md)
+    * [Lesson 5: Writing Data to SD Card Module](../lesson-5/README.md)
 * [Thonny Python IDE](https://thonny.org/) installed on your computer
 * All necessary hardware components
 
