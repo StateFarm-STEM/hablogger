@@ -21,11 +21,11 @@
 In addition to the reading below, you can watch this [video](videos/Lesson6.mp4?raw=true) for guidance!
 <br><br>
 
- ## Steps
+## Steps
 
- ### Hardware Configuration and Wiring
+### Hardware Configuration and Wiring
 
- **IMPORTANT** Before wiring your Pico, UNPLUG IT FROM YOUR COMPUTER. If plugged in while wiring, you risk damaging the Pico or SDCard reader.
+**IMPORTANT** Before wiring your Pico, UNPLUG IT FROM YOUR COMPUTER. If plugged in while wiring, you risk damaging the Pico or SDCard reader.
 
 1. Wire all the modules into the breadboard according to the pin out below:
 <br>BB = Bread Board
@@ -56,7 +56,7 @@ In addition to the reading below, you can watch this [video](videos/Lesson6.mp4?
 ![bringing-it-all-together](./docs/pi-pico-bringing-it-all-together.png)
 
 ![WireUp](./docs/WireUp.jpg)
-**Note:** Thumb tack used to hope the GPS antenna up 😋
+**Note:** Thumb tack used to hold the GPS antenna up 😋
 
 ### Main program
 
@@ -76,7 +76,7 @@ The steps in this section will use the previous hardware and driver sections to 
     ![output](./docs/Output.png)
 
 
-**Congratulations! You have successfully completed Lesson 5.**
+**Congratulations! You have successfully completed Lesson 6.**
 
 <br>
 
