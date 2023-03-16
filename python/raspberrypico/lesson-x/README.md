@@ -1,4 +1,4 @@
-# Lesson 6: Bringing It All Together
+# Lesson X: Launch
 ## High Altitude Balloon Data Logging
 
 ### Pre-requisites
