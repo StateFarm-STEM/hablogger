@@ -47,7 +47,15 @@ def init_sdcard(folder):
                       miso=machine.Pin(12)) # Pico GPIO Pin 12
     sd = sdcard.SDCard(spi,Pin(13))
     
-    os.mount(sd,folder) # Mount SD card using sd card library and folder name
+    # Mount SD card using sd card library and folder name
+    #os.mount(sd,folder)
+    # Some SD cards require another mount attempt to function
+    try:
+        print("Attempting mount...")
+        os.mount(sd,folder)
+    except:
+        print("Second mount attempt...")
+        os.mount(sd,folder)
 
 
 def write_csv_to_sdcard(folder, file_name, dataset, header=None):
