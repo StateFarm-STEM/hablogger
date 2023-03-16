@@ -96,10 +96,16 @@ TXD  | 3
 
 ## Full wire up
 <img src="picture/fullWired.jpg" width="500">
+<br><br>
+
+### Validate Libraries
+Make sure that all the libraries below are installed in the IDE. Without these libraries the code below will not function and will error out.
+* Adafruit bmp085 library
+* BusIO
+* TinyGPSPlus
+<br><br>
 
 ### Working Code - Copy and paste this into your sketch 
-<br>
-
 ``` 
 /*
   SD card datalogger
@@ -130,6 +136,7 @@ TXD  | 3
 #include <SoftwareSerial.h>
 
 const int chipSelect = 10;
+const bool bypassGPS = true;
 
 static const int RXPin = 4, TXPin = 3;
 static const uint32_t GPSBaud = 9600;
@@ -252,7 +259,7 @@ void loop() {
     }
   }
 
-  if (gpsready) {
+  if (gpsready || bypassGPS) {
     // open the file. note that only one file can be open at a time,
     // so you have to close this one before opening another.
     File dataFile = SD.open("datalog.txt", FILE_WRITE);
@@ -301,8 +308,8 @@ void initBMP(){
   }
 }
 ```
-
-<br>
+**Note**: If you are stopping/starting the code for troubleshooting issues, you may want to clear the contents of the SD card to validate correct functions.
+<br><br>
 
 ## Want more?
 If you have finished with the base lesson, check out the items below.
@@ -313,6 +320,7 @@ Things to think about, validate, and/or try:
 * What are some things you could do to test all the modules at once?
 
 Update the code to do any/all of the following:
+1. Add appropriate output statements (like GPS Working - Satellites Not Found, GPS Working - Satellites found) for modules without data.
 1. Change the order/format of the output file data to your liking.
 1. Write the output as fast as the modules can be read. What is your speed? 😵
 <br><br>
@@ -327,7 +335,8 @@ Update the code to do any/all of the following:
 ### Trouble shooting
 - Unplug/reset the Arduino and check all of the connections and try running it again
 - Sd card formatting needs to be fat32 or the program will not run
-- GPS not reading coordinates is likely caused by obstruction of the signal so moving outside may be necessary
+- GPS not reading coordinates is likely caused by obstruction of the signal so moving  outside may be necessary
+- Validate that all libraries are installed for use (BMP180 and GPS)
 <br><br>
 
 ### Need help?
