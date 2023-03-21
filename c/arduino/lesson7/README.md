@@ -1,6 +1,6 @@
-# Welcome to Lesson #6: putting it all together
+# Welcome to Lesson #7: oLED Display
 
-## Making the Final Data Logger
+## Present data to a display
 <br>
 
 #### Pre-requisites:
@@ -8,15 +8,15 @@
 <br><br>
 
 #### Objectives:
-- Breadboard the final circuit
-- Create a device that logs data such as humidity, altitude and temperature onto a CSV file within a micro Sd card. 
+- Breadboard the final circuit with an oLED
+- Create a device that logs data such as pressure, altitude and temperature and displays onto a oLED display.
 <br><br>
 
 #### What you will be using:
 - [Arduino IDE](/c/arduino/lesson4/screenshots/arduino-ide.png)
 - [Arduino Uno](/c/arduino/lesson4/screenshots/arduino-uno-r3.png)
 
-- ![OLED Display](/c/arduino/lesson5/screenshots/OLED.png)
+- <img src="picture/oLED_Display.jpg" width="250">
 
 - [BMP 180](/c/arduino/lesson1/photos/BMP_both.jpg)
 - [GPS module](/c/arduino/lesson1/photos/GPS_NEO-6M.JPG)
@@ -27,77 +27,56 @@
 #### What you will be learning:
 - How to connect multiple different sensors or devices to the Arduino at the same time
   -  Breadboarding circuits
-- How to read a CSV file from the serial port
+- How to write to an oLED display
+- Connecting multiple [I2C](https://en.wikipedia.org/wiki/I%C2%B2C) modules
 - Putting together all of the other lessons in order to make a final product
 <br><br>
 
-### Video Walk-through
-In addition to the reading below, you can watch this [video](videos/Lesson6.mp4?raw=true) for guidance!
-<br><br>
+<!-- ### Video Walk-through
+In addition to the reading below, you can watch this [video](videos/Lesson7.mp4?raw=true) for guidance!
+<br><br> -->
 
 ## Wiring all the sensors and devices to the Arduino
 <br>
 
 - Remember you do not have to use the same color of jumper wire as this, but insure that your connections are the same. 
+- In this lesson, we will be sharing the A4/A5 wires as the devices are I2C. Take note of the common wire up.
 - **Unplug the Arduino from the computer while you are wiring it up**
 <br><br>
 
 #### Wiring the Arduino to the Breadboard
 <br>
 
-Pin on the Arduino | Pin on the Breadboard
------- | ------
-5v | Power on the breadboard
-GND  | GND on the breadboard
-
-<img src="picture/dataloggerardiuno.jpg" width="250"><br>
-<img src=picture/dataloggerbreadboard.jpg width="250">
-<br><br>
-
-#### Wiring the SD card
-Pin on SD card reader | Pin on Arduino/breadboard 
------- | ------
-GND   | GND on the breadboard
-VCC   | Power on the breadboard
-MISO   | 12  
-MOSI   | 11  
-SCK   | 13  
-CS   | 10  
-
-<img src="picture/dataloggersd.jpg" width="250"><br>
-<img src="picture/dataloggersdcardbreadboard.jpg" width="250"><br>
-<img src="picture/DataLoggerSDFront.jpg" width="250">
-<br><br>
-
-#### Wiring the BMP 180
-Pin on the BMP 180 | Pin on Arduino/breadboard 
------- | ------
-VIN | Power on the breadboard
-GND   | GND on the breadboard
-SCL   | A5
-SDA   | A4 
-
-<img src="picture/dataloggerbmp.jpg" width="250"><br>
-<img src="picture/dataloggerbmpbreadboard.jpg" width="250"><br>
-<img src="picture/dataloggerbmparduino.jpg" width="250">
-<br><br>
-
-#### Wiring the GPS
-Pin on the GPS | Pin on Arduino/breadboard 
------- | ------
-VCC | Power on the breadboard
-GND   | GND on the breadboard
-RXD | 4
-TXD  | 3
-
-
-<img src="picture/dataloggerGPS.jpg" width="250"><br>
-<img src="picture/dataloggerGPSbreadboard.jpg" width="250"><br>
-<img src="picture/dataloggerGPSarduino.jpg" width="250">
-<br><br>
+Module/Controller Pin | BB/Arduino Pins
+----------- | ------------
+**oLED Display**||
+GND         | BB Ground (-)
+VCC         | BB Power (+)
+SCL         | Common SCL (Arduino A5)
+SDA         | Common SDA (Arduino A4)
+**GPS Sensor**||
+VCC         | BB Power (+)
+GND         | BB Ground (-)
+PPS         | N/A
+TXD         | 3
+RXD         | 4
+**Pressure Temperature Sensor**||
+VIN         | BB Power (+)
+GND         | BB Ground (-)
+SCL         | Common SCL (Arduino A5)
+SDA         | Common SDA (Arduino A4)
+**Arduino**||
+5V          | BB Power (+)
+GND         | BB Ground (-)
 
 ## Full wire up
 <img src="picture/fullWired.jpg" width="500">
+<br><br>
+
+## Common SCL/SDA
+The BMP180 and oLED Display will share the SCL/SDA A5/A4 spot on the Arduino. [I2C](https://en.wikipedia.org/wiki/I%C2%B2C) addresses are used to differentiate between the two modules.
+<br>
+<img src="picture/CommonSCL_SDA.jpg" width="500">
 <br><br>
 
 ### Validate Libraries
@@ -105,6 +84,8 @@ Make sure that all the libraries below are installed in the IDE. Without these l
 * Adafruit bmp085 library
 * BusIO
 * TinyGPSPlus
+
+***NOTE***: A new library is needed for this build. Install ```Adafruit SSD1306``` library through the Arduino IDE by going to Sketch -> Include Library -> Manage Libraries -> then search for ```Adafruit SSD1306```. Install the depending ```Adafruit GFX``` library as well.
 <br><br>
 
 ### Working Code - Copy and paste this into your sketch 
@@ -152,12 +133,8 @@ void setup() {
   // the library initializes this with an Adafruit splash screen.
   display.display();
 
-  //Serial.print(F("initializing sd card..."));
-
-  //initBMP();
   bmp.begin();
 
-  //initGPS();
   serialgps.begin(GPSBaud);
   delay(2000);
   if (!serialgps.available()) {
@@ -192,7 +169,7 @@ void loop() {
   float p = bmp.readPressure(); //pascals
   
   if ((gps.location.age() < 1000 || gps.location.isUpdated()) && gps.location.isValid()) {
-    if (gps.satellites.isValid() && (gps.satellites.value() > 3)) {
+    if (gps.satellites.isValid() && (gps.satellites.value() >= 3)) {
       lat = gps.location.isValid() ? gps.location.lat() : 0;
       lng = gps.location.isValid() ? gps.location.lng() : 0;
 
@@ -250,8 +227,7 @@ void loop() {
   delay(2000);
 }
 ```
-**Note**: If you are stopping/starting the code for troubleshooting issues, you may want to clear the contents of the SD card to validate correct functions.
-<br><br>
+<br>
 
 ## Want more?
 If you have finished with the base lesson, check out the items below.
@@ -262,24 +238,24 @@ Things to think about, validate, and/or try:
 * What are some things you could do to test all the modules at once?
 
 Update the code to do any/all of the following:
-1. Add appropriate output statements (like GPS Working - Satellites Not Found, GPS Working - Satellites found) for modules without data.
-1. Change the order/format of the output file data to your liking.
-1. Write the output as fast as the modules can be read. What is your speed? 😵
+1. Change the order/format of the output display data to your liking.
+1. Load the demo display code to see the full power of the oLED! 😵 (File > Adafruit SSD1306 > ssd1306_128x64_i2c) (***HINT:*** Change the ```SCREEN_ADDRESS``` to ```0x3C```)
+1. Create you own custom image, load it into a byte array, and display your image on the the oLED. [Try it out!](https://www.instructables.com/How-to-Display-Images-on-OLED-Using-Arduino/) 🐧
 <br><br>
 
 ### Review
 - Learned how to connect multiple different sensors or devices to the Arduino at the same time
   -  Breadboarding circuits
-- How to read a CSV file from the serial port
+- How to display to an oLED Display
 - Put all of the other lessons together in order to make a final product
 <br><br>
 
 ### Trouble shooting
 - Unplug/reset the Arduino and check all of the connections and try running it again
-- Sd card formatting needs to be fat32 or the program will not run
 - GPS not reading coordinates is likely caused by obstruction of the signal so moving  outside may be necessary
 - Validate that all libraries are installed for use (BMP180 and GPS)
+- No display change? GPS never initialized and code is stuck. Validate GPS is setup correctly.
 <br><br>
 
-### Need help?
-Watch the walk-through [video](videos/Lesson6.mp4?raw=true) for guidance!
+<!-- ### Need help?
+Watch the walk-through [video](videos/Lesson6.mp4?raw=true) for guidance! -->
