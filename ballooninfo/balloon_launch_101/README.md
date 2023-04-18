@@ -84,10 +84,12 @@
         - Balloon handler will bring their weight and harness to the fill location
         - Clip launch pad weight to balloon
         - Unclip fill weight harness
+        - Walk to launch location
         - Attach payload train to the payload harness
         - Confirm payload train is running downwind and untangled with little slack
       - Fill next balloon(s) as directed above and move to launch pad(s)
       - Confirm tracker telemetry being recieved from balloon(s)
+      - Unclip weights holding payload rigging
       - Countdown / release!
         - Repeat other balloon(s)
 
