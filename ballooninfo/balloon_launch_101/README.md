@@ -24,6 +24,7 @@
   - Weather check / go no go
   - Prediciton calculation / go no go
   - Validate location of launch based on wind prediciton
+  - File airmens bulliten with the FAA / local tower
   
 - Day of launch
   - Weather check / go no go
@@ -74,17 +75,25 @@
           - Clip excess
           - Tape sharp ends
         - Tighten final zip
-          - clip excess
-          - tape sharp ends
-        
-        
-       
-      
-      
-    
-    
+          - Clip excess
+          - Tape sharp ends
+        - Zip bottom of neck to above top zip
+          - Clip excess
+          - Tape sharp ends
+      - Move ballon to launch location
+        - Balloon handler will bring their weight and harness to the fill location
+        - Clip launch pad weight to balloon
+        - Unclip fill weight harness
+        - Attach payload train to the payload harness
+        - Confirm payload train is running downwind and untangled with little slack
+      - Fill next balloon(s) as directed above and move to launch pad(s)
+      - Confirm tracker telemetry being recieved from balloon(s)
+      - Countdown / release!
+        - Repeat other balloon(s)
 
 ## Laws and Regulations
+- [Code of Federal Regulations - PART 101 - MOORED BALLOONS, KITES, AMATEUR ROCKETS, AND UNMANNED FREE BALLOONS](https://www.ecfr.gov/current/title-14/chapter-I/subchapter-F/part-101)
+- [FAA Order JO 7110.65Z - Air Traffic Control](https://www.faa.gov/air_traffic/publications/atpubs/atc_html/chap9_section_6.html)
 
 ## Supplies
 
