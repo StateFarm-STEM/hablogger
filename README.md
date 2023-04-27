@@ -5,8 +5,8 @@
 - Microcontrollers / electronics basics
   - Arduino and Raspberry Pico lessons included
 - Introduction to coding concepts
-  - Variants in C and Python aailable
-- Test the finished product in a high altitude balloon flight to the stratosphere (60-125k feet)
+  - Variants in C and Python available
+- Test the finished product in a high-altitude balloon flight to the stratosphere (60-125k feet)
 - Collect telemetry data during the flight
 - Analyze collected data
 
@@ -39,4 +39,4 @@ The content is divided up by language and within the language you can choose the
 
 ### Need some help?
 
-- Report an issue by clicking the issue link towards the top of the page
+- Report an issue by clicking the [issue](https://github.com/StateFarm-STEM/hablogger/issues) link towards the top of the page
