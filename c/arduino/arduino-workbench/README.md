@@ -6,10 +6,14 @@ Parts required to assemble:
 * 8 [M3 x 20mm screws](https://www.amazon.com/M3-0-5-Button-Socket-Screws-Quantity/dp/B083HR5HZ9)  
 
 Parts required to hold arduino:
-* 4 [M2x5mm self tapping screws](https://www.amazon.com/100Pcs-Phillips-Tapping-Screws-Carbon/dp/B07ZGDNDGJ)
+* 4 [M2 x 5mm self tapping screws](https://www.amazon.com/100Pcs-Phillips-Tapping-Screws-Carbon/dp/B07ZGDNDGJ)
+
+Parts required to hold breadboard:
+* 2 [M3 x 6mm screws](https://www.amazon.com/uxcell-M3x6mm-Thread-Button-Socket/dp/B01B1OD0IC)
+* 2 [M3 Washers](https://www.amazon.com/HELIFOUNER-Pieces-Washers-Diameter-Thickness/dp/B0B5GXMVRG)
 
 Print one each of:  
-* Frog Box Lid Pico Screw.stl
+* Frog Box Lid Screws.stl
 * Frog Box no seal.stl
 
 Print two each of:
@@ -17,4 +21,4 @@ Print two each of:
 * latch_arm_v2.stl
 * latch_cam_v2.stl
 
-Simply snug tighten each screw, do not overtighten or it'll strip out the plastic and no longer hold.
+Snug tighten each screw, do not overtighten or it'll strip out the plastic and no longer hold.
