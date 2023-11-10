@@ -52,12 +52,13 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
   - Any other items of note to share from your research or further questions?
 
 
-### Laws and regs
+### Laws, regs, and safety
   - What laws and regulations are we restricted to by the FAA?
     - Payload weight
     - Rigging cords
     - Notifications
   - Who would we notify of our flight? (NOTAMs (Notice to Airmen) via the FAA’s Federal NOTAM System)
+  - What threats could influence the safety of a flight and how might the risk be elminated or mitigated? 
   - Any other items of note to share from your research or further questions?
 
 
