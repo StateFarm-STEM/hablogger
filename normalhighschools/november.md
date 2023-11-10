@@ -22,6 +22,14 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
     -	The December session will be spend doing the share out taking the entire class time
         -	Teams will need to be prepared BEFORE the December session; no time will be provided in the December session for prep
 <br><br><br>
+### Temperature issues:
+  - The balloon will travel from 110,000 feet. What temperatures will it encounter though the flight column
+  - What temperature limitations would an Arduino UNO, Raspberry PICO, Rechargable battery, etc have?
+  - Reverse, what would high temperature limitations be?
+  - How can things be tested on the ground?
+  - How to protect things thermally?
+  - Will anythign used produce heat?
+
 ### Power / Battery issues:
   - Some assumptions / constraints:
     - Average flight time is 4 hours
@@ -38,7 +46,6 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
       - Assume same power as Arduino 
   - Any other items of note to share from your research or further questions?
 
-
 ### Tracking:
   - How can we track the balloon in flight?
     - Telemetry broadcasting of extra sensors is a plus, at a minimum we need latitude, longitude, and altitude near real time
@@ -49,10 +56,11 @@ Below are topics to be assigned to small groups in the classrooms. The small gro
     - Many items should be accounted for like is it legal, does it need to face a certain direction, does it need a clear line of site to the sky, power needs, weight, etc.
     - Is there a way to record the flight data for retrieval later for each option?
     - How would we mount it in the foam cooler (12"x12"x12")
+    - Can there be backup tracking options?
   - Any other items of note to share from your research or further questions?
 
 
-### Laws, regs, and safety
+### Laws, regulations, and safety
   - What laws and regulations are we restricted to by the FAA?
     - Payload weight
     - Rigging cords
