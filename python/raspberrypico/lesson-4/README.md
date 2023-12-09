@@ -43,7 +43,7 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
 
 Drivers are code modules for enabling certain functionality. One such driver allows us to read data from the GTU-7 module. This driver is called `gtu7.py` and is located in the [../drivers/src/gtu7.py](../drivers/src/gtu7.py) location. The following steps will result in saving this driver to the Raspberry Pi Pico so the driver can be used by our Python code.
 
-1. Download the driver called `gtu7.py` located in the [../drivers/src/gtu7.py](../drivers/src/gtu7.py) location.
+1. Download the driver called `gtu7.py` located in the [../drivers/src/gtu7.py](../drivers/src/gtu7.py) location to a directory/file/location of your choice. Remember where you downloaded the driver to for a later step.
 
 1. Connect your Raspberry Pi Pico to your computer using the USB cable.
 
@@ -59,7 +59,7 @@ Drivers are code modules for enabling certain functionality. One such driver all
     
     ![drivers-directory](./docs/thonny-2.png)
 
-1. Using Thonny, select _File_ then _Open_ from the menu. Choose _This Computer_. Navigate to the location where you downloaded `gtu7.py` in a previous step. Select the file and click _Open_.
+1. Using Thonny, select _File_ then _Open_ from the menu. Choose _This Computer_. Navigate to the location where you downloaded `gtu7.py` in step 1. Select the file and click _Open_.
 
 1. Save the `gtu7.py` file to the Raspberry Pi Pico. This allows our code to use the driver to perform GT-U7 actions in MicroPython when running on the Pi Pico. 
 
