@@ -1,42 +1,47 @@
 # High altitude Balloon (HAB) Logger
 
-## This is a STEM project meant to introduce the following:
+HABLogger is a project built to be usable by schools, community groups, youth organizations, and more as an introduction to programming, electronics and team building.
 
-- Microcontrollers / electronics basics
-  - Arduino and Raspberry Pico lessons included
-- Introduction to coding concepts
-  - Variants in C and Python available
-- Test the finished product in a high-altitude balloon flight to the stratosphere (60-125k feet)
-- Collect telemetry data during the flight
-- Analyze collected data
+The [National Weather Service](https://www.weather.gov/chs/upperair) launches a minimum of two high altitude balloons a day from [91 locations](https://www.weather.gov/upperair/nws_upper) at 1100 and 2300 UTC to observe weather conditions used to model weather forecasts. When flying high altitude ballons, data is usually collected throughout the flight and later retrieved for analysis.
 
-Lessons will be broken up into short lessons students can work on by themselves or in small groups. 
+This project contains lessons wherein learners will launch their own weather balloon to the stratosphere, or approximately 90,000+ feet. Throughout the balloon flight, the components within the payload will collect temperature, barometric pressure, latitude, longitude, elevation, and other telemetry data. This information is collected via the peripheral modules attached to the microcontrollers within the payload and stored in an SD card for analysis after recovery.
 
-### Lessons:
+The project contains basic hands-on experiences with the following:
 
-- Introduction and how to get started
+- Microcontrollers & electronics, including wiring peripheral modules between a microcontroller and breadboard
+- Programming microcontrollers to interact with peripheral modules using C programming language (Arduino microcontroller) or Python (Raspberry Pi Pico microcontroller)
+- Launching a finished product in a high-altitude balloon flight to the stratosphere (90,000+ feet)
+- Analyzing collected data after recovering the balloon payload
+
+Each lesson is constructed to be completed within the timeframe of a typical classroom experience (approximately 45 minutes to 1 hour), and are designed to be completed by small groups (between 2 and 5 learners is recommended)
+
+## Lesson Overview
+
+- Lesson 1: Introduction and how to get started
   - Details about high altitude balloons
   - Introduction to electronics and components used in the project
-- Blinking lights
+  - Installing and using the preferred integrated development enviornment (IDE)
+- Lesson 2: Blinking lights
   - Traditional first project with microcontrollers getting students comfortable with breadboards, components, microcontrollers, and loading code to the device 
-- Working with the weather sensor
+- Lesson 3: Working with the weather sensor
   - Wiring up sensors to read temperature and barometric pressure
-- Working with the GPS module
+- Lesson 4: Working with the GPS module
   - Wiring up GPS hardware to the microcontroller and reading satellite telemetry
-- Working with the SD card module
-  - Wire up SD card hardware and writing a file to the card
-- Putting it all together
-  - Wire everything up and see telemetry data logging to the SD card
+- Lesson 5: Working with the SD card module
+  - Wire up SD card hardware then writing and reading contents from the SD card
+- Lesson 6: Putting it all together
+  - Wire everything up and write telemetry data to SD card
+  - Read telemetry data from the SD card
 - Analyzing telemetry and log data
   - Samples to interpret flight data
 
-### Accessing the lessons
+### Accessing the Lessons
 
 The content is divided up by language and within the language you can choose the platform (where applicable).
 - [C](https://github.com/StateFarm-STEM/hablogger/tree/main/c)
-- [Java](https://github.com/StateFarm-STEM/hablogger/tree/main/python)
+- [Python](https://github.com/StateFarm-STEM/hablogger/tree/main/python)
 
 
-### Need some help?
+# Need Help?
 
 - Report an issue by clicking the [issue](https://github.com/StateFarm-STEM/hablogger/issues) link towards the top of the page
