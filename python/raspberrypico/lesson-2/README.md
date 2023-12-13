@@ -18,36 +18,37 @@
 In addition to the reading below, you can watch this [video](videos/Lesson2.mp4?raw=true) for guidance!
 <br><br>
 
-## Step 1: Get familiar with the Raspberry Pi Pico
+## Steps
+
+## Become familiar with the Raspberry Pi Pico
 
 This is the top of the Pico.  Notice the small LED in the top right corner of the board and the micorUSB connector on the right side.  The first part of this lesson will blink the small LED.  
 ![Raspberry Pi Pico Top](images/RaspberryPiTop.jpg)
 
-This is the bottom of the Pico.  Notice that all of the pins are labeled.  We will connect LEDs to pins GP11, GP12, GP13 later in the lesson.  There are also multiple GND (a.k.a., "Ground") pins on the board and we will be using one of them as well.
+This is the bottom of the Pico.  Notice that all of the pins are labeled. However, when the Pico is plugged into a breadboard this poses a problem because you can't easily read the pins.
 ![Raspberry Pi Pico Bottom](images/RaspberryPiBottom.jpg)
 
-## Step 2: Blink the onboard LED
+This makes a pinout diagram incredibly helpful. It's recommended to have this pinout diagram on-hand, either printed out or easily available in your computer. The pinout diagram shows bothy logical (for example, GP11) and physical (for example, 15) pin layouts.
 
-The onboard LED is mapped to pin 25 on the Raspberry Pi Pico.  The following code will blink the onboard LED.  Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson.  In python, comments are marked with an '#'.
+![Raspberry Pi Pico Pinout](docs/raspberry-pi-pico-pinout.png)
 
-```python
-from machine import Pin  #This imports the libraries needed for us to access the Pico and it's pins
-import time #The time library will enable us to use the sleep method
+## Blink the Onboard LED
 
-#The next few lines creates and initializes a variable "led" as type "Pin" with initialization parameters.  It can also be written in one line like this... led = Pin(25, Pin.OUT)
-led = Pin( #Initialize a variable called "led" as a "Pin" object
-    25, #Assign pin number 25 (which is the onboard led)
-    Pin.OUT) #Specify this is an output pin, meaning we will send data to the pin vs recieving data from it
+The following code will blink the onboard LED.  Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson.  In python, comments are marked with an '#'.
 
-while True: #A while loop will run until the argument is no longer true.  In this case, True will always be true so it will run forever until we forcefully stop the program
-    led.toggle() #Call the "toggle()" function of the led object
-    time.sleep(1) #Call the sleep() function of the time object and pass it "1" so it sleeps for 1 second
-```
+The steps in this section will result in the onboard LED blinking. The code example for this lesson is located in [./src/main.py](./src/main.py).
 
-Load and run [BlinkOnboardLEDwithLoop.py](code/BlinkOnboardLEDwithLoop.py) on the Pi and the onboard LED should blink.
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py). You will choose _This Computer_ and search for the directory of this project.
+
+   Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson.  In python, comments are marked with an '#'.
+
+1. Run the script.
+
+    ![run-script](./docs/thonny-3.png)
 
 Below is a picture of the LED when it is on, it isn't very bright.
 ![Raspberry Pi Onboard LED On](images/RaspberryPiOnboardLEDOn.jpg)
+
 
 ## Step 3: Wire the Breadboard
 
@@ -163,3 +164,19 @@ Congratulations, you have succesfully wired a Raspberry Pi Pico to a breadboard 
 
 ## Need help?
 Watch the walk-through [video](videos/Lesson2.mp4?raw=true) for guidance!
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+
+</details>
