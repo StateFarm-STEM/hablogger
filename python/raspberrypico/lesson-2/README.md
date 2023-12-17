@@ -110,7 +110,7 @@ The code we used to blink the onboard LED can also be used to blink an external 
 
 Referencing our code from before, edit line `8` and replace the value of 25 with `11`.
 
-> :information_source: **Physical pins versus logical pins. Effectively using your pinout diagram**  
+> :information_source: **Physical pins versus logical pins and effectively using your pinout diagram**  
 You might be asking "but I connected my wire to the physical pin location of `15`, why would I write the value of `11` in my code?" Again, reference your Raspberry Pi Pico pinout diagram. Notice the physical pin has a reference to it called `GP11`. GP, or General Purpose I/O pins, are used by microcontrollers for general input and output operations. Each micorocontroller has unique pinout diagrams with individual pin functionalities. These become incresingly important in later lessons.
 
 The full code can be referenced below.
@@ -131,68 +131,94 @@ while True: # A while loop will run until the argument is no longer true. In thi
 
 ## Blink Three External LEDs
 
-Using the same principles you learned above, wire two more LEDs by connecting them to physical pin 16 (GP12) and physical pin 17 (GP13). The image below is what the final circuit should look like. 
+Using the same principles you learned above, wire two more LEDs by connecting them to physical pin `16` (`GP12`) and physical pin `17` (`GP13`). The image below is what the final circuit shall look like. 
 
 > :warning: **Be careful that none of the resistor or LED wires are touching each other**
 
 ![RaspberryPiThreeLEDsWired.jpg](docs/RaspberryPiThreeLEDsWired.jpg)
 
-Again, referencing our source code from before. Let's make a few modifications to blink all three connected LEDs.
+Again, referencing our source code from before, let's make a few modifications to blink all three connected LEDs.
 
-The following code will blink the LEDs we wired up in sequence (assuming you used all the same PINs as I did). Take some time to read the comments in this code so you understand what is happening.  
+Let's start by creating individual variables for each of the LEDs we just wired based on their color and location. Delete lines `6-9` and replace it with the following code snippet. Double check the pin values match the GP location in your pinout diagram for each.
 
 ```python
-from machine import Pin  # This imports the libraries needed for us to access the Pico and it's pins
-import time  # the time library will enable us to use the sleep method
-
-# Create variables for each LED, initializaing them to the pins they are connected to   
-redled = Pin(11, Pin.OUT)
-yellowled = Pin(12, Pin.OUT) 
-greenled = Pin(13, Pin.OUT)
-
-# Create a variable to control how long the LED will stay on, in seconds
-timerPeriod = 1
-
-while True:  # A while loop will run until the argument is no longer true. In this case, True will always be true so it will run forever until we forcefully stop the program
-    greenled.on()  # Turn the green LED on
-    time.sleep(timerPeriod)  # Sleeping now will keep the LED on for the period specified by the variable you created ealier
-    greenled.off()  # Turn the green LED off
-    # what line of code would you add here to keep the LED off for a specified period?
-    yellowled.on()  # Turn the yellow LED on
-    time.sleep(timerPeriod)  
-    yellowled.off()  
-    redled.on()  
-    time.sleep(timerPeriod) 
-    redled.off()  
-    time.sleep(timerPeriod)  
-    
+red_led = Pin(11, Pin.OUT)
+yellow_led = Pin(12, Pin.OUT) 
+green_led = Pin(13, Pin.OUT)
 ```
 
-Load and run [BlinkThreeLEDs.py](code/BlinkThreeLEDs.py) on the Pi and the LEDs should blink in sequence.
+Now, let sequentially turn the LEDs on, then off, in turn. First, delete lines `11` and `12`. Use the following code block to toggle the LEDs on then off with a 1 second delay between each.
 
-#### Challenge: Modify your code to make the LEDs blink every half a second.
-#### Challenge: Modify your code to reverse the order that the LEDs blink
+```python
+    green_led.on()
+    time.sleep(1)
+    greenled.off()
 
-## Step 7: Celebrate Your Success!
+    yellowled.on()
+    time.sleep(1)
+    yellowled.off()
 
-Congratulations, you have succesfully wired a Raspberry Pi Pico to a breadboard with external LEDs, learned what resistors do, and wrote code to control your device. In the next lessons, you will learn how to add sensors to your circuit, read data from them, and store and analyze that data for later study.
+    redled.on()
+    time.sleep(1)
+    redled.off()
 
+    time.sleep(1)  
+```
 
-## Need help?
-Watch the walk-through [video](videos/Lesson2.mp4?raw=true) for guidance!
+Your final code should look like this:
+
+```python
+from machine import Pin
+import time
+
+red_led = Pin(11, Pin.OUT)
+yellow_led = Pin(12, Pin.OUT) 
+green_led = Pin(13, Pin.OUT)
+
+while True:
+    green_led.on()
+    time.sleep(1)
+    greenled.off()
+
+    yellowled.on()
+    time.sleep(1)
+    yellowled.off()
+
+    redled.on()
+    time.sleep(1)
+    redled.off()
+
+    time.sleep(1)  
+```
+
+**Congratulations! You have successfully completed Lesson 2.**
+<br><br>
+
+## Want more?
+If you have finished with the base lesson, check out the items below.
+
+* Use a single variable to manage timing for your LEDs.
+* Modify your code to make the LEDs blink every half a second.
+* Modify your code to reverse the order that the LEDs blink.
+* Modify your code to use a for loop to iterate through each of the three LEDs and turn them on/off in sequence.
 
 <details>
+<summary>Expand to see example using a for loop to minimize code duplication</summary>
 
-<summary>Tips for collapsed sections</summary>
+```python
+from machine import Pin
+import time
 
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
+while True:
+    for x in range(11,24):
+        led = Pin(x, Pin.OUT)
+        led.on()
+        time.sleep(1)
+        led.off()
 ```
-
 </details>
+
+## Toubleshooting
+Watch the walk-through [video](videos/Lesson2.mp4?raw=true) for guidance!
+
+LEDs not lighting up? Double check the wiring. Then, be sure the values you have defined in your code map to the `GP` pin locations on your Pi Pico. Remember, the physical pin location of the microcontroller is not the same as the logical usage of the pins themselves. Reference your pinout diagram as needed.
