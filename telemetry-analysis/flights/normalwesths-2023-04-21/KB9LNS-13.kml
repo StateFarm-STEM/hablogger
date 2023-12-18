@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<kml xmlns="http://earth.google.com/kml/2.1">
+
+<Folder>
+<name>APRS tracking by aprs.fi</name>
+<NetworkLink>
+ <visibility>1</visibility>
+ <name>APRS tracking: KB9LNS-13</name>
+ <description><![CDATA[
+ <p>Tracking: KB9LNS-13</p>
+ <p>Google Earth application by <a href='http://aprs.fi/'>aprs.fi</a></p>
+]]></description>
+ <Snippet maxLines='2'>Tracking KB9LNS-13</Snippet>
+ <Link>
+   <href>http://aprs.fi/aprsupdate.kml?units=imperial&amp;units_temp=F&amp;call=KB9LNS-13</href>
+   <viewRefreshMode>onStop</viewRefreshMode>
+   <viewRefreshTime>1</viewRefreshTime>
+   <refreshMode>onExpire</refreshMode>
+ </Link>
+</NetworkLink>
+
+<NetworkLink>
+ <visibility>0</visibility>
+ <name>APRS tracking of all targets</name>
+ <description><![CDATA[
+ Real-time APRS network tracking of all APRS targets in the world
+ <p>Google Earth application by <a href='http://aprs.fi/'>aprs.fi</a></p>
+]]></description>
+ <Snippet maxLines='2'>Real-time APRS network tracking of all APRS targets in the world</Snippet>
+ <Link>
+   <href>http://aprs.fi/aprsupdate.kml?units=imperial&amp;units_temp=F</href>
+   <viewRefreshMode>onStop</viewRefreshMode>
+   <viewRefreshTime>1</viewRefreshTime>
+   <refreshMode>onExpire</refreshMode>
+ </Link>
+</NetworkLink>
+
+</Folder>
+</kml>
+
