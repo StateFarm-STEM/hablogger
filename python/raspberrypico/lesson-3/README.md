@@ -18,7 +18,7 @@
 * A functioning program for reading temperature, pressure, and altitude using the BMP-180<br><br>
 
 ### Video Walk-through
-In addition to the reading below, you can watch this [video](videos/Lesson3.mp4?raw=true) for guidance!
+In addition to the reading below, you can watch this [video](docs/videos/Lesson3.mp4?raw=true) for guidance!
 <br><br>
 
 ## Steps
@@ -33,9 +33,9 @@ In addition to the reading below, you can watch this [video](videos/Lesson3.mp4?
     SCL          | (Serial Clock): Accepts clock pulses from the Pico to synchronize data transmission | GP17 (22)
     SDA          | (Serial Data): Used for data exchange | GP16 (21)
 
-    ![bmp-180-diagram](./docs/pi-pico-bmp180.png)
+    ![bmp-180-diagram](./docs/images/pi-pico-bmp180.png)
 
-    ![Lesson Three](./docs/lesson3.jpg)
+    ![Lesson Three](./docs/images/lesson3.jpg)
 
 ### Install BMP-180 Driver
 
@@ -47,15 +47,15 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
 1. Open the Thonny IDE. _Stop/Restart_ the backend to refresh the connection.
 
-    ![stop-restart](./docs/thonny-1.png)
+    ![stop-restart](./docs/images/thonny-1.png)
 
     You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny. If the "Files" window is not displaying add it from the View > Files menu.
 
-    ![files-menu](./docs/FilesView.jpg)
+    ![files-menu](./docs/images/FilesView.jpg)
 
 1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
-    ![drivers-directory](./docs/thonny-2.png)
+    ![drivers-directory](./docs/images/thonny-2.png)
 
 1. Using Thonny, select _File_ then _Open_ from the menu. Choose _This Computer_. Navigate to the location where you downloaded `bmp180.py` in a previous step. Select the file and click _Open_.
 
@@ -68,7 +68,7 @@ Drivers are code modules for enabling certain functionality. One such driver all
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
 
     Your finished folders and files should look like this:<br>
-    ![files-menu](./docs/FinishedFiles.PNG)
+    ![files-menu](./docs/images/FinishedFiles.PNG)
 
 ### BMP-180 Program
 
@@ -78,7 +78,7 @@ The steps in this section will use the previous hardware and driver sections to 
 
 1. Run the script.
 
-    ![run-script](./docs/thonny-3.png)
+    ![run-script](./docs/images/thonny-3.png)
 
     Output will be generated to the console in Thonny describing the actions being taken. You will see output for the temperature, pressure, and altutide captured by the BMP-180.
 
@@ -131,4 +131,4 @@ Things to think about, validate, and/or try:
 <br><br>
 
 ## Need help?
-Watch the walk-through [video](videos/Lesson3.mp4?raw=true) for guidance!
+Watch the walk-through [video](docs/videos/Lesson3.mp4?raw=true) for guidance!
