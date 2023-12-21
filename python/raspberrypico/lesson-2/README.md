@@ -231,3 +231,5 @@ while True:
 Watch the walk-through [video](docs/videos/Lesson2.mp4?raw=true) for guidance!
 
 LEDs not lighting up? Double check the wiring. Then, be sure the values you have defined in your code map to the `GP` pin locations on your Pi Pico. Remember, the physical pin location of the microcontroller is not the same as the logical usage of the pins themselves. Reference your pinout diagram as needed.
+
+Also, your Pi Pico will remember the state of its onboard LED from the last time the onboard LED was used. This means if your LED was OFF and you stop, or unplug the Pico, it will remember the LED being OFF next time you plug it in. Similarly this applies to if the LED was ON.
