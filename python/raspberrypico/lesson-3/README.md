@@ -98,18 +98,72 @@ If you have finished with the base lesson, check out the items below.
 <br><br>
 
 Update the code to do any/all of the following:
-1. Add the units to the end of the output
-1. Convert the temperature to degrees Fahrenheit (or Kelvin 🥶)
-1. Convert the pressure to inches of mercury or atmospheres
-1. Convert the altitude to feet (or furlongs 🤔)
-1. Create a function for unit conversions to pass variables and print output.
+* Add the units of measurement to the end of the output
+* Convert the temperature to degrees Fahrenheit (or Kelvin 🥶)
+* Convert the pressure to inches of mercury or atmospheres
+* Convert the altitude to feet (or furlongs 🤔)
+* Create a function for unit conversions to pass variables and print output.
 
 Things to think about, validate, and/or try:
 * How can you change the temperature surrounding the BMP180 (Don't touch it 😅)
 * What should the pressure reading be?
 * Is the altitude correct? 
 * How sensitive is the reading?
-<br><br>
+
+## Challenge 
+Modify your code to use a function to initialize the BPM180 module.
+
+This challenge will introduce you to using  [Python Functions](https://www.w3schools.com/python/python_functions.asp). Using functions can simplify your code, offer greater readability, and align to the "DRY" (Don't Repeat Yourself) concepts mentioned in earlier challenges. A good function is one with an obvious name based on its action and with predictable inputs and outputs. For example, a function named `multiply_integer_by_10` would likely take in an integer, multiply it by 10, and output the result.
+
+A successful implementation of this code will result in the following:
+* Actions related to initiatlizing the BMP180 module will be contained in a function.
+* Inputs for this function will be the `GP` pin locations for `SCL` and `SDA`.
+* The output of this function will be a BMP180 object we use later in our code to extract measurements.
+
+As you think through introducing this function into your code, think about how this same function can be used in later lessons. If the function is re-usable, can it be shared across more of our code base? Is the function "obvious" in its intent and what it outputs?
+
+<details>
+<summary>Expand to see an example using a Function to initialize the BMP180 module</summary>
+
+```python
+from machine import Pin, I2C
+from drivers import bmp180
+import time
+
+def initialize_bmp180_module(scl_pin_location, sda_pin_location):
+    # Initialize I2C using available I2C pins
+    bus =  I2C(0,
+               scl=Pin(scl_pin_location), # take SCL as input into the function and use it here
+               sda=Pin(sda_pin_location), # take SDA as input into the function and use it here
+               freq=100000)
+    
+    # Initialize BMP180 with previously defined I2C config
+    new_bmp180 = bmp180.BMP180(bus) # Create a new bmp180 object.
+    
+    new_bmp180.oversample_sett = 2 # Accuracy, as defined in driver docs: https://github.com/micropython-IMU/micropython-bmp180
+    new_bmp180.baseline = 101325   # Baseline pressure, as defined in driver docs: https://github.com/micropython-IMU/micropython-bmp180
+
+    return new_bmp180 # return the bmp180 object. Once returned, we assign the object to a new value in our main function
+
+if __name__ == "__main__" :
+    # Main entrypoint. Primary code functions start here.
+    
+    bmp180 = initialize_bmp180_module(17,16) # initialize the BMP180 using our function.
+                                             # Assign it to a variable of your choosing. In this example we call it `bmp180`
+    
+    while True:
+        temp = bmp180.temperature  # Capture temperature, assign to `temp` variable
+        p = bmp180.pressure        # Capture pressure, assign to `p` variable
+        altitude = bmp180.altitude # Capture altitude, assign to `altitude` variable
+        
+        # Print results to console
+        print("Temperature (C):\t %d" % temp)
+        print("Pressure (Pa):  \t %d" % p)
+        print("Altitude (m):   \t %d" % altitude)
+        print("")
+        time.sleep(1)
+```
+</details>
 
 ## Troubleshooting
 
@@ -122,6 +176,31 @@ Things to think about, validate, and/or try:
     Traceback (most recent call last):
       File "<stdin>", line 2, in <module>
     ImportError: no module named 'drivers'
+    ```
+
+* `OSError: [Errno 5] EIO`
+
+    If you see this error it means you likely have incorrect or loose wiring. Double-check the location of your wires whether those wires are loose.
+
+    Example error message:
+
+    ```
+    Traceback (most recent call last):
+      File "<stdin>", line 15, in <module>
+      File "drivers/bmp180.py", line 48, in __init__
+    OSError: [Errno 5] EIO
+    ```
+
+* `OValueError: bad [SCL | SDA] pin`
+
+    If you see this error it means you likely have incorrectly defined your SCL or SDA pin location in your code. You may have your module wired to a location on your Pico, but define the GP pins in your code to point to a different location. Verify your code matches with the `GP` pin locations in your Pi Pico pinout diagram.
+
+    Example error message:
+
+    ```
+    Traceback (most recent call last):
+      File "<stdin>", line 11, in <module>
+    ValueError: bad [SDA | SCL] pin
     ```
 
 ## Reference Material
