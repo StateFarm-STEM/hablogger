@@ -113,6 +113,7 @@ Things to think about, validate, and/or try:
     * Date?
     * Time?
 * What other readings are available from the module? (**Hint:** look at the driver...) 😏
+* Understand more about [GPS data and NMEA sentence information](https://aprs.gids.nl/nmea/).
 * What is UART and how are we using it? 😵
 * Research [Google's Geocoding API and understand how we can use latitude and longitude to perform a reverse geocoding lookup](https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding) to retrieve a human readable address for our location data
 
