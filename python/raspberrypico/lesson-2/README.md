@@ -199,17 +199,27 @@ If you have finished with the base lesson, check out the items below.
 * Use a single variable to manage timing for your LEDs.
 * Modify your code to make the LEDs blink every half a second.
 * Modify your code to reverse the order that the LEDs blink.
-* Modify your code to use a for loop to iterate through each of the three LEDs and turn them on/off in sequence.
+
+## Challenge 
+Modify your code to use a For Loop to iterate through each of the three LEDs and turn them on/off in sequence.
+
+This challenge will introduce you to the [Python For Loop](https://www.w3schools.com/python/python_for_loops.asp). By using a For Loop, you can simplify your code by reducing duplication. In general programming this concept is often referred to as "DRY" (Don't Repeat Yourself).
+
+A successful implementation of this code will result in the following:
+* Minimal duplication of code. Ideally no duplication.
+* Each LED will blink in a sequence. For example, Red -> White -> Blue -> Repeat.
+
+As you think through using a For Loop, consider the location of your wiring. Is each one of your three LEDs wired to sequential pins on your Pico? If not, how might you solve for this?
 
 <details>
-<summary>Expand to see example using a for loop to minimize code duplication</summary>
+<summary>Expand to see an example using a For Loop to minimize code duplication</summary>
 
 ```python
 from machine import Pin
 import time
 
 while True:
-    for x in range(11,24):
+    for x in range(11,24): # The LEDs were wired to GP pins 11, 12, and 13 in this example.
         led = Pin(x, Pin.OUT)
         led.on()
         time.sleep(1)
@@ -221,3 +231,5 @@ while True:
 Watch the walk-through [video](docs/videos/Lesson2.mp4?raw=true) for guidance!
 
 LEDs not lighting up? Double check the wiring. Then, be sure the values you have defined in your code map to the `GP` pin locations on your Pi Pico. Remember, the physical pin location of the microcontroller is not the same as the logical usage of the pins themselves. Reference your pinout diagram as needed.
+
+Also, your Pi Pico will remember the state of its onboard LED from the last time the onboard LED was used. This means if your LED was OFF and you stop, or unplug the Pico, it will remember the LED being OFF next time you plug it in. Similarly this applies to if the LED was ON.
