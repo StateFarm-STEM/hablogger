@@ -19,7 +19,7 @@
 * A functioning program for reading GPS data and printing the information to the console<br><br>
 
 ### Video Walk-through
-In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?raw=true) for guidance!
+In addition to the reading below, you can watch this [video](./docs/videos/Lesson4.mp4?raw=true) for guidance!
 <br><br>
 
 ## Steps
