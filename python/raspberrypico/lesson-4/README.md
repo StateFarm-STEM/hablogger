@@ -35,9 +35,9 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
     TXD          | (Transmit): Transmission pin used for serial communication | UART1 RX / GP5 (7)
     RXD          | (Receive): Receiver pin used for serial communication | UART1 TX / GP4 (6)
 
-    ![gtu7-diagram](./docs/pi-pico-gtu7.png)
+    ![gtu7-diagram](./docs/images/pi-pico-gtu7.png)
 
-    ![Lesson Four](./images/WireUp.jpg)
+    ![Lesson Four](./docs/images/WireUp.jpg)
 
 ### Install GT-U7 Driver
 
@@ -49,15 +49,15 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
 1. Open the Thonny IDE. _Stop/Restart_ the backend to refresh the connection.
 
-    ![stop-restart](./docs/thonny-1.png)
+    ![stop-restart](./docs/images/thonny-1.png)
 
     You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny.If the "Files" window is not displaying add it from the View > Files menu.
 
-    ![files-menu](../lesson-3/docs/FilesView.jpg)
+    ![files-menu](./docs/images/FilesView.jpg)
 
 1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
-    ![drivers-directory](./docs/thonny-2.png)
+    ![drivers-directory](./docs/images/thonny-2.png)
 
 1. Using Thonny, select _File_ then _Open_ from the menu. Choose _This Computer_. Navigate to the location where you downloaded `gtu7.py` in step 1. Select the file and click _Open_.
 
@@ -70,7 +70,7 @@ Drivers are code modules for enabling certain functionality. One such driver all
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
 
     Your finished folders and files should look like this:<br>
-    ![files-menu](./docs/FinishedFiles.png)
+    ![files-menu](./docs/images/FinishedFiles.png)
 
 ### GT-U7 Program
 
@@ -80,7 +80,7 @@ The steps in this section will use the previous hardware and driver sections to 
 
 1. Run the script.
 
-    ![run-script](./docs/thonny-3.png)
+    ![run-script](./docs/images/thonny-3.png)
 
     Output will be generated to the console in Thonny describing the actions being taken. You will see output for latitude, longitude, number of satellites, and time returned from the GPS module.
 
@@ -138,4 +138,4 @@ Update the code to do any/all of the following:
     ```
 
 ## Need help?
-Watch the walk-through [video](videos/Lesson4.mp4?raw=true) for guidance!
+Watch the walk-through [video](./docs/videos/Lesson4.mp4?raw=true) for guidance!
