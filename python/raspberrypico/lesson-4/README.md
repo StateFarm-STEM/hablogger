@@ -189,5 +189,17 @@ if __name__ == "__main__" :
     ImportError: no module named 'drivers'
     ```
 
+* `ERROR: IndexError: list index out of range`
+    
+    Specific to the code in this lesson, this error occurs when we attempt to format the GPS data for printed output, but there is no data to format. In other words we are attempted to format an empty array. The cause for no data being returned could be related to:
+    1. No GPS signal. See first troubleshooting error for more information to help with this.
+
+    Example error message:
+    ```sh
+    Traceback (most recent call last):
+      File "<stdin>", line 22, in <module>
+    IndexError: list index out of range
+    ```
+
 ## Need help?
 Watch the walk-through [video](./docs/videos/Lesson4.mp4?raw=true) for guidance!
