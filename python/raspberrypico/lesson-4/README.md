@@ -101,6 +101,11 @@ The steps in this section will use the previous hardware and driver sections to 
 If you have finished with the base lesson, check out the items below.
 <br><br>
 
+Update the code to do any/all of the following:
+1. Reformat the printed output to a format of your liking
+1. Reformat the printed output to be simply a list of the information
+1. Print out another module data point (**Hint:** look at the driver...) 😁
+
 Things to think about, validate, and/or try:
 * What are the units/formats of the module output? 🤔
 * How accurate is the readout of the module? 
@@ -109,11 +114,56 @@ Things to think about, validate, and/or try:
     * Time?
 * What other readings are available from the module? (**Hint:** look at the driver...) 😏
 * What is UART and how are we using it? 😵
+* Research [Google's Geocoding API and understand how we can use latitude and longitude to perform a reverse geocoding lookup](https://developers.google.com/maps/documentation/geocoding/requests-reverse-geocoding) to retrieve a human readable address for our location data
 
-Update the code to do any/all of the following:
-1. Add the units to the end/middle of the output
-1. Print out another module data point 😁
-<br><br>
+## Challenge 
+Modify your code to handle exceptions.
+
+This challenge will introduce you to using  [Python Try Except](https://www.w3schools.com/python/python_try_except.asp) code blocks for exception handling. The Try Except code block is very useful in handling errors and exceptions from functions or code attempts. In its basic implementation, this code block tries something, except if something unexpected happens (like an error), try something else. If all else fails, finally take one last action.
+
+A successful implementation of this code will result in the following:
+* A Try Except code block handling the following error: `IndexError: list index out of range`
+  HINT: One method of recreating this error is by flipping the TX and RX wires.
+* A response providing troubleshooting tips to the user for if this error is encountered.
+
+As you think through this code, also consider how it might be applied to previous lessons. Similarly, keep this code in mind for future lessons. It is a useful approach for offering more informed responses to errors, or alternatively taking new actions if an error is encountered.
+
+<details>
+<summary>Expand to see an example using a Try Catch to handle an exception</summary>
+
+```python
+# Import all needed libraries
+from machine import Pin, UART
+import time
+from drivers import gtu7
+
+if __name__ == "__main__" :
+    
+    # Define our UART(Universal Asynchronous Receiver/Transmitter)
+    uart = UART(1,
+                baudrate=9600,
+                timeout=3600,
+                tx=Pin(4),
+                rx=Pin(5))
+    
+    # Loop for GPS coordinates
+    while True:
+        gps_module = gtu7.GTU7(uart)
+
+        gpgga_data = gps_module.gpgga()
+        
+        try: # Try printing the data.
+            print("Latitude:\t{0}\nLongitude:\t{1}\nSatellites:\t{2}\nTime:\t\t{3}\n".
+                  format(gpgga_data[1], gpgga_data[2], gpgga_data[3], gpgga_data[0]))
+        except IndexError as e: # We are capturing the specific `IndexError` exception. However, you can capture other
+                                # exceptions as well. View the Troubleshooting section for this lesson and think
+                                # about how you might add more exception handling
+            print("No data returned from GPS module. Ensure wiring is correct.")
+
+        time.sleep(5)
+
+```
+</details>
 
 ## Troubleshooting
 
@@ -128,7 +178,9 @@ Update the code to do any/all of the following:
 
 * `ERROR: No module named (drivers, bmp180, ...)`
     
-    If you see this error it means Python is not able to locate a module to be imported. This can occur because the version of MicroPyhon you are using does not support the module you are trying to import. Specifically for this lesson it likely applies to the `drivers` step. Ensure the `drivers` folder and its contents, `gtu7.py` and `__init__.py`, are saved to the Raspberry Pi Pico device and _not_ your computer.
+    If you see this error it means Python is not able to locate a module to be imported. This can occur because the version of MicroPyhon you are using does not support the module you are trying to import. Specifically for this lesson it likely applies to the `drivers` step. Ensure the `drivers` folder and its contents, `gtu7.py` and `__init__.py`, are saved to the Raspberry Pi Pico device and _not_ your computer. 
+    
+    Also be aware the case-sensitivity of the `drivers` folder name (lower case) and how its referenced in your Python code. Be sure everything is in lower case.
 
     Example error message:
     ```sh
