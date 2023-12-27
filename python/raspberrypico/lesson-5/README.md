@@ -115,6 +115,64 @@ Things to think about, validate, and/or try:
 * Is CSV the best output format?
 * How long before we run out of space on the SD card? 🤔
 
+## Challenge 
+Create a function to delete contents on the SD card
+
+A successful implementation of this code will result in the following:
+* A new function called `delete_files_from_sdcard_folder`
+* This function will take in a folder name and delete all the contents in that folder
+* The function will print status information to inform the user of actions being taken
+* The function may implement the use of Try Except to handle exceptions
+
+As you think through this code, also consider previous challenges in lessons that introduce concepts of Python Functions and Python Try Except blocks for exception handling.
+
+<details>
+<summary>Expand to see an example function to delete folder contents from the SD card</summary>
+
+You may choose to add this code to your `main.py` as a means to clear contents from the SD card.
+
+```python
+from machine import Pin, SPI
+from drivers import sdcard
+
+import os
+
+def delete_files_from_sdcard_folder(folder):
+    """Delete all files from SD Card folder"""
+
+    print("Deleting files in %s" % folder)
+    for file in os.listdir(folder):
+        try:
+            os.remove(folder + '/' + file)
+        except Exception as e:
+            pass
+    print("Done.\n\n")
+
+
+if __name__ == "__main__":
+    # Main entrypoint. Primary code functions start here.
+    
+    sd_dir = '/sd' # Directory created on SD card at root '/'. Expected format is '/<string>'. Example: '/sd'
+
+    # Intialize SPI peripheral
+    spi = machine.SPI(1,
+                      baudrate=1000000,     # 1 MHz
+                      polarity=0,
+                      phase=0,
+                      bits=8,
+                      firstbit=SPI.MSB,
+                      sck=machine.Pin(10),  # Pico GPIO Pin 10
+                      mosi=machine.Pin(11), # Pico GPIO Pin 11
+                      miso=machine.Pin(12)) # Pico GPIO Pin 12
+
+    # Initialize the SD card to Pico GPIO Pin 13 on chip select (CS) pin
+    sd = sdcard.SDCard(spi,Pin(13))
+    
+    delete_files_from_sdcard_folder(sd_dir) # Uncomment this line to run a function to delete all the files
+                                            # in the folder location passed in.
+     
+```
+</details>
 
 ## Troubleshooting
 
