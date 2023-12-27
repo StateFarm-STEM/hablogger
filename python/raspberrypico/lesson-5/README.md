@@ -21,7 +21,7 @@
 * A functioning program for storing data on an SD card connected to the Raspberry Pi Pico
 
 ### Video Walk-through
-In addition to the reading below, you can watch this [video](videos/Lesson5.mp4?raw=true) for guidance!
+In addition to the reading below, you can watch this [video](./docs/videos/Lesson5.mp4?raw=true) for guidance!
 <br><br>
 
  ## Steps
@@ -40,14 +40,15 @@ In addition to the reading below, you can watch this [video](videos/Lesson5.mp4?
     MISO        | (Master In Slave Out): SPI output from the microSD card module | GP12 (16)
     CS          | (Chip Select): Control pin used to select one (or set) of devices on the SPI bus | GP13 (17) 
 
-    ![sd-card-diagram](./docs/pi-pico-hw150.png)
+    ![sd-card-diagram](./docs/images/pi-pico-hw150.png)
 
     Finished wire up:
-    ![sd-card-diagram](./docs/WireUp.jpg)
+    ![sd-card-diagram](./docs/images/WireUp.jpg)
 
 1. Format the micro SD card as `FAT32`. Use [How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html) as a guide.
 
-    ***NOTE:*** If you do not have a 32GB card you can [partition](/c/arduino/lesson5/videos/sdCardFormat.gif) a larger card down to 32GB and it will work as well but use caution with this tool as it can alter your boot drive as well!
+> :information_source: **Partition larger SD card to 32GB**  
+If you do not have a 32GB card you can [partition](./docs/images/sdCardFormat.gif) a larger card down to 32GB and it will work as well. Be cautious in using Disk Formatter because you can accidentally reformat any attached storage device to your computer. **Double check you have selected the SD card you want to format**.
 
 ### Install SD Card MicroPython Driver
 
@@ -59,15 +60,15 @@ Drivers are code modules for enabling certain functionality. One such driver all
 
 1. Open the Thonny IDE. _Stop/Restart_ the backend to refresh the connection.
 
-    ![stop-restart](./docs/thonny-1.png)
+    ![stop-restart](./docs/images/thonny-1.png)
 
     You should now see `Raspberry Pi Pico` displayed in the left-hand navigation of Thonny.If the "Files" window is not displaying add it from the View > Files menu.
 
-    ![files-menu](../lesson-3/docs/FilesView.jpg)
+    ![files-menu](./docs/images/FilesView.jpg)
 
 1. If one does not already exist, create a new directory in Thonny on the Raspberry Pi Pic called `drivers`.
     
-    ![drivers-directory](./docs/thonny-2.png)
+    ![drivers-directory](./docs/images/thonny-2.png)
 
 1. Using Thonny, select _File_ then _Open_ from the menu. Choose _This Computer_. Navigate to the location where you downloaded `sdcard.py` in a previous step. Select the file and click _Open_.
 
@@ -80,7 +81,7 @@ Drivers are code modules for enabling certain functionality. One such driver all
     Click _File_ then _New_. Then click _File_ then _Save as..._. Choose _Raspberry Pi Pico_ and save this empty file to the same `drivers` location as the previous step. Name the file `__init__.py`. This empty file is used by Python to indicate the `drivers` folder is to be used for Python modules.
 
      Your finished folders and files should look like this:<br>
-    ![files-menu](./docs/FinishedFiles.png)
+    ![files-menu](./docs/images/FinishedFiles.png)
 
 ### SD Card Reader/Writer Program
 
@@ -90,11 +91,11 @@ The steps in this section will use the previous hardware and driver sections to 
 
 1. Run the script.
 
-    ![run-script](./docs/thonny-3.png)
+    ![run-script](./docs/images/thonny-3.png)
 
     Output will be generated to the console in Thonny describing the actions being taken. You will also see a new directory created on the SD card called `/sd` if using the example code. Within this folder is a called called `data.csv`. You may choose to download this file to your computer and open the file using a program such as Microsoft Excel to read the data in a more familiar program.
 
-    ![output](./docs/Output.png)
+    ![output](./docs/images/Output.png)
 
 
 **Congratulations! You have successfully completed Lesson 5.**
@@ -105,15 +106,15 @@ The steps in this section will use the previous hardware and driver sections to 
 If you have finished with the base lesson, check out the items below.
 <br><br>
 
+Update the code to do any/all of the following:
+1. Write your own custom output to the file and change the filename
+1. Use a loop to write the even numbers from 0 to 100 into the file 😵
+
 Things to think about, validate, and/or try:
 * How big is the file?
 * Is CSV the best output format?
 * How long before we run out of space on the SD card? 🤔
 
-Update the code to do any/all of the following:
-1. Write your own custom output to the file and change the filename
-1. Use a loop to write the even numbers from 0 to 100 into the file 😵
-<br><br>
 
 ## Troubleshooting
 
@@ -127,7 +128,9 @@ Update the code to do any/all of the following:
       File "<stdin>", line 2, in <module>
     ImportError: no module named 'drivers'
     ```
-* Validate that the SD card is 32GB or smaller formatted to FAT32 ([How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html) and [partitioning](/c/arduino/lesson5/videos/sdCardFormat.gif))
+* Validate the SD card is 32GB or smaller and formatted to FAT32
+  * [How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html)
+  * [partitioning a larger SD card to 32GB](./docs/images/sdCardFormat.gif)
 
 ## Reference Material
 * [How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html)
