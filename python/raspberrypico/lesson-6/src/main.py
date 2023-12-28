@@ -30,6 +30,7 @@ def init_gtu7():
                 rx=Pin(5))
 
     gtu7 = gpsdriver.GTU7(uart)
+    #gtu7.setGPS_DynamicMode6() #uncomment for high altitude mode. Only works with ublox branded GPS chips.
 
     return gtu7
 
