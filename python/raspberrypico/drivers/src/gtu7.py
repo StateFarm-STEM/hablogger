@@ -145,3 +145,59 @@ class GTU7 :
         else :
             return ''
 
+    def sendUBX(self, msg):
+        self.uart.flush()
+        self.uart.write(bytes([0xFF]))
+        time.sleep_ms(100)
+        #for c in msg:
+        #print(str(type(msg)))
+        self.uart.write(msg)
+                      
+    def getUBX_ACK(self, msg): 
+        startTime = time.ticks_ms()
+        ackByteId = 0
+        
+        # Construct the expected ACK packet    
+        ackPacket = bytearray([0xB5, 0x62, 0x05, 0x01, 0x02, 0x00, msg[2], msg[3], 0x00, 0x00])
+      
+        # Calculate the checksums THIS IS NOT CALCULATING RIGHT
+        for u in range (2, 8):
+            ackPacket[8] = ackPacket[8] + ackPacket[u]
+            ackPacket[9] = ackPacket[9] + ackPacket[8]
+       
+        while True:
+            # Test for success
+            if ackByteId > 9:
+                # All bytes in order!
+                return True
+            
+            # Timeout if no valid response in 3 seconds
+            if time.ticks_diff(startTime, time.ticks_ms()) > 3000:
+                return false
+            
+            # Make sure data is available to read
+            if self.uart.any():
+                b = self.uart.read(1)
+                
+                # Check that bytes arrive in sequence as per expected ACK packet
+                if b[0] == ackPacket[ackByteId]:
+                    ackByteId = ackByteId + 1
+                else:
+                    # Reset and look again, invalid order
+                    ackByteId = 0
+        
+    def resetGPS(self):
+        set_reset = bytes([0xB5, 0x62, 0x06, 0x04, 0x04, 0x00, 0xFF, 0x87, 0x00, 0x00, 0x94, 0xF5])
+        self.sendUBX(set_reset)
+
+    def setGPS_DynamicMode6(self):
+        set_dm6 = bytes([0xB5, 0x62, 0x06, 0x24, 0x24, 0x00, 0xFF, 0xFF, 0x06,
+            0x03, 0x00, 0x00, 0x00, 0x00, 0x10, 0x27, 0x00, 0x00,
+            0x05, 0x00, 0xFA, 0x00, 0xFA, 0x00, 0x64, 0x00, 0x2C,
+            0x01, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
+            0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0xDC])
+        gps_set_success = False
+        
+        while not gps_set_success:
+            self.sendUBX(set_dm6)
+            gps_set_success = self.getUBX_ACK(set_dm6)
