@@ -1,6 +1,6 @@
 from machine import Pin, SPI
 from drivers import sdcard
-from time import sleep, gmtime
+from time import gmtime
 
 import os
 
@@ -42,18 +42,6 @@ def read_csv_from_sdcard(folder, file_name):
     return csv_data
 
 
-def delete_files_from_sdcard_folder(folder):
-    """Delete all files from SD Card folder"""
-
-    print("Deleting files in %s" % folder)
-    for file in os.listdir(folder):
-        try:
-            os.remove(folder + '/' + file)
-        except Exception as e:
-            pass
-    print("Done.\n\n")
-
-
 if __name__ == "__main__":
     # Main entrypoint. Primary code functions start here.
     
@@ -74,8 +62,7 @@ if __name__ == "__main__":
     sd = sdcard.SDCard(spi,Pin(13))
      
     # Mount the SD card at specified directory
-    #os.mount(sd,sd_dir)
-    # Some SD cards require another mount attempt to function
+    # Some SD cards require another mount attempt to function, so we use a Try Except to handle that.
     try:
         print("Attempting mount...")
         os.mount(sd,sd_dir)
@@ -95,8 +82,3 @@ if __name__ == "__main__":
     for row in read_csv_from_sdcard(sd_dir, "data.csv") :
         print(row)
     print("Done.\n\n")
-
-    # Remove all files within the directory passed in. Useful for cleaning things up during testing.
-    # You can move this to earlier in the code to clean things up ahead of time, or at the end.
-    #delete_files_from_sdcard_folder(sd_dir) # Comment this out if you do not want the files to be deleted.
-    
