@@ -95,6 +95,10 @@ Update the code to do any/all of the following:
 
 ## Troubleshooting
 
+* Errors related to individual modules
+
+    If you encounter an error not listed in this section, review the troubleshooting sections of previous lessons for modules you suspect might be causing errors. In each lesson for the modules you will find more example errors and how to fix them.
+
 * `ERROR: No module named (drivers, sdcard, ...)`
     
     If you see this error it means Python is not able to locate a module to be imported. This can occur because the version of MicroPyhon you are using does not support the module you are trying to import. Specifically for this lesson it likely applies to the `drivers` step. Ensure the `drivers` folder and its contents, `sdcard.py` and `__init__.py`, are saved to the Raspberry Pi Pico device and _not_ your computer.
