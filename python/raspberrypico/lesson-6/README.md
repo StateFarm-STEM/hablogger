@@ -18,7 +18,7 @@
 <br><br>
 
 ### Video Walk-through
-In addition to the reading below, you can watch this [video](videos/Lesson6.mp4?raw=true) for guidance!
+In addition to the reading below, you can watch this [video](./docs/videos/Lesson6.mp4?raw=true) for guidance!
 <br><br>
 
 ## Steps
@@ -53,9 +53,9 @@ In addition to the reading below, you can watch this [video](videos/Lesson6.mp4?
     5V (40)      | (Voltage In): Provides power.  | BB Power (+)
     GND (38)     | Ground | BB Ground (-)
 
-![bringing-it-all-together](./docs/pi-pico-bringing-it-all-together.png)
+![bringing-it-all-together](./docs/images/pi-pico-bringing-it-all-together.png)
 
-![WireUp](./docs/WireUp.jpg)
+![WireUp](./docs/images/WireUp.jpg)
 **Note:** Thumb tack used to hold the GPS antenna up 😋
 
 ### Main program
@@ -65,15 +65,15 @@ The steps in this section will use the previous hardware and driver sections to 
 1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py).
 
 1. Verify that your drivers folder contains all the files needed
-   <br>![files-menu](../lesson-5/docs/FinishedFiles.png)
+   <br>![files-menu](./docs/images/FinishedFiles.png)
 
 1. Run the script.
    
-    ![run-script](../lesson-5/docs/thonny-3.png)
+    ![run-script](./docs/images/thonny-3.png)
 
     Output will be generated to the console in Thonny describing the actions being taken. You will also see a new directory created on the SD card called `/sd` if using the example code. Within this folder is a called called `data.csv`. You may choose to download this file to your computer and open the file using a program such as Microsoft Excel to read the data in a more familiar program.
 
-    ![output](./docs/Output.png)
+    ![output](./docs/images/Output.png)
 
 
 **Congratulations! You have successfully completed Lesson 6.**
@@ -105,7 +105,7 @@ Update the code to do any/all of the following:
       File "<stdin>", line 2, in <module>
     ImportError: no module named 'drivers'
     ```
-* Validate that the SD card is 32GB or smaller formatted to FAT32 ([How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html) and [partitioning](/c/arduino/lesson5/videos/sdCardFormat.gif))
+* Validate that the SD card is 32GB or smaller formatted to FAT32 ([How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html) and [partitioning](./docs/images/sdCardFormat.gif))
 
 ## Reference Material
 * [How to Format SD Card on Mac, Windows, Android and Camera](https://www.cisdem.com/resource/how-to-format-sd-card.html)
@@ -115,4 +115,4 @@ Update the code to do any/all of the following:
 * [MicroPython libraries](https://docs.micropython.org/en/latest/library/index.html)
 
 ## Need help?
-Watch the walk-through [video](videos/Lesson6.mp4?raw=true) for guidance!
+Watch the walk-through [video](./docs/videos/Lesson6.mp4?raw=true) for guidance!
