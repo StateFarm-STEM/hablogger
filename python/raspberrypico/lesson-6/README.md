@@ -84,14 +84,77 @@ The steps in this section will use the previous hardware and driver sections to 
 If you have finished with the base lesson, check out the items below.
 <br><br>
 
-Things to think about, validate, and/or try:
-* Is the data being written out correct? 🤔
-* What are some things you could do to test all the modules at once?
-
 Update the code to do any/all of the following:
 1. Change the order/format of the output file data to your liking.
 1. Write the output as fast as the modules can be read. What is your speed? 😵
+
+Things to think about, validate, and/or try:
+* Is the data being written out correct? 🤔
+* What are some things you could do to test all the modules at once?
 <br><br>
+
+## Challenge 
+Introduce in-line testing for the GTU-7 function.
+
+This challenge will introduce you to using the [Python assert keyword](https://www.w3schools.com/python/ref_keyword_assert.asp) to test whether certain conditions in your code return `True` or `False`. Assertions can be a very useful approach to testing your code when a potential cause for error may already be known. A common example is using a type assertion, or verifying the type of data being used in the program. Simply put, if you expect an `int` but a `str` exists, your assertion would return `False`.
+
+A successful implementation of this code will result in the following:
+* Modifying your code to use `assert` to validate individual pieces of data being returned from the GTU-7 module
+* Modifying your code to enable or disable assertions, thus adding a "debug" or "testing" capability to your code
+* Print statements indicating a success or failure:
+
+  ```
+  GTU7_GPGGA : OK
+  GTU7_GPRMC : OK
+  ```
+
+As you think through this code, also consider how you might add assertions to other functions such as the BMP-180 or SDCard. Additionally, how might this technique prove useful in the field on launch day when a computer is not available? What component is missing from our configuraiton so far that might help us display outputs of our debugging statements?
+
+<details>
+<summary>Expand to see an example GTU7 function modified to use assert statements</summary>
+
+You may choose to add this code to your `main.py` as a means to clear contents from the SD card.
+
+```python
+
+
+...
+
+
+def init_gtu7(test=True): # By defaulting test to `True`, debugging always runs. If you do not want
+                          # debugging to run, call this function and pass in a value of `False`.
+                          # For example: `gtu7 = init_gtu7(False)`
+    uart = UART(1,
+                baudrate=9600,
+                timeout=3600,
+                tx=Pin(4),
+                rx=Pin(5))
+
+    gtu7 = gpsdriver.GTU7(uart)
+    
+    if test:
+        try:
+            assert len(gtu7.gpgga()) == 4 # If the length of GPGGA data returned is anything but 4, fail the test
+        except AssertionError:
+            print("GTU7_GPGGA : ERR")
+        else:
+            print("GTU7_GPGGA : OK")
+
+        try:
+            assert len(gtu7.gprmc()) == 5 # If the length of GPRMC data returned is anything but 5, fail the test
+        except AssertionError:
+            print("GTU7_GPRMC : ERR")
+        else:
+            print("GTU7_GPRMC : OK")
+
+    return gtu7
+
+
+...
+
+
+```
+</details>
 
 ## Troubleshooting
 
