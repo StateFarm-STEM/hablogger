@@ -51,7 +51,7 @@ If you are unable to download the software due to access issues or hardware rest
 <br><br>
 
 #### Working project
-- Copy and paste this code into your sketch
+- Copy and paste this code into your sketch and run it
 ```
 void setup() {
   // put your setup code here, to run once:
@@ -86,7 +86,11 @@ Notice the colored bands on the resistor, these indicate the amount of resistanc
 
 Ok, let's wire up the breadboard with the LED and resistor!
 
-First, we need to connect one of the GND ("ground") pins to the negative (-) bar on the breadboard. You simply need to insert a wire into the GND pin on the board and then to any hole in the negative bar on the breadboard. In the image below, this is the black wire. This will enable us to gound our circuiut later. Next, a wrie from the 13 pin of the board to a line on the bread board (A7 in this example). Then connect a resistor from that line to another further down the line (E7 to E10). Don't be afraid to give yourself some room. Next, connect the positive (+) side of your LED to the resistor, through the breadboard, by inserting the long leg of the LED into another hole on the same row you just connected the resistor. The negative (-) side of the LED will be put directly into the negative (-) bar on the breadboard. When you are done, your setup should look like the picture below.
+1. First, we need to connect one of the GND ("ground") pins to the negative (-) bar on the breadboard. You simply need to insert a wire into the GND pin on the board and then to any hole in the negative bar on the breadboard. In the image below, this is the black wire. This will enable us to gound our circuiut later. 
+
+2. Next, a wrie from the 13 pin of the board to a line on the bread board (A7 in this example). 
+3. Then connect a resistor from that line to another further down the line (E7 to E10). Don't be afraid to give yourself some room. 
+4. Next, connect the positive (+) side of your LED to the resistor, through the breadboard, by inserting the long leg of the LED into another hole on the same row you just connected the resistor. The negative (-) side of the LED will be put directly into the negative (-) bar on the breadboard. When you are done, your setup should look like the picture below.
 <br><br>
 
 ![Single LED Setup](/c/arduino/lesson2/images/SingleLight.jpg)
@@ -152,4 +156,4 @@ void loop()
 Congratulations! You have successfully looped a multi LED circut.
 
 ### Need help?
-Watch the walk-through [video](videos/Lesson2.1.mp4?raw=true) for guidance!
+Watch the walk-through [video](videos/Lesson2.mp4?raw=true) for guidance!
