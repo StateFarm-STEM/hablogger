@@ -151,15 +151,15 @@ Now, let sequentially turn the LEDs on, then off, in turn. First, delete lines `
 ```python
     green_led.on()
     time.sleep(1)
-    greenled.off()
+    green_led.off()
 
-    yellowled.on()
+    yellow_led.on()
     time.sleep(1)
-    yellowled.off()
+    yellow_led.off()
 
-    redled.on()
+    red_led.on()
     time.sleep(1)
-    redled.off()
+    red_led.off()
 
     time.sleep(1)  
 ```
@@ -177,15 +177,15 @@ green_led = Pin(13, Pin.OUT)
 while True:
     green_led.on()
     time.sleep(1)
-    greenled.off()
+    green_led.off()
 
-    yellowled.on()
+    yellow_led.on()
     time.sleep(1)
-    yellowled.off()
+    yellow_led.off()
 
-    redled.on()
+    red_led.on()
     time.sleep(1)
-    redled.off()
+    red_led.off()
 
     time.sleep(1)  
 ```
