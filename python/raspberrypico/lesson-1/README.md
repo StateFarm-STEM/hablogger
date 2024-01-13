@@ -110,31 +110,41 @@
 
 
 ### Getting started with the IDE
-- This project will be using the Thonny Integrated Development Environment
-- [Thonny](https://thonny.org/)
-- This tool allows users to write code, interact with their microcontroller, view output, and much more
+
+This project will be using the [Thonny](https://thonny.org/) Integrated Development Environment. Thonny acts as the interface between the code you write and the Raspberry Pi Pico microcontroller.
 
 ### Let's give it a try!
 
-- Start up Thonny
-- Connect your Raspberry pico using the USB Micro cable
-  - Be sure to insert the micro end properly, it only goes one way and sometimes its hard to see unless you look closely
-- Find the Raspberry Pico in the software
-- Push this code to the board
-<br><br>
+1. Download Thonny from the [Thonny website](https://thonny.org/) and install it
+1. Connect your Raspberry Pi Pico using the USB cable
+	> :information_source: **Connecting a brand new Raspberry Pi Pico**  
+	If this is a brand new Raspberry Pi Pico, you will need to load MicroPython onto the microcontroller to allow Python code to execute. If you see the error `Couldn't find the device automatically.`, this means you will need to load MicroPython onto the Pi Pico microcontroller. Follow the steps below to install MicroPython onto the Pi Pico using Thonny.
 
-```python
-# Blinks onboard LED every 1 second
+	a. With the Pi Pico plugged in, select _Run -> Configure Interpreter_ from within Thonny  
+	b. For _Which kind of interpreter should Thonny use for running you code?_ choose _MicroPython (Raspberry Pi Pico)_ from the list. Leave all other options as default, but **do not click OK yet**  
+	c. Click _Install or update MicroPython_  
+	d. Click _MicroPython variant_ and choose the version of MicroPython specific to your Raspberry Pi Pico  hardware type. If your Pi Pico supports wireless, choose the option with `Pico WH` option. Otherwise choose `Pico H`  
 
-from machine import Pin
-import time
+	<img src="./docs/images/thonny-install-micropython-1.png" width="50%" >
 
-led = Pin(25, Pin.OUT)
+	e. Select the latest version of MicroPython  
+	f. Click _Install_  
+	g. Click _Close_  
+	h. Click _OK_
 
-while True:
-    led.toggle()
-    time.sleep(1)
-```
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py). You will choose _This Computer_ and search for the directory of this project.
 
-- Are you see the tiny LED on the Raspberry Pico flash?
+   Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson. In Python, comments are marked with an '#'.
+
+1. Run the script.
+
+    ![run-script](./docs/images/thonny-3.png)
+
+**Congratulations! You have successfully completed Lesson 1.**
+
+## Troubleshooting
+
+* `ERROR: Couldn't find the device automatically.`
+
+	If you encounter this error it's likely a result of MicroPython not being loaded onto the Raspberry Pi Pico. This usually occurs with a brand new Pi Pico device. Follow the steps in the above lesson to install MicroPython to the controller.
 
