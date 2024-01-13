@@ -7,16 +7,16 @@
 - Ensure the [Integrated Development Environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) can connect to the microcontroller and upload code
 <br><br>
 ## What you will be using:
-- [Raspberry Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)
-  ![Raspberry Pico](photos/RaspberryPiTop.jpg)
-- [Breadboard](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all)
- ![Breadboard](photos/breadboard.jpg)
-- [BMP-180 - Barometric Pressure/Temperature/Altitude Sensor](https://www.adafruit.com/product/1603)
-  <img src=photos/BMP_both.jpg width="1000" >
-- [GPS Module](https://www.u-blox.com/en/product/neo-6-series)
-  ![GPS NEO-6M](photos/GPS_NEO-6M.JPG)
-- [Arduino SD card adapter](https://electropeak.com/micro-sd-tf-card-adapter-module)
-  ![SD Card Adapter](photos/sd_card_module.jpg)
+- [Raspberry Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)  
+  <img src="./docs/images/RaspberryPiTop.jpg" width="50%">
+- [Breadboard](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all)  
+  <img src="./docs/images/HabBreadboard.jpg" width="50%">
+- [BMP-180 - Barometric Pressure/Temperature/Altitude Sensor](https://www.adafruit.com/product/1603)  
+  <img src="./docs/images/BMP_both.jpg" width="50%">
+- [GPS Module](https://www.u-blox.com/en/product/neo-6-series)  
+  <img src="./docs/images/GPS_NEO-6M.jpg" width="50%">
+- [Arduino SD card adapter](https://electropeak.com/micro-sd-tf-card-adapter-module)  
+  <img src="./docs/images/sd_card_module.jpg" width="25%">
     
 - [Micro SD card](https://en.wikipedia.org/wiki/SD_card)
 
@@ -49,8 +49,8 @@
     - There are three main parts to a bread board, the power rails, the terminal strips, and the DIP support channel.
     - The DIP support channel is the channel that runs through the middle of the board. It splits the terminal strips into two and makes it so many different integrated circuits can be used while taking up minimum space on the breadboard. Each pin of the IC (integrated circuit) is unique and needs to be separate from the other pins, hence the need for a channel that breaks up the terminal strips. 
     - Terminal strips are the strips of metal that connect the rows of pins, they are hidden, but important. This means that all of the holes on either side of the DIP channel are connected to each other. 
-    - The power rails are typically accompanied by a blue or red line. These are used to provide a power source and a common ground. Blue means negative or ground and red means positive or power.
-      <img src=photos/HabBreadboard.jpg width="600" >     
+    - The power rails are typically accompanied by a blue or red line. These are used to provide a power source and a common ground. Blue means negative or ground and red means positive or power.  
+      <img src=./docs/images/HabBreadboard.jpg width="50%" >     
     - The red and blue arrows are pointing to the positive and negative power rails respectively. The yellow arrow is illustrating which pin are connected. The pins are connected in the same direction as the yellow arrow, but separated by the channel in the middle. They are connected horizontally and not vertically in this picture. 
     - If you want more information on breadboards please refer to <a href=https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all title="How to Use a Breadboard">This article</a>
 - IT's VERY important to keep in mind polarity:
@@ -87,7 +87,7 @@
 - To work best the antenna needs unobstructed access to the sky, sometimes however the readings can work inside a building. When working on the GPS lab this is an error you may encounter.
 - What are some things that use GPS technology that you know of?
 
-#### SD [Card Reader](https://electropeak.com/micro-sd-tf-card-adapter-module)
+#### [SD Card Reader](https://electropeak.com/micro-sd-tf-card-adapter-module)
 - This device will be used to write data for later interpretation. The software written will save data every 30 seconds to track details throughout the flight
 - SD cards come in two sizes, we will be using micro SD cards in an adapter to allow them to be read by multiple types of SD readers on computers
 - SD stands for secure digital
