@@ -7,16 +7,16 @@
 - Ensure the [Integrated Development Environment (IDE)](https://en.wikipedia.org/wiki/Integrated_development_environment) can connect to the microcontroller and upload code
 <br><br>
 ## What you will be using:
-- [Raspberry Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)
-  ![Raspberry Pico](photos/RaspberryPiTop.jpg)
-- [Breadboard](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all)
- ![Breadboard](photos/breadboard.jpg)
-- [BMP-180 - Barometric Pressure/Temperature/Altitude Sensor](https://www.adafruit.com/product/1603)
-  <img src=photos/BMP_both.jpg width="1000" >
-- [GPS Module](https://www.u-blox.com/en/product/neo-6-series)
-  ![GPS NEO-6M](photos/GPS_NEO-6M.JPG)
-- [Arduino SD card adapter](https://electropeak.com/micro-sd-tf-card-adapter-module)
-  ![SD Card Adapter](photos/sd_card_module.jpg)
+- [Raspberry Pico](https://www.raspberrypi.com/products/raspberry-pi-pico/)  
+  <img src="./docs/images/RaspberryPiTop.jpg" width="50%">
+- [Breadboard](https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all)  
+  <img src="./docs/images/HabBreadboard.jpg" width="50%">
+- [BMP-180 - Barometric Pressure/Temperature/Altitude Sensor](https://www.adafruit.com/product/1603)  
+  <img src="./docs/images/BMP_both.jpg" width="50%">
+- [GPS Module](https://www.u-blox.com/en/product/neo-6-series)  
+  <img src="./docs/images/GPS_NEO-6M.jpg" width="50%">
+- [Arduino SD card adapter](https://electropeak.com/micro-sd-tf-card-adapter-module)  
+  <img src="./docs/images/sd_card_module.jpg" width="25%">
     
 - [Micro SD card](https://en.wikipedia.org/wiki/SD_card)
 
@@ -49,8 +49,8 @@
     - There are three main parts to a bread board, the power rails, the terminal strips, and the DIP support channel.
     - The DIP support channel is the channel that runs through the middle of the board. It splits the terminal strips into two and makes it so many different integrated circuits can be used while taking up minimum space on the breadboard. Each pin of the IC (integrated circuit) is unique and needs to be separate from the other pins, hence the need for a channel that breaks up the terminal strips. 
     - Terminal strips are the strips of metal that connect the rows of pins, they are hidden, but important. This means that all of the holes on either side of the DIP channel are connected to each other. 
-    - The power rails are typically accompanied by a blue or red line. These are used to provide a power source and a common ground. Blue means negative or ground and red means positive or power.
-      <img src=photos/HabBreadboard.jpg width="600" >     
+    - The power rails are typically accompanied by a blue or red line. These are used to provide a power source and a common ground. Blue means negative or ground and red means positive or power.  
+      <img src=./docs/images/HabBreadboard.jpg width="50%" >     
     - The red and blue arrows are pointing to the positive and negative power rails respectively. The yellow arrow is illustrating which pin are connected. The pins are connected in the same direction as the yellow arrow, but separated by the channel in the middle. They are connected horizontally and not vertically in this picture. 
     - If you want more information on breadboards please refer to <a href=https://learn.sparkfun.com/tutorials/how-to-use-a-breadboard/all title="How to Use a Breadboard">This article</a>
 - IT's VERY important to keep in mind polarity:
@@ -87,7 +87,7 @@
 - To work best the antenna needs unobstructed access to the sky, sometimes however the readings can work inside a building. When working on the GPS lab this is an error you may encounter.
 - What are some things that use GPS technology that you know of?
 
-#### SD [Card Reader](https://electropeak.com/micro-sd-tf-card-adapter-module)
+#### [SD Card Reader](https://electropeak.com/micro-sd-tf-card-adapter-module)
 - This device will be used to write data for later interpretation. The software written will save data every 30 seconds to track details throughout the flight
 - SD cards come in two sizes, we will be using micro SD cards in an adapter to allow them to be read by multiple types of SD readers on computers
 - SD stands for secure digital
@@ -110,31 +110,41 @@
 
 
 ### Getting started with the IDE
-- This project will be using the Thonny Integrated Development Environment
-- [Thonny](https://thonny.org/)
-- This tool allows users to write code, interact with their microcontroller, view output, and much more
+
+This project will be using the [Thonny](https://thonny.org/) Integrated Development Environment. Thonny acts as the interface between the code you write and the Raspberry Pi Pico microcontroller.
 
 ### Let's give it a try!
 
-- Start up Thonny
-- Connect your Raspberry pico using the USB Micro cable
-  - Be sure to insert the micro end properly, it only goes one way and sometimes its hard to see unless you look closely
-- Find the Raspberry Pico in the software
-- Push this code to the board
-<br><br>
+1. Download Thonny from the [Thonny website](https://thonny.org/) and install it
+1. Connect your Raspberry Pi Pico using the USB cable
+	> :information_source: **Connecting a brand new Raspberry Pi Pico**  
+	If this is a brand new Raspberry Pi Pico, you will need to load MicroPython onto the microcontroller to allow Python code to execute. If you see the error `Couldn't find the device automatically.`, this means you will need to load MicroPython onto the Pi Pico microcontroller. Follow the steps below to install MicroPython onto the Pi Pico using Thonny.
 
-```python
-# Blinks onboard LED every 1 second
+	a. With the Pi Pico plugged in, select _Run -> Configure Interpreter_ from within Thonny  
+	b. For _Which kind of interpreter should Thonny use for running you code?_ choose _MicroPython (Raspberry Pi Pico)_ from the list. Leave all other options as default, but **do not click OK yet**  
+	c. Click _Install or update MicroPython_  
+	d. Click _MicroPython variant_ and choose the version of MicroPython specific to your Raspberry Pi Pico  hardware type. If your Pi Pico supports wireless, choose the option with `Pico WH` option. Otherwise choose `Pico H`  
 
-from machine import Pin
-import time
+	<img src="./docs/images/thonny-install-micropython-1.png" width="50%" >
 
-led = Pin(25, Pin.OUT)
+	e. Select the latest version of MicroPython  
+	f. Click _Install_  
+	g. Click _Close_  
+	h. Click _OK_
 
-while True:
-    led.toggle()
-    time.sleep(1)
-```
+1. Using Thonny, open the `main.py` file in [./src/main.py](./src/main.py). You will choose _This Computer_ and search for the directory of this project.
 
-- Are you see the tiny LED on the Raspberry Pico flash?
+   Take some time to read the comments in this code so you understand what is happening, this will help you later in the lesson. In Python, comments are marked with an '#'.
+
+1. Run the script.
+
+    ![run-script](./docs/images/thonny-3.png)
+
+**Congratulations! You have successfully completed Lesson 1.**
+
+## Troubleshooting
+
+* `ERROR: Couldn't find the device automatically.`
+
+	If you encounter this error it's likely a result of MicroPython not being loaded onto the Raspberry Pi Pico. This usually occurs with a brand new Pi Pico device. Follow the steps in the above lesson to install MicroPython to the controller.
 
