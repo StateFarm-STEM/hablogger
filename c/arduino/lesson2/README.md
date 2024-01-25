@@ -52,7 +52,7 @@ If you are unable to download the software due to access issues or hardware rest
 
 #### Working project
 - Copy and paste this code into your sketch and run it
-```
+```java
 void setup() {
   // put your setup code here, to run once:
   pinMode(13,OUTPUT);
@@ -97,7 +97,7 @@ Ok, let's wire up the breadboard with the LED and resistor!
 
 #### Working project
 - Copy and paste this code into your sketch and run it
-```
+```java
 void setup()
 {
   // Green LED
@@ -123,7 +123,7 @@ Using the same principles you learned above, wire two more LEDs, connecting them
 
 #### Working project
 - Copy and paste this code into your sketch and run it
-```
+```java
 void setup()
 {
   // Green LED
