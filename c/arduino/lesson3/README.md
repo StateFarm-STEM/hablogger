@@ -81,7 +81,7 @@ SDA	| A4
 <br><br>
 
 #### Working Code 
-```
+```java
 //#include <SD.h> // load the SD library
 //#include <SPI.h> // load the SPI library
 
@@ -110,7 +110,7 @@ void loop() {
   Serial.print(pressure/3386.389);
   Serial.println(" in of HG (inches of mercury).");
   Serial.println("");
-  delay(250); //Pause between readings.
+  delay(250); //Pause between readings
 }
 ```
 <br>
@@ -146,6 +146,84 @@ The BMP_180 also measures Altitude! Add the appropriate code to capture the alti
 * Is the altitude correct? 
 * How sensitive is the reading? 
 <br><br>
+
+## Challenge  
+If you have finished with the extension lesson questions, check out the challenge below.
+<br><br>
+
+Use three LEDs to show a temperature or pressure change from low, to medium, to high. Wire up the three LEDs like you did in lesson two. You can combine the code from this lesson with some of the code from lesson two to get you started. 
+
+Things to think about:
+* Set a threshold for each level.
+* Evaluate the sensor reading on an interval? how fast can you go? 
+* Don't forget to turn off the previous light when you cross a threshold.
+* Which is easier to evaluate, temperature or pressure?
+
+<details>
+
+<summary>Try to write the code on your own. If you get stuck or need some inspiration expand this section.</summary>
+
+```java
+//#include <SD.h> // load the SD library
+//#include <SPI.h> // load the SPI library
+
+#include "Wire.h"    // imports the wire library for talking over I2C 
+#include "Adafruit_BMP085.h"  // import the Pressure Sensor Library
+Adafruit_BMP085 mySensor;  // create sensor object called mySensor
+
+float tempC;  // Variable for holding temp in C
+float tempF;  // Variable for holding temp in F
+float pressure; //Variable for holding pressure reading
+
+void setup(){
+  // Green LED
+  pinMode(13,OUTPUT);
+  // Yellow LED
+  pinMode(12,OUTPUT);
+  // Red LED
+  pinMode(11,OUTPUT);
+  
+  //turn on serial monitor 
+  Serial.begin(9600); 
+  
+  //initialize mySensor
+  mySensor.begin();   
+}
+
+void loop() {
+  // Read Temperature
+  tempC = mySensor.readTemperature(); 
+  
+  // Convert degrees C to F
+  tempF = tempC*1.8 + 32.; 
+  
+  // Print out the temp for verification
+  Serial.println(tempF); 
+
+  if (tempF <= 67) // Green
+  {
+    digitalWrite(13, HIGH);
+    digitalWrite(12, LOW);
+    digitalWrite(11, LOW);
+  } 
+  else if (tempF > 67 and tempF <= 70) // Yellow
+  {
+    digitalWrite(13, LOW);
+    digitalWrite(12, HIGH);
+    digitalWrite(11, LOW);
+  } 
+  else if (tempF > 70) // Red
+  {
+    digitalWrite(13, LOW);
+    digitalWrite(12, LOW);
+    digitalWrite(11, HIGH);
+  }
+}
+
+```
+
+</details>
+
 
 ### Trouble shooting
 - If you get an error code that looks like this `fatal error: Adafruit_I2CDevice.h` you are are likley missing the BusIO library, to check to see if it is installed go to Sketch -> Include Library -> Manage Libraries -> then search for "BusIO", this should be installed. 
