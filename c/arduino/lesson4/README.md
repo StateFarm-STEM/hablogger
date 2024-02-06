@@ -85,7 +85,7 @@ In addition to the reading below, you can watch this [video](videos/Lesson4.mp4?
 - In order to see the serial monitor, where your data will be printing out, press ctrl + shift + m or enter the tools menu and select the serial monitor
 </br></br>
 
-``` 
+```java
 #include "TinyGPSPlus.h"
 #include <SoftwareSerial.h>
 
@@ -147,8 +147,97 @@ Things to think about, validate, and/or try:
 * How accurate are the coordinates returned?
 
 Update the code to do any/all of the following:
-* Add the units to the end/middle of the output 😁
+* Add the units to the end/middle of the output
+* Convert from Decimal Degrees to Degrees,Minutes,Seconds
 <br><br>
+
+## Challenge  
+If you have finished with the extension lesson questions, check out the challenge below.
+<br><br>
+
+Use a red and green LED to show if the GPS sensor is transmitting within our outside a circle at your current location. The green LED should light solid inside the circle and solid red outside.
+
+Things to think about:
+* How should you set the circle on the map and how big?
+* How do you know if the current GPS coordinate is outside the circle? 😵
+* Which methods will give an approximation and which are exact? 
+* How (or where) would the formula below become less accurate? 🥶
+
+<details>
+
+<summary>Try to write the code on your own. If you get stuck or need some inspiration expand this section.</summary>
+
+```java
+#include "TinyGPSPlus.h"
+#include <SoftwareSerial.h>
+
+// Create the serial_connection
+//
+// Connect the GT-U7 RX and TX to the Arduino
+// using the following connections...
+// RX=pin --> Arduino analog 10
+// TX pin --> Arduino analog 11
+//
+// In the code below on line 14 is the constructor.
+// use the RX pin number as the first argument
+// use the TX pin number as the second argument
+SoftwareSerial serial_connection(10, 11);
+
+TinyGPSPlus gps;
+
+// Set home location
+static const float homeLat=40.541800, homeLong=-88.949430;
+
+// GPS scale factor and radius (Meters)
+static const int gpsFactor=111000, gpsRadius=2;
+
+void setup() {
+  pinMode(12,OUTPUT); // Red
+  pinMode(13,OUTPUT); // Green  
+  
+  Serial.begin(9600);
+  serial_connection.begin(9600);
+  Serial.println("GPS Start");  
+}
+
+void loop() {
+  // Variable to hold GPS sensor lat/long
+  float currentLat, currentLong;
+  while(serial_connection.available())
+  {
+    gps.encode(serial_connection.read());
+  }
+  if(gps.location.isUpdated())
+  {
+    Serial.println("Latitude:");
+    Serial.println(gps.location.lat(), 6);
+    currentLat = gps.location.lat();
+    Serial.println("Longitude:");
+    Serial.println(gps.location.lng(), 6);
+    currentLong = gps.location.lng();
+
+    // the point is inside the circle if d2<r2
+    // on the circle if d2=r2
+    // and outside the circle if d2>r2
+    // Thus, you want to compare the number (x2−x1)2+(y2−y1)2 with r2
+    float distanceFromHome = abs(sqrt(sq(currentLat-homeLat)+sq(currentLong-homeLong))*gpsFactor);
+    Serial.println(distanceFromHome, 6);
+    if (distanceFromHome <= gpsRadius) // Green
+    {
+      digitalWrite(13, HIGH);
+      digitalWrite(12, LOW);
+    } 
+    else if (distanceFromHome > gpsRadius) // Red
+    {
+      digitalWrite(13, LOW);
+      digitalWrite(12, HIGH);
+    } 
+    Serial.println("---");
+  }  
+}
+```
+
+</details>
 
 ## Troubleshooting 
 - If your GPS is not reading out coordinates on the COM port 
@@ -157,6 +246,7 @@ Update the code to do any/all of the following:
   - wait for a satellite(s) to be acquired
 - You need to have the TinyGPSPlus library installed in order for the code to work, refer to the video further up this page for more help
 - The GPUs unit should have a solid red light when looking for satellites and start blinking when it connects with a satellite(s)
+- Swap the two data wires (TXD and RXD)
 </br></br>
 
 ### Need help?
