@@ -99,7 +99,7 @@ In some locations, such as the center of a building or in a basement, the GPS mo
 
 If you want to generate fake data, use the following syntax for either GPGGA data or GPRMC data. Note the use of `fake=True` being passed in.
 
-> :information_source: **Unexpected keyward argument 'fake'**  
+> :information_source: **TypeError: unexpected keyword argument 'fake'**  
 	The fake data feature was added to the GTU7 module in an update. If you encounter the unexpected argument error, follow the steps earlier in the lesson on installing the GTU7 driver, ensuring you are using the latest copy of the driver located in this project.
 
     ```
