@@ -102,10 +102,10 @@ If you want to generate fake data, use the following syntax for either GPGGA dat
 > :information_source: **TypeError: unexpected keyword argument 'fake'**  
 	The fake data feature was added to the GTU7 module in an update. If you encounter the unexpected argument error, follow the steps earlier in the lesson on installing the GTU7 driver, ensuring you are using the latest copy of the driver located in this project.
 
-    ```python
-    gpgga_data = gps_module.gpgga(fake=True)
-    gprmc_data = gps_module.gprmc(fake=True)
-    ```
+```python
+gpgga_data = gps_module.gpgga(fake=True)
+gprmc_data = gps_module.gprmc(fake=True)
+```
 
 
 **Congratulations! You have successfully completed Lesson 4.**
