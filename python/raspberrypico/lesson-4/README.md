@@ -93,6 +93,21 @@ The steps in this section will use the previous hardware and driver sections to 
     Time:		 18:46:14
     ```
 
+#### Is Your GPS Module Not Connecting?
+
+In some locations, such as the center of a building or in a basement, the GPS module cannot receive a GPS signal. To aid in these scenarios, an update was made to the GTU7 module to support "fake" data returned similar to real data. This can be useful for testing purposes, or to gain familiarity with what to expect as a response.
+
+If you want to generate fake data, use the following syntax for either GPGGA data or GPRMC data. Note the use of `fake=True` being passed in.
+
+> :information_source: **TypeError: unexpected keyword argument 'fake'**  
+	The fake data feature was added to the GTU7 module in an update. If you encounter the unexpected argument error, follow the steps earlier in the lesson on installing the GTU7 driver, ensuring you are using the latest copy of the driver located in this project.
+
+```python
+gpgga_data = gps_module.gpgga(fake=True)
+gprmc_data = gps_module.gprmc(fake=True)
+```
+
+
 **Congratulations! You have successfully completed Lesson 4.**
 
 <br><br>
@@ -200,6 +215,17 @@ if __name__ == "__main__" :
     Traceback (most recent call last):
       File "<stdin>", line 22, in <module>
     IndexError: list index out of range
+    ```
+
+* `ERROR: TypeError: unexpected keyword argument 'fake'`
+    
+    On occasion the drivers will be updated. The GTU7 driver received an update that allowed fake data to be created in the scenario where GPS signal cannot be acquired. If the user attempts to pass in `fake=True` and receives this error, the GTU7 driver is out of date. Follow the steps in the lesson above to install the GTU7 driver, overwriting the existing version on your Pi Pico.
+
+    Example error message:
+    ```sh
+    Traceback (most recent call last):
+      File "<stdin>", line 19, in <module>
+    TypeError: unexpected keyword argument 'fake'
     ```
 
 ## Need help?
